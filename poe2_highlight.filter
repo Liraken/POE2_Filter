@@ -1,0 +1,205 @@
+##Currency
+
+Show # $type->gold $tier->stacklvl1
+	BaseType == "Gold"
+	SetFontSize 30
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 255 255 0 180
+	MinimapIcon 0 Gold Cross
+
+Show 
+	Class "Currency"
+	BaseType "Divine Orb" "Mirror of Kalandra" "Mirror Shard" "Perfect Jeweller's Orb"
+	SetFontSize 45
+	SetTextColor 0 19 166 255
+	SetBorderColor 0 19 166 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 1 Red Star
+
+Show 
+	Class "Currency"
+	BaseType "Exalted Orb" "Orb of Annulment" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb" "Lesser Jeweller's Orb" "Exotic"
+	SetFontSize 45
+	SetTextColor 255 190 0 255
+	SetBackgroundColor 33 48 169
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 1 Red Circle
+	SetBorderColor 255 255 255 255
+
+Show
+	BaseType == "Scroll of Wisdom"
+	SetFontSize 35
+	SetTextColor 255 140 54
+	SetBorderColor 100 50 30
+	SetBackgroundColor 66 0 0
+
+Show 
+	Class "Currency"
+	SetFontSize 35
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 33 48 169 255
+	PlayAlertSound 2 300
+	MinimapIcon 1 Yellow Circle
+	SetBorderColor 255 190 0 255
+
+
+## GEM
+
+Show 
+	Class "Gem"
+	SetFontSize 45
+	SetTextColor 255 190 0 255
+	SetBackgroundColor 33 48 169
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 1 Red Circle
+	SetBorderColor 255 255 255 255
+
+Show
+	BaseType "Uncut"
+	SetFontSize 45
+	SetTextColor 255 190 0 255
+	SetBackgroundColor 33 48 169
+	PlayAlertSound 1 200
+	PlayEffect Red
+	MinimapIcon 1 Red Circle
+	SetBorderColor 255 255 255 255
+ 
+Show
+ 	BaseType "Rune"
+ 	SetFontSize 50
+ 	SetTextColor 0 0 0
+ 	SetBorderColor 0 0 0
+ 	SetBackgroundColor 111 255 111
+
+##Gear
+
+Show
+    Sockets 1 2 3 4 
+    SetBackgroundColor 111 0 111
+
+Show
+	Rarity Normal Magic Rare
+	BaseType "Sceptre"
+	SetFontSize 30
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 34 100 200
+
+Show
+	Rarity Normal Magic Rare
+	Class == "Bows"
+	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow"
+	SetFontSize 40
+	SetBorderColor 29 255 29
+	SetBackgroundColor 0 121 0	
+
+Show
+	Rarity Normal Magic Rare
+	Class == "Quivers"
+	BaseType "Broadhead Quiver" "Fire Quiver" "Sacral Quiver" "Primed Quiver" "Volant Quiver"
+	SetFontSize 40
+	SetBorderColor 29 255 29
+	SetBackgroundColor 0 121 0		
+
+## Evasion Expert / Advanced Gear
+
+Show
+	Rarity Normal Magic Rare
+	BaseType "Expert Felt Cap" "Expert Swathed Cap" "Expert Hunter Hood" "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Face Mask" "Expert Veiled Mask" "Expert Tribal Mask" "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Scalper's Jacket" "Expert Laced Boots" "Expert Steeltoe Boots" "Expert Lizardscale Boots" "Expert Mail Sabatons" "Expert Braced Sabatons" "Expert Stacked Sabatons" "Expert Frayed Shoes" "Expert Threaded Shoes" "Expert Hunting Shoes" "Expert Firm Bracers" "Expert Sectioned Bracers" "Expert Spined Bracers" "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Gauze Wraps" "Expert Linen Wraps" "Expert Spiral Wraps"
+	SetFontSize 45
+	SetBorderColor 255 255 255
+	SetBackgroundColor 0 150 0 
+
+Show
+	Rarity Normal Magic Rare
+	BaseType "Advanced Shabby Hood" "Advanced Felt Cap" "Advanced Lace Hood" "Advanced Swathed Cap" "Advanced Hunter Hood" "Advanced Brimmed Helm" "Advanced Guarded Helm" "Advanced Visored Helm" "Advanced Cowled Helm" "Advanced Shielded Helm" "Advanced Hewn Mask" "Advanced Face Mask" "Advanced Hooded Mask" "Advanced Veiled Mask" "Advanced Tribal Mask" "Advanced Quilted Vest" "Advanced Pathfinder Coat" "Advanced Rhoahide Coat" "Advanced Studded Vest" "Advanced Scout's Vest" "Advanced Serpentscale Coat" "Advanced Chain Mail" "Advanced Rogue Armour" "Advanced Vagabond Armour" "Advanced Cloaked Mail" "Advanced Explorer Armour" "Advanced Scale Mail" "Advanced Hermit Garb" "Advanced Waxed Jacket" "Advanced Marabout Garb" "Advanced Wayfarer Jacket" "Advanced Anchorite Garb" "Advanced Scalper's Jacket" "Advanced Laced Boots" "Advanced Embossed Boots" "Advanced Steeltoe Boots" "Advanced Lizardscale Boots" "Advanced Mail Sabatons" "Advanced Braced Sabatons" "Advanced Stacked Sabatons" "Advanced Frayed Shoes" "Advanced Threaded Shoes" "Advanced Hunting Shoes" "Advanced Firm Bracers" "Advanced Bound Bracers" "Advanced Sectioned Bracers" "Advanced Spined Bracers" "Advanced Ringmail Gauntlets" "Advanced Layered Gauntlets" "Advanced Doubled Gauntlets" "Advanced Gauze Wraps" "Advanced Linen Wraps" "Advanced Spiral Wraps"
+	SetFontSize 30
+	SetBorderColor 255 255 255
+	SetBackgroundColor 0 90 0
+
+Show
+	Rarity Rare
+	Class "Body"
+	SetFontSize 40
+	SetBackgroundColor 33 48 169 
+
+Show 
+	Rarity Rare
+	Class "Boots" "Gloves" "Helmets"
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+	SetBorderColor 255 255 255 255
+
+Show
+	Rarity Rare
+	Class "Boots"
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+	SetBorderColor 255 255 255 255
+
+Show
+	Rarity Normal Magic Rare
+	Class = "Ring" "Amulets" "Belt"
+	SetFontSize 45
+	SetBackgroundColor 9 9 69
+	SetBorderColor 227 255 0
+
+Show 
+	Rarity Rare
+	SetFontSize 40
+	SetBorderColor 0 140 240 255
+	SetBackgroundColor 33 48 169 
+
+## Flasks
+
+Show
+	Class == "Mana Flasks"
+	SetFontSize 25
+	SetBorderColor 0 0 120 255
+	SetBackgroundColor 25 96 100
+
+Show
+	Class == "Life Flasks"
+	SetFontSize 25
+	SetBorderColor 120 0 0 255
+	SetBackgroundColor 106 0 0
+
+## Catch Alls
+
+Show
+	Rarity Normal
+	SetFontSize 25
+
+Show
+	Rarity Magic
+	SetFontSize 30
+	SetBorderColor 0 140 240 255
+	MinimapIcon 2 Grey Diamond	
+
+##Map
+
+Show 
+	BaseType "Simulacrum" "Tablet" "Breachstone" "Barya" "Ultimatum"
+	SetFontSize 45
+	SetTextColor 255 207 255
+	SetBorderColor 255 207 255
+	SetBackgroundColor 65 20 80
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 1 White Square
+
+Show 
+	BaseType "Waystone"
+	SetFontSize 45
+	SetTextColor 255 207 255
+	SetBorderColor 255 207 255
+	SetBackgroundColor 65 20 80
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 1 White Square	
+
+
