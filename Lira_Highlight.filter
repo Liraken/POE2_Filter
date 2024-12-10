@@ -33,8 +33,8 @@
 # NOTES! IMPORTANT!
 #------------------------------------
 # This is currently a SHOW only filter! 
-# The Table of Contents currently lists that are not yet implmented!
-#
+# All Hide Sections are turned off
+# The Table of Contents currently lists sections that are not yet implmented!
 #
 #===============================================================================================================
 # [WELCOME] TABLE OF CONTENTS + QUICKJUMP TABLE [WIP]
@@ -93,11 +93,11 @@
 #   [4206] Tier 3 uniques 
 #   [4207] Tier 4 uniques
 # [[4500]] Hide outdated leveling flasks
-# [[4700]] Leveling - Life, Mana, Hybrid
+# [[4700]] Leveling - Life and Mana
 #   [4702] Life flasks
 #   [4703] Mana flasks
 # [[4800]] Leveling - Rules
-#   [4801] Sockets
+#   [4801] Socketed Items
 #   [4802] Rares - Decorators
 #   [4803] Rares - Universal
 #   [4804] Rares - Caster
@@ -186,7 +186,7 @@ PlayAlertSound 3 300
 
 Show
     Rarity Normal Magic Rare
-    SetFontSize 40
+    SetFontSize 35
     Corrupted True
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -207,7 +207,6 @@ Show # %D5 $type->crafting->expensive $tier->any
 	Corrupted False
 	ItemLevel >= 82
 	Rarity Normal Magic Rare
-	BaseType == "Expert Dualstring Bow" "Expert Shaman Mantle" "Hallowed Sceptre"
 	SetFontSize 50
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -222,7 +221,7 @@ PlayAlertSound 3 300
 
 
 #------------------------------------
-#   [1307] ILVL ANY - EVASION
+#   [1307] ILVL ANY - DECORATOR - EVASION 
 #------------------------------------
 
 Show
@@ -230,26 +229,30 @@ Show
 	BaseType == "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Scalper's Jacket" "Expert Laced Boots" "Expert Steeltoe Boots" "Expert Lizardscale Boots" "Expert Frayed Shoes" "Expert Threaded Shoes" "Expert Hunting Shoes" "Expert Firm Bracers" "Expert Sectioned Bracers" "Expert Spined Bracers" "Expert Gauze Wraps" "Expert Linen Wraps" "Expert Spiral Wraps" "Expert Felt Cap" "Expert Swathed Cap" "Expert Hunter Hood" "Expert Face Mask" "Expert Veiled Mask" "Expert Tribal Mask"
 	SetFontSize 35
 	SetBorderColor 0 255 0
+	Continue
 
 Show
 	Rarity Normal Magic
 	BaseType == "Advanced Quilted Vest" "Advanced Pathfinder Coat" "Advanced Rhoahide Coat" "Advanced Studded Vest" "Advanced Scout's Vest" "Advanced Serpentscale Coat" "Advanced Hermit Garb" "Advanced Waxed Jacket" "Advanced Marabout Garb" "Advanced Wayfarer Jacket" "Advanced Anchorite Garb" "Advanced Scalper's Jacket" "Advanced Laced Boots" "Advanced Embossed Boots" "Advanced Steeltoe Boots" "Advanced Lizardscale Boots" "Advanced Frayed Shoes" "Advanced Threaded Shoes" "Advanced Hunting Shoes" "Advanced Firm Bracers" "Advanced Bound Bracers" "Advanced Sectioned Bracers" "Advanced Spined Bracers" "Advanced Gauze Wraps" "Advanced Linen Wraps" "Advanced Spiral Wraps" "Advanced Shabby Hood" "Advanced Felt Cap" "Advanced Lace Hood" "Advanced Swathed Cap" "Advanced Hunter Hood" "Advanced Hewn Mask" "Advanced Face Mask" "Advanced Hooded Mask" "Advanced Veiled Mask" "Advanced Tribal Mask"
-	SetFontSize 30
+	SetFontSize 35
 	SetBorderColor 0 255 0
+	Continue
 
 Show
 	Rarity Normal Magic
 	Class == "Bows"
 	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow"
-	SetFontSize 30
+	SetFontSize 35
 	SetBorderColor 0 255 0
+	Continue
 
 Show
 	Rarity Normal Magic
 	Class == "Crossbows"
 	BaseType "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Dyad Crossbow" "Bombard Crossbow"
-	SetFontSize 30
-	SetBorderColor 0 255 0    	
+	SetFontSize 35
+	SetBorderColor 0 255 0
+	Continue    	
 
 Show
 	Rarity Normal Magic
@@ -257,9 +260,10 @@ Show
 	BaseType "Broadhead Quiver" "Fire Quiver" "Sacral Quiver" "Primed Quiver" "Volant Quiver"
 	SetFontSize 35
 	SetBorderColor 0 255 0
+	Continue
 
 #------------------------------------
-#   [1308] ILVL ANY - ARMOUR
+#   [1308] ILVL ANY - DECORATOR - ARMOUR
 #------------------------------------
 
 Show
@@ -302,7 +306,7 @@ Show
 	Continue
 
 #------------------------------------
-#   [1309] ILVL ANY - Energy Shield
+#   [1309] ILVL ANY - DECORATOR - Energy Shield
 #------------------------------------
 
 Show
@@ -315,7 +319,7 @@ Show
 Show
 	Rarity Normal Magic
 	BaseType == "Advanced Feathered Robe" "Advanced Hexer's Robe" "Advanced Silk Robe" "Advanced Keth Raiment" "Advanced Votive Raiment" "Advanced Altar Robe" "Advanced Wrapped Sandals" "Advanced Lattice Sandals" "Advanced Silk Slippers" "Advanced Feathered Sandals" "Advanced Sombre Gloves" "Advanced Stitched Gloves" "Advanced Jewelled Gloves" "Advanced Intricate Gloves" "Advanced Twig Circlet" "Advanced Wicker Tiara" "Advanced Beaded Circlet" "Advanced Chain Tiara" "Advanced Feathered Tiara"
-	SetFontSize 30
+	SetFontSize 35
 	SetBorderColor 0 0 255
 	Continue
 
@@ -330,7 +334,7 @@ Show
 	Rarity Normal Magic
 	Class == "Shields"
 	BaseType == "Expert Sigil Crest Shield" "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Advanced Blazon Crest Shield" "Advanced Sigil Crest Shield" "Advanced Emblem Crest Shield" "Advanced Jingling Crest Shield" "Advanced Sectarian Crest Shield" "Advanced Omen Crest Shield"
-	SetFontSize 30
+	SetFontSize 35
 	SetBorderColor 100 100 255
 	Continue
 
@@ -345,7 +349,6 @@ Show
 #------------------------------------
 #   [1310] ILVL ANY - Jewelery
 #------------------------------------	
-
 
 Show # %D4 $type->rr->amuring $tier->t1
 	Rarity Normal Magic
@@ -424,40 +427,34 @@ Show # %D2 $type->rr->belts $tier->t3
 #   [1505] Early mapping life/mana flasks
 #------------------------------------
 
-Show # %D2 $type->endgameflasks $tier->earlymappinglifemana
+Show # %D2 $type->endgameflasks $tier->earlymappinglife
 	Mirrored False
 	Corrupted False
 	Rarity Normal Magic
-	BaseType == "Ultimate Life Flask" "Ultimate Mana Flask" "Transcendent Life Flask" "Transcendent Mana Flask"
+	BaseType == "Ultimate Life Flask" "Transcendent Life Flask"
 	SetFontSize 30
-    AreaLevel >= 68
+    AreaLevel >= 65
 	AreaLevel <= 75
-	SetBorderColor 100 100 100 150
-	SetBackgroundColor 20 20 0 180
+	SetBorderColor 120 0 0 255
+	SetBackgroundColor 106 0 0
+
+
+Show # %D2 $type->endgameflasks $tier->earlymappingmana
+	Mirrored False
+	Corrupted False
+	Rarity Normal Magic
+	BaseType == "Ultimate Mana Flask" "Transcendent Mana Flask"
+	SetFontSize 30
+    AreaLevel >= 65
+	AreaLevel <= 75
+	SetBorderColor 0 0 120 255
+	SetBackgroundColor 25 96 100	
 
 #===============================================================================================================
 # [[1600]] Misc Rules
 #===============================================================================================================
 
-#------------------------------------
-#   [4702] Life flasks
-#------------------------------------
 
-Show
-	Class == "Life Flasks"
-	SetFontSize 25
-	SetBorderColor 120 0 0 255
-	SetBackgroundColor 106 0 0
-
-#------------------------------------
-#   [4703] Mana flasks
-#------------------------------------
-
-Show
-	Class == "Mana Flasks"
-	SetFontSize 25
-	SetBorderColor 0 0 120 255
-	SetBackgroundColor 25 96 100
 
 #===============================================================================================================
 # [[1700]] Hide Layer 1 - Normal and Magic Endgame Gear
@@ -643,7 +640,7 @@ Show
 Show
 	Rarity Rare
 	BaseType == "Advanced Quilted Vest" "Advanced Pathfinder Coat" "Advanced Rhoahide Coat" "Advanced Studded Vest" "Advanced Scout's Vest" "Advanced Serpentscale Coat" "Advanced Hermit Garb" "Advanced Waxed Jacket" "Advanced Marabout Garb" "Advanced Wayfarer Jacket" "Advanced Anchorite Garb" "Advanced Scalper's Jacket" "Advanced Laced Boots" "Advanced Embossed Boots" "Advanced Steeltoe Boots" "Advanced Lizardscale Boots" "Advanced Frayed Shoes" "Advanced Threaded Shoes" "Advanced Hunting Shoes" "Advanced Firm Bracers" "Advanced Bound Bracers" "Advanced Sectioned Bracers" "Advanced Spined Bracers" "Advanced Gauze Wraps" "Advanced Linen Wraps" "Advanced Spiral Wraps" "Advanced Shabby Hood" "Advanced Felt Cap" "Advanced Lace Hood" "Advanced Swathed Cap" "Advanced Hunter Hood" "Advanced Hewn Mask" "Advanced Face Mask" "Advanced Hooded Mask" "Advanced Veiled Mask" "Advanced Tribal Mask"
-	SetFontSize 30
+	SetFontSize 40
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 121 0
 
@@ -679,14 +676,14 @@ Show
 Show
 	Rarity Rare
 	BaseType == "Expert Soldier Greathelm" "Expert Spired Greathelm" "Expert Elite Greathelm" "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Horned Crown" "Expert Martyr Crown" "Expert Heavy Crown" "Expert Riveted Mitts" "Expert Bolstered Mitts" "Expert Moulded Mitts" "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Rope Cuffs" "Expert Aged Cuffs" "Expert Goldcast Cuffs" "Expert Iron Greaves" "Expert Trimmed Greaves" "Expert Stone Greaves" "Expert Mail Sabatons" "Expert Braced Sabatons" "Expert Stacked Sabatons" "Expert Padded Leggings" "Expert Secured Leggings" "Expert Pelt Leggings" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Pelt Mantle" "Expert Shaman Mantle" "Expert Sacrificial Mantle"
-	SetFontSize 35
+	SetFontSize 45
     SetBorderColor 0 0 0
 	SetBackgroundColor 121 0 0
 
 Show
 	Rarity Rare
 	BaseType == "Advanced Fur Plate" "Advanced Iron Cuirass" "Advanced Maraketh Cuirass" "Advanced Steel Plate" "Advanced Full Plate" "Advanced Vaal Cuirass" "Advanced Chain Mail" "Advanced Rogue Armour" "Advanced Vagabond Armour" "Advanced Cloaked Mail" "Advanced Explorer Armour" "Advanced Scale Mail" "Advanced Pilgrim Vestments" "Advanced Pelt Mantle" "Advanced Mail Vestments" "Advanced Shaman Mantle" "Advanced Ironclad Vestments" "Advanced Sacrificial Mantle" "Advanced Iron Greaves" "Advanced Bronze Greaves" "Advanced Trimmed Greaves" "Advanced Stone Greaves" "Advanced Mail Sabatons" "Advanced Braced Sabatons" "Advanced Stacked Sabatons" "Advanced Padded Leggings" "Advanced Secured Leggings" "Advanced Pelt Leggings" "Advanced Riveted Mitts" "Advanced Tempered Mitts" "Advanced Bolstered Mitts" "Advanced Moulded Mitts" "Advanced Ringmail Gauntlets" "Advanced Layered Gauntlets" "Advanced Doubled Gauntlets" "Advanced Rope Cuffs" "Advanced Aged Cuffs" "Advanced Goldcast Cuffs" "Advanced Rusted Greathelm" "Advanced Soldier Greathelm" "Advanced Wrapped Greathelm" "Advanced Spired Greathelm" "Advanced Elite Greathelm" "Advanced Brimmed Helm" "Advanced Guarded Helm" "Advanced Visored Helm" "Advanced Cowled Helm" "Advanced Shielded Helm" "Advanced Iron Crown" "Advanced Horned Crown" "Advanced Cultist Crown" "Advanced Martyr Crown" "Advanced Heavy Crown"
-	SetFontSize 30
+	SetFontSize 40
 	SetBorderColor 0 0 0
 	SetBackgroundColor 121 0 0
 
@@ -729,7 +726,7 @@ Show
 Show
 	Rarity Rare
 	BaseType == "Advanced Feathered Robe" "Advanced Hexer's Robe" "Advanced Silk Robe" "Advanced Keth Raiment" "Advanced Votive Raiment" "Advanced Altar Robe" "Advanced Wrapped Sandals" "Advanced Lattice Sandals" "Advanced Silk Slippers" "Advanced Feathered Sandals" "Advanced Sombre Gloves" "Advanced Stitched Gloves" "Advanced Jewelled Gloves" "Advanced Intricate Gloves" "Advanced Twig Circlet" "Advanced Wicker Tiara" "Advanced Beaded Circlet" "Advanced Chain Tiara" "Advanced Feathered Tiara"
-	SetFontSize 30
+	SetFontSize 40
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 121
 
@@ -1255,11 +1252,11 @@ Show
 
 Show 
 	Class "Currency"
-	BaseType "Exalted Orb" "Orb of Annulment" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb" "Lesser Jeweller's Orb" "Exotic"
+	BaseType "Exalted Orb" "Orb of Alchemy" "Orb of Annulment" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb" "Lesser Jeweller's Orb" "Exotic" "Regal Orb" "Gemcutter's Prism" "Glassblower's Bauble"
 	SetFontSize 45
 	SetTextColor 255 190 0 255
 	SetBackgroundColor 33 48 169
-	PlayAlertSound 1 300
+	PlayAlertSound 1 250
 	PlayEffect Red
 	MinimapIcon 1 Red Circle
 	SetBorderColor 255 255 255 255
@@ -1273,6 +1270,17 @@ Show
 
 Show 
 	Class "Currency"
+	BaseType == "Orb of Transmutation" "Orb of Augmentation" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Chance Shard"
+	SetFontSize 35
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 33 48 169 255
+	PlayAlertSound 2 300
+	MinimapIcon 1 Yellow Circle
+	SetBorderColor 255 190 0 255
+
+Show 
+	Class "Currency"
+	BaseType == "Transmutation Shard" "Regal Shard" "Artificer's Shard" 
 	SetFontSize 35
 	SetTextColor 255 255 255 255
 	SetBackgroundColor 33 48 169 255
@@ -1324,7 +1332,16 @@ Show # $type->fragments
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 180 0 255 255
 	PlayAlertSound 1 300
-	MinimapIcon 1 Red Hexagon			
+	MinimapIcon 1 Red Hexagon	
+
+Show # $type->expedition->logbook $tier->any
+	BaseType == "Expedition Logbook"
+	SetFontSize 45
+	SetTextColor 255 85 85 255
+	SetBorderColor 255 85 85 255
+	SetBackgroundColor 40 0 30 255
+	PlayAlertSound 5 300
+	MinimapIcon 1 Yellow UpsideDownHouse			
 
 #------------------------------------
 #   [3702] Runes
@@ -1430,7 +1447,7 @@ Show # %D8 $type->currency->stackedthree $tier->t1
 	Class == "Stackable Currency"
 	BaseType == "Exotic Coinage" "Broken Circle Artifact" "Black Scythe Artifact" "Order Artifact" "Sun Artifact"
 	SetFontSize 45
-	SetTextColor 255 79 0 255
+	SetTextColor 255 100 30 255
 	SetBorderColor 255 79 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 1 Orange Circle
@@ -1514,14 +1531,14 @@ PlayAlertSound 3 300
 #------------------------------------
 
 Show # $type->currency->distilations $tier->t1
-Class == "Stackable Currency"
-BaseType == "Distilled Despair" "Distilled Fear" "Distilled Suffering" "Distilled Isolation"
-SetFontSize 45
-SetTextColor 0 148 255 255
-SetBorderColor 0 148 255 255
-SetBackgroundColor 255 255 255 255
-PlayEffect Red
-MinimapIcon 0 Red Star
+	Class == "Stackable Currency"
+	BaseType == "Distilled Despair" "Distilled Fear" "Distilled Suffering" "Distilled Isolation"
+	SetFontSize 45
+	SetTextColor 0 148 255 255
+	SetBorderColor 0 148 255 255
+	SetBackgroundColor 255 255 255 255
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 PlayAlertSound 10 300
 
 Show # $type->currency->distilations $tier->t2
@@ -1652,30 +1669,33 @@ Show
 #===============================================================================================================
 
 #------------------------------------
-#   [4702] Life flasks
+#   [4702] Life flasks Leveling
 #------------------------------------
 
 Show
 	Class == "Life Flasks"
+	AreaLevel <= 64
 	SetFontSize 25
 	SetBorderColor 120 0 0 255
 	SetBackgroundColor 106 0 0
 
 #------------------------------------
-#   [4703] Mana flasks
+#   [4703] Mana flasks Leveling
 #------------------------------------
 
 Show
 	Class == "Mana Flasks"
+	AreaLevel <= 64
 	SetFontSize 25
 	SetBorderColor 0 0 120 255
 	SetBackgroundColor 25 96 100
+
 #===============================================================================================================
 # [[4800]] Leveling - Rules
 #===============================================================================================================
 
 #------------------------------------
-#   [4801] Sockets
+#   [4801] Socketed Items
 #------------------------------------
 
 Show
@@ -1694,10 +1714,31 @@ Show
 # [[4900]] Leveling - Useful magic and normal items
 #===============================================================================================================
 
+#------------------------------------
+#   [4901] Shrink Non Highlighted items
+#------------------------------------
+
+Show
+	Rarity Normal Magic
+	BaseType "Expert"
+	SetFontSize 35
+
+Show
+	Rarity Normal Magic
+	Class == "Sceptres" "Bows" "Shields"
+	SetFontSize 35	
+
 Show
 	Rarity Normal Magic
 	ItemLevel >= 40
 	SetFontSize 25
+
+Show
+	SetFontSize 30
+	Quality >= 1
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 10 70 65 255	
 
 
 #------------------------------------
