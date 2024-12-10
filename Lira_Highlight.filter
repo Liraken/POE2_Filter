@@ -4,7 +4,7 @@
 #===============================================================================================================
 # Liraken's Indepth Loot Filter - for Path of Exile [Based off of NeverSink's Path of Exile 1 Filter]
 #===============================================================================================================
-# Version 0.1.0-alpha.2024.1
+# Version 0.3.0-alpha.2024.1
 # AUTHOR: Liraken
 #
 #------------------------------------
@@ -234,21 +234,21 @@ Show
 Show
 	Rarity Normal Magic
 	BaseType == "Advanced Quilted Vest" "Advanced Pathfinder Coat" "Advanced Rhoahide Coat" "Advanced Studded Vest" "Advanced Scout's Vest" "Advanced Serpentscale Coat" "Advanced Hermit Garb" "Advanced Waxed Jacket" "Advanced Marabout Garb" "Advanced Wayfarer Jacket" "Advanced Anchorite Garb" "Advanced Scalper's Jacket" "Advanced Laced Boots" "Advanced Embossed Boots" "Advanced Steeltoe Boots" "Advanced Lizardscale Boots" "Advanced Frayed Shoes" "Advanced Threaded Shoes" "Advanced Hunting Shoes" "Advanced Firm Bracers" "Advanced Bound Bracers" "Advanced Sectioned Bracers" "Advanced Spined Bracers" "Advanced Gauze Wraps" "Advanced Linen Wraps" "Advanced Spiral Wraps" "Advanced Shabby Hood" "Advanced Felt Cap" "Advanced Lace Hood" "Advanced Swathed Cap" "Advanced Hunter Hood" "Advanced Hewn Mask" "Advanced Face Mask" "Advanced Hooded Mask" "Advanced Veiled Mask" "Advanced Tribal Mask"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 0 255 0
 
 Show
 	Rarity Normal Magic
 	Class == "Bows"
 	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 0 255 0
 
 Show
 	Rarity Normal Magic
 	Class == "Crossbows"
 	BaseType "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Dyad Crossbow" "Bombard Crossbow"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 0 255 0    	
 
 Show
@@ -266,29 +266,32 @@ Show
 	Rarity Normal Magic
 	BaseType == "Expert Soldier Greathelm" "Expert Spired Greathelm" "Expert Elite Greathelm" "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Horned Crown" "Expert Martyr Crown" "Expert Heavy Crown" "Expert Riveted Mitts" "Expert Bolstered Mitts" "Expert Moulded Mitts" "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Rope Cuffs" "Expert Aged Cuffs" "Expert Goldcast Cuffs" "Expert Iron Greaves" "Expert Trimmed Greaves" "Expert Stone Greaves" "Expert Mail Sabatons" "Expert Braced Sabatons" "Expert Stacked Sabatons" "Expert Padded Leggings" "Expert Secured Leggings" "Expert Pelt Leggings" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Pelt Mantle" "Expert Shaman Mantle" "Expert Sacrificial Mantle"
 	SetFontSize 35
-    SetBorderColor 0 0 0
-	SetBackgroundColor 150 0 0 
+	SetBorderColor 255 0 0
+	Continue
 
 Show
 	Rarity Normal Magic
 	BaseType == "Advanced Fur Plate" "Advanced Iron Cuirass" "Advanced Maraketh Cuirass" "Advanced Steel Plate" "Advanced Full Plate" "Advanced Vaal Cuirass" "Advanced Chain Mail" "Advanced Rogue Armour" "Advanced Vagabond Armour" "Advanced Cloaked Mail" "Advanced Explorer Armour" "Advanced Scale Mail" "Advanced Pilgrim Vestments" "Advanced Pelt Mantle" "Advanced Mail Vestments" "Advanced Shaman Mantle" "Advanced Ironclad Vestments" "Advanced Sacrificial Mantle" "Advanced Iron Greaves" "Advanced Bronze Greaves" "Advanced Trimmed Greaves" "Advanced Stone Greaves" "Advanced Mail Sabatons" "Advanced Braced Sabatons" "Advanced Stacked Sabatons" "Advanced Padded Leggings" "Advanced Secured Leggings" "Advanced Pelt Leggings" "Advanced Riveted Mitts" "Advanced Tempered Mitts" "Advanced Bolstered Mitts" "Advanced Moulded Mitts" "Advanced Ringmail Gauntlets" "Advanced Layered Gauntlets" "Advanced Doubled Gauntlets" "Advanced Rope Cuffs" "Advanced Aged Cuffs" "Advanced Goldcast Cuffs" "Advanced Rusted Greathelm" "Advanced Soldier Greathelm" "Advanced Wrapped Greathelm" "Advanced Spired Greathelm" "Advanced Elite Greathelm" "Advanced Brimmed Helm" "Advanced Guarded Helm" "Advanced Visored Helm" "Advanced Cowled Helm" "Advanced Shielded Helm" "Advanced Iron Crown" "Advanced Horned Crown" "Advanced Cultist Crown" "Advanced Martyr Crown" "Advanced Heavy Crown"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 255 0 0
+	Continue
 
 
 Show
 	Rarity Normal Magic
 	Class == "Two Hand Maces"
 	BaseType "Expert Leaden Greathammer" "Advanced Leaden Greathammer" "Leaden Greathammer" "Expert Cultist Greathammer" "Advanced Cultist Greathammer" "Cultist Greathammer" "Expert Crumbling Maul" "Advanced Crumbling Maul" "Crumbling Maul"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 255 0 0
+	Continue
 
 Show
 	Rarity Normal Magic
 	Class == "One Hand Maces"
 	BaseType "Expert Brigand Mace" "Expert Construct Hammer" "Advanced Brigand Mace" "Advanced Construct Hammer" "Brigand Mace" "Construct Hammer"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 255 0 0
+	Continue
 
 Show
 	Rarity Normal Magic
@@ -296,6 +299,7 @@ Show
 	BaseType == "Expert Pelage Targe" "Expert Crescent Targe" "Expert Feathered Targe" "Expert Plated Buckler" "Expert Spiked Buckler" "Expert Edged Buckler" "Advanced Painted Tower Shield" "Advanced Braced Tower Shield" "Advanced Effigial Tower Shield" "Advanced Rampart Tower Shield" "Advanced Heraldric Tower Shield" "Advanced Stone Tower Shield"
 	SetFontSize 35
 	SetBorderColor 255 0 0		 
+	Continue
 
 #------------------------------------
 #   [1309] ILVL ANY - Energy Shield
@@ -306,25 +310,29 @@ Show
 	BaseType == "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe" "Expert Wrapped Sandals" "Expert Silk Slippers" "Expert Feathered Sandals" "Expert Sombre Gloves" "Expert Jewelled Gloves" "Expert Intricate Gloves" "Expert Wicker Tiara" "Expert Chain Tiara" "Expert Feathered Tiara"
 	SetFontSize 35
 	SetBorderColor 100 100 255
+	Continue
 
 Show
 	Rarity Normal Magic
 	BaseType == "Advanced Feathered Robe" "Advanced Hexer's Robe" "Advanced Silk Robe" "Advanced Keth Raiment" "Advanced Votive Raiment" "Advanced Altar Robe" "Advanced Wrapped Sandals" "Advanced Lattice Sandals" "Advanced Silk Slippers" "Advanced Feathered Sandals" "Advanced Sombre Gloves" "Advanced Stitched Gloves" "Advanced Jewelled Gloves" "Advanced Intricate Gloves" "Advanced Twig Circlet" "Advanced Wicker Tiara" "Advanced Beaded Circlet" "Advanced Chain Tiara" "Advanced Feathered Tiara"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 0 0 255
+	Continue
 
 Show
 	Rarity Normal Magic
 	Class == "Wands"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 100 100 255
+	Continue
 
 Show
 	Rarity Normal Magic
 	Class == "Shields"
 	BaseType == "Expert Sigil Crest Shield" "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Advanced Blazon Crest Shield" "Advanced Sigil Crest Shield" "Advanced Emblem Crest Shield" "Advanced Jingling Crest Shield" "Advanced Sectarian Crest Shield" "Advanced Omen Crest Shield"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 100 100 255
+	Continue
 
 Show
 	Rarity Normal Magic
@@ -332,6 +340,7 @@ Show
 	BaseType == "Hallowed Sceptre" "Aromatic Sceptre" "Pious Sceptre" "Wrath Sceptre" "Clasped Sceptre" "Devouring Sceptre" "Ochre Sceptre" "Rattling Sceptre" 
 	SetFontSize 35
 	SetBorderColor 100 100 255
+	Continue
 
 #------------------------------------
 #   [1310] ILVL ANY - Jewelery
@@ -357,7 +366,7 @@ Show # %D3 $type->rr->amuring $tier->t2
 Show # %D2 $type->rr->amuring $tier->t3
 	Rarity Normal Magic
 	Class == "Amulets" "Rings"
-	BaseType == "Emerald Ring" "Iron Ring" "Unset Ring" "Lazuli Ring" "Crimson Amulet" 
+	BaseType == "Emerald Ring" "Iron Ring" "Unset Ring" "Lazuli Ring" "Crimson Amulet"  "Gold Ring"
 	SetFontSize 45
 	SetBackgroundColor 31 0 75 255
 
@@ -371,7 +380,7 @@ Show # %D4 $type->rr->belts $tier->t1
 #Show # %D3 $type->rr->belts $tier->t2
 	#Rarity Normal Magic
 	#Class == "Belts"
-	#BaseType == "" ""
+	#BaseType == "" ""l
 	#SetFontSize 45
 	#SetBackgroundColor 9 9 69 255
 	#SetBorderColor 237 255 0
@@ -766,7 +775,7 @@ Show
 
 Show # %HS3 $type->jewels->generic $tier->anyrare
     Rarity Rare
-    BaseType == "Ruby" "Emerald" "Sapphire" "Diamond"   
+    BaseType == "Ruby" "Emerald" "Sapphire" "Diamond"    
     SetFontSize 45  
     SetTextColor 255 255 255 255
     SetBorderColor 255 255 255 255
@@ -778,11 +787,33 @@ Show # %H2 $type->jewels->generic $tier->anymagic
 	Rarity Normal Magic
 	BaseType == "Ruby" "Emerald" "Sapphire" "Diamond"
 	SetFontSize 40
-	SetTextColor 0 75 250 255
+	SetTextColor 0 250 250 255
 	SetBorderColor 0 75 250 255
 	SetBackgroundColor 0 20 40 255
 	PlayAlertSound 10 300
 	MinimapIcon 2 Blue Diamond
+
+#------------------------------------
+#   [2601] Charm Tiering
+#------------------------------------	
+
+Show # Charms Tiering
+	Rarity Normal Magic Rare
+	BaseType == "Grounding Charm" "Stone Charm" "Thawing Charm" "Amethyst Charm"
+	SetFontSize 40
+	SetTextColor 255 255 255
+	SetBorderColor 255 255 255
+	SetBackgroundColor 143 21 208
+	MinimapIcon 0 Yellow Pentagon
+
+Show # Charms Tiering
+	Rarity Normal Magic Rare
+	BaseType == "Topaz Charm" "Sapphire Charm" "Ruby Charm" "Silver Charm" "Golden Charm" "Staunching Charm" "Dousing Charm" "Antidote Charm"
+	SetFontSize 35
+	SetTextColor 200 0 255 255
+	SetBorderColor 100 255 0 255
+	SetBackgroundColor 30 0 30 255	
+	MinimapIcon 1 White Pentagon
 
 #===============================================================================================================
 # [[2800]] Gem Tierlists
