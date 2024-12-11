@@ -5,6 +5,12 @@ All Hide Sections are set to off
 
 
 - To Do
-Change Expert / Advanced Normal / Magic into a deco
-Customize currency a bit more
-Add charm highlight
+
+Highlight filter
+	Add highlight for good staves and Foci	
+	Think more about what kind of deco can be used on hybrid bases
+
+Build Hide Version
+	Hide Normal, Magic not amazing bases
+	Hide Wisdoms
+	Hide some skill gems
