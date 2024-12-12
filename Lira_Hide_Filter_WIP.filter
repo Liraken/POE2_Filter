@@ -243,7 +243,7 @@ Show # %D5 $type->crafting->Sceptres
 	Corrupted False
 	Rarity Normal Magic
 	Class == "Bows" "Crossbows" "Sceptres"
-	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Advanced Dualstring Bow" "Expert Dualstring Bow" "Hallowed Sceptre" "Aromatic Sceptre" "Pious Sceptre" "Wrath Sceptre" "Clasped Sceptre" "Devouring Sceptre" "Ochre Sceptre" "Rattling Sceptre" 
+	BaseType == "Expert Dyad Crossbow" "Advanced Warden Bow" "Expert Warden Bow" "Expert Bombard Crossbow" "Expert Shortbow" "Advanced Dualstring Bow" "Expert Dualstring Bow" "Hallowed Sceptre" "Aromatic Sceptre" "Pious Sceptre" "Wrath Sceptre" "Clasped Sceptre" "Devouring Sceptre" "Ochre Sceptre" "Rattling Sceptre" 
 	ItemLevel >= 81
 	SetFontSize 45
 	SetBorderColor 255 125 0 255
@@ -260,38 +260,36 @@ Show # %D5 $type->crafting->Sceptres
 	Corrupted False
 	Rarity Normal Magic
 	Class == "Wands" "Staves"
-	ItemLevel >= 78
+	ItemLevel >= 55
 	SetFontSize 35
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 0 Blue Moon
-PlayAlertSound 3 300
 
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
 	Rarity Normal Magic
 	Class == "Body Armours"
-	ItemLevel >= 78
+	ItemLevel >= 65
 	BaseType == "Expert Scalper's Jacket" "Expert Wayfarer Jacket" "Expert Waxed Jacket" "Expert Sacrificial Mantle" "Expert Shaman Mantle" "Expert Pelt Mantle" "Expert Altar Robe" "Expert Keth Raiment" "Expert Hexer's Robe" "Expert Scale Mail" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Rogue Armour" "Expert Serpentscale Coat" "Expert Studded Vest" "Expert Pathfinder Coat" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
 	SetFontSize 35
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 0 Blue Moon
-PlayAlertSound 3 300
 
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
 	Rarity Normal Magic
 	Class == "Bows" "Crossbows"
-	ItemLevel >= 77
+	ItemLevel >= 65
 	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Advanced Dualstring Bow" "Expert Dualstring Bow"
 	SetFontSize 35
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 0 Blue Moon
-PlayAlertSound 3 300
+PlayAlertSound 3 150
 
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
@@ -304,7 +302,6 @@ Show # %D5 $type->crafting->Sceptres
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 0 Blue Moon
-PlayAlertSound 3 300
 
 
 #------------------------------------
@@ -328,7 +325,7 @@ Show
 Show
 	Rarity Normal Magic
 	Class == "Bows"
-	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow"
+	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow" "Expert Shortbow"
 	SetFontSize 35
 	SetBorderColor 0 255 0
 	Continue
@@ -727,7 +724,7 @@ Show
 Show
 	Rarity Rare
 	Class == "Bows"
-	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow"
+	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow" "Warden Bow" "Advanced Warden Bow" "Expert Warden Bow" "Expert Shortbow" "Advanced Shortbow" "Shortbow"
 	SetFontSize 40
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 121 0
@@ -1097,7 +1094,7 @@ Show # $type->Waystone $tier->Waystone_a_t15
 	SetFontSize 40
 	SetTextColor 255 255 255 255
 	SetBackgroundColor 193 67 67 255
-	PlayAlertSound 5 300
+	PlayAlertSound 6 300
 	MinimapIcon 2 Red Square
 
 Show # $type->Waystone $tier->Waystone_a_t14
