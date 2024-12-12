@@ -183,7 +183,6 @@ PlayAlertSound 3 300
 # [[1100]] Exotic Item Variations
 #===============================================================================================================
 
-
 Show
     Rarity Rare
     SetFontSize 35
@@ -209,9 +208,11 @@ Show # %D5 $type->crafting->Sceptres
 	Class == "Wands" "Staves"
 	ItemLevel >= 82
 	SetFontSize 45
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 61 0 0 255
-	MinimapIcon 0 Blue Moon
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 90 0 74 255
+	PlayEffect Purple
+	MinimapIcon 1 Purple Diamond
 PlayAlertSound 3 300
 
 Show # %D5 $type->crafting->Sceptres
@@ -220,10 +221,12 @@ Show # %D5 $type->crafting->Sceptres
 	Rarity Normal Magic
 	Class == "Wands" "Staves"
 	ItemLevel >= 81
-	SetFontSize 45
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 61 0 0 255
-	MinimapIcon 0 Blue Moon
+	SetFontSize 40
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
 PlayAlertSound 3 300
 
 Show # %D5 $type->crafting->Sceptres
@@ -233,9 +236,11 @@ Show # %D5 $type->crafting->Sceptres
 	Class == "Bows" "Crossbows" "Sceptres"
 	ItemLevel >= 82
 	SetFontSize 45
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 61 0 0 255
-	MinimapIcon 0 Blue Moon
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 90 0 74 255
+	PlayEffect Purple
+	MinimapIcon 1 Purple Diamond
 PlayAlertSound 3 300
 
 Show # %D5 $type->crafting->Sceptres
@@ -245,10 +250,12 @@ Show # %D5 $type->crafting->Sceptres
 	Class == "Bows" "Crossbows" "Sceptres"
 	BaseType == "Expert Dyad Crossbow" "Advanced Warden Bow" "Expert Warden Bow" "Expert Bombard Crossbow" "Expert Shortbow" "Advanced Dualstring Bow" "Expert Dualstring Bow" "Hallowed Sceptre" "Aromatic Sceptre" "Pious Sceptre" "Wrath Sceptre" "Clasped Sceptre" "Devouring Sceptre" "Ochre Sceptre" "Rattling Sceptre" 
 	ItemLevel >= 81
-	SetFontSize 45
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 61 0 0 255
-	MinimapIcon 0 Blue Moon
+	SetFontSize 40
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
 PlayAlertSound 3 300
 
 #------------------------------------
@@ -540,7 +547,7 @@ Show # %D2 $type->endgameflasks $tier->earlymappingmana
 
 Hide # $type->hidelayer $tier->normalmagicendgame
 	Rarity Normal Magic
-	Class == "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Crossbows" "Foci" "Spears" "Flails" "Quarterstaves"
+	Class == "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Sceptres" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Crossbows" "Foci" "Spears" "Flails" "Quarterstaves"
 	AreaLevel >= 68
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
@@ -706,20 +713,23 @@ SetBorderColor 255 255 255 255
 # [[2401]] Endgame - Rare - Gear - EXPERT / ADVANCED EVASION
 #===============================================================================================================
 
+Show
+	Rarity Rare
+	Class == "Rings" "Amulets"
+	SetFontSize 45
+	SetBorderColor 0 0 0
 
 Show
 	Rarity Rare
 	BaseType == "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Scalper's Jacket" "Expert Laced Boots" "Expert Steeltoe Boots" "Expert Lizardscale Boots" "Expert Frayed Shoes" "Expert Threaded Shoes" "Expert Hunting Shoes" "Expert Firm Bracers" "Expert Sectioned Bracers" "Expert Spined Bracers" "Expert Gauze Wraps" "Expert Linen Wraps" "Expert Spiral Wraps" "Expert Felt Cap" "Expert Swathed Cap" "Expert Hunter Hood" "Expert Face Mask" "Expert Veiled Mask" "Expert Tribal Mask"
 	SetFontSize 45
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 150 0 
 
 Show
 	Rarity Rare
 	BaseType == "Advanced Quilted Vest" "Advanced Pathfinder Coat" "Advanced Rhoahide Coat" "Advanced Studded Vest" "Advanced Scout's Vest" "Advanced Serpentscale Coat" "Advanced Hermit Garb" "Advanced Waxed Jacket" "Advanced Marabout Garb" "Advanced Wayfarer Jacket" "Advanced Anchorite Garb" "Advanced Scalper's Jacket" "Advanced Laced Boots" "Advanced Embossed Boots" "Advanced Steeltoe Boots" "Advanced Lizardscale Boots" "Advanced Frayed Shoes" "Advanced Threaded Shoes" "Advanced Hunting Shoes" "Advanced Firm Bracers" "Advanced Bound Bracers" "Advanced Sectioned Bracers" "Advanced Spined Bracers" "Advanced Gauze Wraps" "Advanced Linen Wraps" "Advanced Spiral Wraps" "Advanced Shabby Hood" "Advanced Felt Cap" "Advanced Lace Hood" "Advanced Swathed Cap" "Advanced Hunter Hood" "Advanced Hewn Mask" "Advanced Face Mask" "Advanced Hooded Mask" "Advanced Veiled Mask" "Advanced Tribal Mask"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 121 0
 
 Show
 	Rarity Rare
@@ -727,7 +737,6 @@ Show
 	BaseType "Dualstring Bow" "Advanced Dualstring Bow" "Expert Dualstring Bow" "Warden Bow" "Advanced Warden Bow" "Expert Warden Bow" "Expert Shortbow" "Advanced Shortbow" "Shortbow"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 121 0
 
 Show
 	Rarity Rare
@@ -735,34 +744,36 @@ Show
 	BaseType "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Dyad Crossbow" "Bombard Crossbow"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 121 0	    	
-
+  	
 Show
 	Rarity Rare
 	Class == "Quivers"
 	BaseType "Broadhead Quiver" "Fire Quiver" "Sacral Quiver" "Primed Quiver" "Volant Quiver"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 121 0	 
+
+Show
+	Rarity Rare
+	Class == "Quivers"
+	SetFontSize 35
+	SetBorderColor 0 0 0	
+ 
 
 #===============================================================================================================
 # [2402] Endgame - Rare - Gear - EXPERT / ADVANCED ARMOUR
 #===============================================================================================================
-
 
 Show
 	Rarity Rare
 	BaseType == "Expert Soldier Greathelm" "Expert Spired Greathelm" "Expert Elite Greathelm" "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Horned Crown" "Expert Martyr Crown" "Expert Heavy Crown" "Expert Riveted Mitts" "Expert Bolstered Mitts" "Expert Moulded Mitts" "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Rope Cuffs" "Expert Aged Cuffs" "Expert Goldcast Cuffs" "Expert Iron Greaves" "Expert Trimmed Greaves" "Expert Stone Greaves" "Expert Mail Sabatons" "Expert Braced Sabatons" "Expert Stacked Sabatons" "Expert Padded Leggings" "Expert Secured Leggings" "Expert Pelt Leggings" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Pelt Mantle" "Expert Shaman Mantle" "Expert Sacrificial Mantle"
 	SetFontSize 45
     SetBorderColor 0 0 0
-	SetBackgroundColor 121 0 0
 
 Show
 	Rarity Rare
 	BaseType == "Advanced Fur Plate" "Advanced Iron Cuirass" "Advanced Maraketh Cuirass" "Advanced Steel Plate" "Advanced Full Plate" "Advanced Vaal Cuirass" "Advanced Chain Mail" "Advanced Rogue Armour" "Advanced Vagabond Armour" "Advanced Cloaked Mail" "Advanced Explorer Armour" "Advanced Scale Mail" "Advanced Pilgrim Vestments" "Advanced Pelt Mantle" "Advanced Mail Vestments" "Advanced Shaman Mantle" "Advanced Ironclad Vestments" "Advanced Sacrificial Mantle" "Advanced Iron Greaves" "Advanced Bronze Greaves" "Advanced Trimmed Greaves" "Advanced Stone Greaves" "Advanced Mail Sabatons" "Advanced Braced Sabatons" "Advanced Stacked Sabatons" "Advanced Padded Leggings" "Advanced Secured Leggings" "Advanced Pelt Leggings" "Advanced Riveted Mitts" "Advanced Tempered Mitts" "Advanced Bolstered Mitts" "Advanced Moulded Mitts" "Advanced Ringmail Gauntlets" "Advanced Layered Gauntlets" "Advanced Doubled Gauntlets" "Advanced Rope Cuffs" "Advanced Aged Cuffs" "Advanced Goldcast Cuffs" "Advanced Rusted Greathelm" "Advanced Soldier Greathelm" "Advanced Wrapped Greathelm" "Advanced Spired Greathelm" "Advanced Elite Greathelm" "Advanced Brimmed Helm" "Advanced Guarded Helm" "Advanced Visored Helm" "Advanced Cowled Helm" "Advanced Shielded Helm" "Advanced Iron Crown" "Advanced Horned Crown" "Advanced Cultist Crown" "Advanced Martyr Crown" "Advanced Heavy Crown"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 121 0 0
 
 Show
 	Rarity Rare
@@ -770,7 +781,6 @@ Show
 	BaseType "Expert Leaden Greathammer" "Advanced Leaden Greathammer" "Leaden Greathammer" "Expert Cultist Greathammer" "Advanced Cultist Greathammer" "Cultist Greathammer" "Expert Crumbling Maul" "Advanced Crumbling Maul" "Crumbling Maul"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 121 0 0
 
 Show
 	Rarity Rare
@@ -778,41 +788,36 @@ Show
 	BaseType "Expert Brigand Mace" "Expert Construct Hammer" "Advanced Brigand Mace" "Advanced Construct Hammer" "Brigand Mace" "Construct Hammer"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 121 0 0	    	
-
+  	
 Show
 	Rarity Rare
 	Class == "Quivers"
 	BaseType "Broadhead Quiver" "Fire Quiver" "Sacral Quiver" "Primed Quiver" "Volant Quiver"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 121 0 0 
+
 
 #===============================================================================================================
 # [2403] Endgame - Rare - Gear - EXPERT / ADVANCED ENERGY SHIELD
 #===============================================================================================================
-
 
 Show
 	Rarity Rare
 	BaseType == "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe" "Expert Wrapped Sandals" "Expert Silk Slippers" "Expert Feathered Sandals" "Expert Sombre Gloves" "Expert Jewelled Gloves" "Expert Intricate Gloves" "Expert Wicker Tiara" "Expert Chain Tiara" "Expert Feathered Tiara"
 	SetFontSize 45
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 0 121 
 
 Show
 	Rarity Rare
 	BaseType == "Advanced Feathered Robe" "Advanced Hexer's Robe" "Advanced Silk Robe" "Advanced Keth Raiment" "Advanced Votive Raiment" "Advanced Altar Robe" "Advanced Wrapped Sandals" "Advanced Lattice Sandals" "Advanced Silk Slippers" "Advanced Feathered Sandals" "Advanced Sombre Gloves" "Advanced Stitched Gloves" "Advanced Jewelled Gloves" "Advanced Intricate Gloves" "Advanced Twig Circlet" "Advanced Wicker Tiara" "Advanced Beaded Circlet" "Advanced Chain Tiara" "Advanced Feathered Tiara"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 0 121
 
 Show
 	Rarity Rare
 	Class == "Wands"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 0 121
 
 Show
 	Rarity Rare
@@ -820,14 +825,12 @@ Show
 	BaseType == "Advanced Blazon Crest Shield" "Advanced Sigil Crest Shield" "Advanced Emblem Crest Shield" "Advanced Jingling Crest Shield" "Advanced Sectarian Crest Shield" "Advanced Omen Crest Shield" "Expert Sigil Crest Shield" "Expert Jingling Crest Shield" "Expert Omen Crest Shield"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 0 121	    	
-
+    	
 Show
 	Rarity Rare
 	Class == "Sceptres"
 	SetFontSize 40
 	SetBorderColor 0 0 0
-	SetBackgroundColor 0 0 121 
 
 #===============================================================================================================
 # [[2500]] Hide Layer 2 - Rare Gear - DISABLED
@@ -1349,7 +1352,7 @@ Show
 
 Show 
 	Class "Currency"
-	BaseType "Exalted Orb" "Orb of Alchemy" "Orb of Annulment" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb" "Lesser Jeweller's Orb" "Exotic" "Regal Orb" "Gemcutter's Prism" "Glassblower's Bauble" "Gold Key"
+	BaseType "Exalted Orb" "Orb of Alchemy" "Orb of Annulment" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb" "Exotic" "Regal Orb" "Gemcutter's Prism" "Glassblower's Bauble" "Gold Key"
 	SetFontSize 45
 	SetTextColor 255 190 0 255
 	SetBackgroundColor 33 48 169
@@ -1368,7 +1371,7 @@ Show
 
 Show 
 	Class "Currency"
-	BaseType == "Orb of Transmutation" "Orb of Augmentation" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Regal Shard" "Chance Shard"  "Bronze Key" "Silver Key"
+	BaseType == "Lesser Jeweller's Orb" "Orb of Transmutation" "Orb of Augmentation" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Regal Shard" "Chance Shard"  "Bronze Key" "Silver Key"
 	SetFontSize 35
 	SetTextColor 255 255 255 255
 	SetBackgroundColor 33 48 169 255
@@ -1835,7 +1838,8 @@ Show
 
 Show
 	Rarity Rare
-	SetFontSize 35
+	SetFontSize 30
+	SetBorderColor 255 215 70
 
 #===============================================================================================================
 # [[4900]] Leveling - Useful magic and normal items
