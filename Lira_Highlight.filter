@@ -112,6 +112,14 @@
 #===============================================================================================================
 # !! "All Rules - Highest priority - DANGER ZONE"
 
+Show # %D2 $type->endgameflasks $tier->earlymappingmana
+	Mirrored False
+	Corrupted False
+	Rarity Normal Magic
+	BaseType == "Ultimate Mana Flask" "Transcendent Mana Flask"
+	SetFontSize 50
+	SetBorderColor 0 0 120 255
+	SetBackgroundColor 25 96 100
 
 #===============================================================================================================
 # [[0200]] Gold
@@ -120,18 +128,18 @@
 Show # $type->gold $tier->stack3
 	StackSize >= 3001
 	BaseType == "Gold"
-	SetFontSize 45
+	SetFontSize 30
 	SetTextColor 235 200 110 255
 	SetBorderColor 235 200 110 255
 	SetBackgroundColor 20 20 0 255
 	PlayEffect Orange
 	MinimapIcon 1 Yellow Cross
 PlayAlertSound 2 300
-
+	
 Show # $type->gold $tier->stack2
 	StackSize >= 500
 	BaseType == "Gold"
-	SetFontSize 40
+	SetFontSize 30
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 255 255 0 255
@@ -140,7 +148,7 @@ Show # $type->gold $tier->stack2
 Show # $type->gold $tier->stack1
 	StackSize >= 150
 	BaseType == "Gold"
-	SetFontSize 40
+	SetFontSize 30
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 255 255 0 255
@@ -150,7 +158,7 @@ Show # $type->gold $tier->stacklvl1
 	StackSize >= 50
 	BaseType == "Gold"
 	AreaLevel <= 68
-	SetFontSize 30
+	SetFontSize 25
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 255 255 0 180
@@ -234,7 +242,7 @@ Show
 Show
 	Rarity Normal Magic
 	BaseType == "Advanced Quilted Vest" "Advanced Pathfinder Coat" "Advanced Rhoahide Coat" "Advanced Studded Vest" "Advanced Scout's Vest" "Advanced Serpentscale Coat" "Advanced Hermit Garb" "Advanced Waxed Jacket" "Advanced Marabout Garb" "Advanced Wayfarer Jacket" "Advanced Anchorite Garb" "Advanced Scalper's Jacket" "Advanced Laced Boots" "Advanced Embossed Boots" "Advanced Steeltoe Boots" "Advanced Lizardscale Boots" "Advanced Frayed Shoes" "Advanced Threaded Shoes" "Advanced Hunting Shoes" "Advanced Firm Bracers" "Advanced Bound Bracers" "Advanced Sectioned Bracers" "Advanced Spined Bracers" "Advanced Gauze Wraps" "Advanced Linen Wraps" "Advanced Spiral Wraps" "Advanced Shabby Hood" "Advanced Felt Cap" "Advanced Lace Hood" "Advanced Swathed Cap" "Advanced Hunter Hood" "Advanced Hewn Mask" "Advanced Face Mask" "Advanced Hooded Mask" "Advanced Veiled Mask" "Advanced Tribal Mask"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 0 255 0
 	Continue
 
@@ -301,7 +309,7 @@ Show
 	Rarity Normal Magic
 	Class == "Shields"
 	BaseType == "Expert Pelage Targe" "Expert Crescent Targe" "Expert Feathered Targe" "Expert Plated Buckler" "Expert Spiked Buckler" "Expert Edged Buckler" "Advanced Painted Tower Shield" "Advanced Braced Tower Shield" "Advanced Effigial Tower Shield" "Advanced Rampart Tower Shield" "Advanced Heraldric Tower Shield" "Advanced Stone Tower Shield"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 255 0 0		 
 	Continue
 
@@ -319,7 +327,7 @@ Show
 Show
 	Rarity Normal Magic
 	BaseType == "Advanced Feathered Robe" "Advanced Hexer's Robe" "Advanced Silk Robe" "Advanced Keth Raiment" "Advanced Votive Raiment" "Advanced Altar Robe" "Advanced Wrapped Sandals" "Advanced Lattice Sandals" "Advanced Silk Slippers" "Advanced Feathered Sandals" "Advanced Sombre Gloves" "Advanced Stitched Gloves" "Advanced Jewelled Gloves" "Advanced Intricate Gloves" "Advanced Twig Circlet" "Advanced Wicker Tiara" "Advanced Beaded Circlet" "Advanced Chain Tiara" "Advanced Feathered Tiara"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 0 0 255
 	Continue
 
@@ -334,7 +342,7 @@ Show
 	Rarity Normal Magic
 	Class == "Shields"
 	BaseType == "Expert Sigil Crest Shield" "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Advanced Blazon Crest Shield" "Advanced Sigil Crest Shield" "Advanced Emblem Crest Shield" "Advanced Jingling Crest Shield" "Advanced Sectarian Crest Shield" "Advanced Omen Crest Shield"
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 100 100 255
 	Continue
 
@@ -433,8 +441,8 @@ Show # %D2 $type->endgameflasks $tier->earlymappinglife
 	Rarity Normal Magic
 	BaseType == "Ultimate Life Flask" "Transcendent Life Flask"
 	SetFontSize 30
-    AreaLevel >= 65
-	AreaLevel <= 75
+    AreaLevel >= 60
+	AreaLevel <= 65
 	SetBorderColor 120 0 0 255
 	SetBackgroundColor 106 0 0
 
@@ -445,8 +453,8 @@ Show # %D2 $type->endgameflasks $tier->earlymappingmana
 	Rarity Normal Magic
 	BaseType == "Ultimate Mana Flask" "Transcendent Mana Flask"
 	SetFontSize 30
-    AreaLevel >= 65
-	AreaLevel <= 75
+    AreaLevel >= 60
+	AreaLevel <= 65
 	SetBorderColor 0 0 120 255
 	SetBackgroundColor 25 96 100	
 
@@ -772,7 +780,7 @@ Show
 
 Show # %HS3 $type->jewels->generic $tier->anyrare
     Rarity Rare
-    BaseType == "Ruby" "Emerald" "Sapphire" "Diamond"    
+    BaseType == "Ruby" "Emerald" "Sapphire" "Diamond" "Time-Lost Sapphire" "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Diamond"  
     SetFontSize 45  
     SetTextColor 255 255 255 255
     SetBorderColor 255 255 255 255
@@ -782,7 +790,7 @@ Show # %HS3 $type->jewels->generic $tier->anyrare
 
 Show # %H2 $type->jewels->generic $tier->anymagic
 	Rarity Normal Magic
-	BaseType == "Ruby" "Emerald" "Sapphire" "Diamond"
+	BaseType == "Ruby" "Emerald" "Sapphire" "Diamond" "Time-Lost Sapphire" "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Diamond"
 	SetFontSize 40
 	SetTextColor 0 250 250 255
 	SetBorderColor 0 75 250 255
@@ -797,11 +805,11 @@ Show # %H2 $type->jewels->generic $tier->anymagic
 Show # Charms Tiering
 	Rarity Normal Magic Rare
 	BaseType == "Grounding Charm" "Stone Charm" "Thawing Charm" "Amethyst Charm"
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 255 255 255
 	SetBorderColor 255 255 255
 	SetBackgroundColor 143 21 208
-	MinimapIcon 0 Yellow Pentagon
+	MinimapIcon 1 Yellow Pentagon
 
 Show # Charms Tiering
 	Rarity Normal Magic Rare
@@ -823,60 +831,56 @@ Show # Charms Tiering
 Show
 	BaseType == "Uncut Skill Gem"
 	ItemLevel >= 20
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 47 0 74 255
 	PlayAlertSound 10 300
-	PlayEffect Red
 	MinimapIcon 2 Red Triangle
 
 Show
 	BaseType == "Uncut Skill Gem"
-	ItemLevel >= 15
+	ItemLevel >= 18
 	ItemLevel <= 19
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 20 240 240 255
 	SetBorderColor 240 0 0 255
 	SetBackgroundColor 70 0 20 255
-	PlayAlertSound 10 300
-	PlayEffect Red
-	MinimapIcon 1 Red Triangle
+	PlayAlertSound 2 300
+	MinimapIcon 2 Red Triangle
 
 Show
 	BaseType == "Uncut Skill Gem"
 	ItemLevel >= 11
-	ItemLevel <= 15
-	SetFontSize 45
+	ItemLevel <= 17
+	SetFontSize 30
 	SetTextColor 20 240 240 255
 	SetBorderColor 240 0 0 255
 	SetBackgroundColor 70 0 20 255
-	PlayAlertSound 10 300
-	PlayEffect Red
-	MinimapIcon 1 Red Triangle
+	PlayAlertSound 2 300
+	MinimapIcon 2 Red Triangle
 
 Show
 	BaseType == "Uncut Skill Gem"
 	ItemLevel >= 6
 	ItemLevel <= 10
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 20 240 240 255
 	SetBorderColor 20 240 240 255
 	SetBackgroundColor 6 0 60 255
 	PlayAlertSound 2 300
-	PlayEffect White
-	MinimapIcon 1 Yellow Triangle
+	MinimapIcon 2 Yellow Triangle
 
 Show
 	BaseType == "Uncut Skill Gem"
 	ItemLevel <= 5
-	SetFontSize 40
+	SetFontSize 30
 	SetTextColor 20 240 240 255
 	SetBorderColor 20 240 240 255
 	SetBackgroundColor 6 0 60 255
 	PlayAlertSound 2 300
 	PlayEffect White
-	MinimapIcon 1 Yellow Triangle
+	MinimapIcon 2 Yellow Triangle
 
 #------------------------------------
 #   [2802] Uncut Support gem progression
@@ -885,6 +889,7 @@ Show
 Show
 	BaseType == "Uncut Support Gem"
 	ItemLevel == 3
+	AreaLevel <= 60
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -896,6 +901,7 @@ Show
 Show
 	BaseType == "Uncut Support Gem"
 	ItemLevel == 2
+	AreaLevel <= 60
 	SetFontSize 45
 	SetTextColor 20 240 240 255
 	SetBorderColor 240 0 0 255
@@ -907,12 +913,12 @@ Show
 Show
 	BaseType == "Uncut Support Gem"
 	ItemLevel == 1
-	SetFontSize 40
+	AreaLevel <= 60
+	SetFontSize 30
 	SetTextColor 20 240 240 255
 	SetBorderColor 20 240 240 255
 	SetBackgroundColor 6 0 60 255
 	PlayAlertSound 2 300
-	PlayEffect White
 	MinimapIcon 1 Yellow Triangle
 
 
@@ -923,60 +929,56 @@ Show
 Show
 	BaseType == "Uncut Spirit Gem"
 	ItemLevel >= 20
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 47 0 74 255
 	PlayAlertSound 10 300
-	PlayEffect Red
 	MinimapIcon 2 Red Triangle
 
 Show
 	BaseType == "Uncut Spirit Gem"
-	ItemLevel >= 15
+	ItemLevel >= 18
 	ItemLevel <= 19
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 20 240 240 255
 	SetBorderColor 240 0 0 255
 	SetBackgroundColor 70 0 20 255
-	PlayAlertSound 10 300
-	PlayEffect Red
+	PlayAlertSound 2 300
 	MinimapIcon 1 Red Triangle
 
 Show
 	BaseType == "Uncut Spirit Gem"
 	ItemLevel >= 11
-	ItemLevel <= 15
-	SetFontSize 45
+	ItemLevel <= 17
+	SetFontSize 30
 	SetTextColor 20 240 240 255
 	SetBorderColor 240 0 0 255
 	SetBackgroundColor 70 0 20 255
-	PlayAlertSound 10 300
-	PlayEffect Red
-	MinimapIcon 1 Red Triangle
+	PlayAlertSound 2 300
+	MinimapIcon 2 Red Triangle
 
 Show
 	BaseType == "Uncut Spirit Gem"
 	ItemLevel >= 6
 	ItemLevel <= 10
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 20 240 240 255
 	SetBorderColor 20 240 240 255
 	SetBackgroundColor 6 0 60 255
 	PlayAlertSound 2 300
-	PlayEffect White
-	MinimapIcon 1 Yellow Triangle
+	MinimapIcon 2 Yellow Triangle
 
 Show
 	BaseType == "Uncut Spirit Gem"
 	ItemLevel <= 5
-	SetFontSize 40
+	SetFontSize 30
 	SetTextColor 20 240 240 255
 	SetBorderColor 20 240 240 255
 	SetBackgroundColor 6 0 60 255
 	PlayAlertSound 2 300
 	PlayEffect White
-	MinimapIcon 1 Yellow Triangle
+	MinimapIcon 2 Yellow Triangle
 
 #------------------------------------
 #   [3102] Waystone progression
@@ -1348,7 +1350,7 @@ Show # $type->currency->Soul Core $tier->t1
 PlayAlertSound 6 300
 
 Show # $type->Runes $tier->t1
-	BaseType == "Body Rune" "Iron Rune" "Desert Rune" "Glacial Rune" "Storm Rune" "Soul Core of Opiloti" "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi" "Soul Core of Topotante"
+	BaseType == "Soul Core of Opiloti" "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi" "Soul Core of Topotante"
 	SetFontSize 38
 	SetTextColor 255 190 0 255
 	SetBorderColor 0 255 255 255
@@ -1357,7 +1359,7 @@ Show # $type->Runes $tier->t1
 	PlayAlertSound 11 300	
 
 Show # $type->Runes $tier->t2
-	BaseType == "Mind Rune" "Rebirth Rune" "Inspiration Rune" "Stone Rune" "Vision Rune"
+	BaseType == "Mind Rune" "Rebirth Rune" "Inspiration Rune" "Stone Rune" "Vision Rune" "Body Rune" "Iron Rune" "Desert Rune" "Glacial Rune" "Storm Rune"
 	SetFontSize 35
 	SetTextColor 0 255 255 255
 	SetBorderColor 0 255 255 255
@@ -1395,7 +1397,7 @@ Show # %HS4 $type->currency->essence $tier->t2
 Show # %D8 $type->currency->stackedthree $tier->t1
 	Class == "Stackable Currency"
 	BaseType == "Flesh Catalyst" "Neural Catalyst" "Carapace Catalyst" "Uul-Netol's Catalyst" "Xoph's Catalyst" "Tul's Catalyst" "Esh's Catalyst" "Chayula's Catalyst" "Reaver Catalyst" "Sibilant Catalyst" "Skittering Catalyst" "Adaptive Catalyst" 
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 255 79 0 255
 	SetBorderColor 255 79 0 255
 	SetBackgroundColor 0 0 0 255
@@ -1405,7 +1407,7 @@ PlayAlertSound 2 300
 #Show # %D7 $type->currency->stackedthree $tier->t2
 	#Class == "Stackable Currency"
 	#BaseType == ""
-	#SetFontSize 45
+	#SetFontSize 40
 	#SetTextColor 255 0 0 255
 	#SetBorderColor 255 0 0 255
 	#SetBackgroundColor 0 0 0 255
@@ -1415,7 +1417,7 @@ PlayAlertSound 2 300
 #Show # %D6 $type->currency->stackedthree $tier->t3
 	#Class == "Stackable Currency"
 	#BaseType == ""
-	#SetFontSize 45
+	#SetFontSize 40
 	#SetTextColor 255 0 255 255
 	#SetBorderColor 253 0 253 255
 	#SetBackgroundColor 0 0 0 255
@@ -1428,7 +1430,7 @@ PlayAlertSound 2 300
 Show # %D8 $type->currency->stackedthree $tier->t1
 	Class == "Stackable Currency"
 	BaseType == "Exotic Coinage" "Broken Circle Artifact" "Black Scythe Artifact" "Order Artifact" "Sun Artifact"
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 255 100 30 255
 	SetBorderColor 255 79 0 255
 	SetBackgroundColor 0 0 0 255
@@ -1438,7 +1440,7 @@ Show # %D8 $type->currency->stackedthree $tier->t1
 #Show # %D7 $type->currency->stackedthree $tier->t2
 	#Class == "Stackable Currency"
 	#BaseType == ""
-	#SetFontSize 45
+	#SetFontSize 40
 	#SetTextColor 255 0 0 255
 	#SetBorderColor 255 0 0 255
 	#SetBackgroundColor 0 0 0 255
@@ -1448,7 +1450,7 @@ Show # %D8 $type->currency->stackedthree $tier->t1
 #Show # %D6 $type->currency->stackedthree $tier->t3
 	#Class == "Stackable Currency"
 	#BaseType == ""
-	#SetFontSize 45
+	#SetFontSize 40
 	#SetTextColor 255 0 255 255
 	#SetBorderColor 253 0 253 255
 	#SetBackgroundColor 0 0 0 255
@@ -1461,7 +1463,7 @@ Show # %D8 $type->currency->stackedthree $tier->t1
 Show # $type->currency->trial->omen $tier->t1
 	Class == "Omen"
 	BaseType == "Omen of Greater Annulment" "Omen of Sinistral Annulment" "Omen of Dextral Annulment"
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 0 148 255 255
 	SetBorderColor 0 148 255 255
 	SetBackgroundColor 255 255 255 255
@@ -1472,7 +1474,7 @@ Show # $type->currency->trial->omen $tier->t1
 Show # $type->currency->trial->omen $tier->t2
 	Class == "Omen"
 	BaseType == "Omen of Whittling" "Omen of Sinistral Alchemy" "Omen of Dextral Alchemy" "Omen of Greater Exaltation" "Omen of Sinistral Exaltation" "Omen of Dextral Exaltation"  
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 0 148 255 255
@@ -1483,7 +1485,7 @@ Show # $type->currency->trial->omen $tier->t2
 Show # $type->currency->trial->omen $tier->t3
 	Class == "Omen"
 	BaseType == "Omen of Sinistral Erasure" "Omen of Dextral Erasure" "Omen of Sinistral Coronation" "Omen of Dextral Coronation" "Omen of Corruption"
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 130 214 255 255
@@ -1515,7 +1517,7 @@ PlayAlertSound 3 300
 Show # $type->currency->distilations $tier->t1
 	Class == "Stackable Currency"
 	BaseType == "Distilled Despair" "Distilled Fear" "Distilled Suffering" "Distilled Isolation"
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 0 148 255 255
 	SetBorderColor 0 148 255 255
 	SetBackgroundColor 255 255 255 255
@@ -1526,7 +1528,7 @@ PlayAlertSound 10 300
 Show # $type->currency->distilations $tier->t2
 	Class == "Stackable Currency"
 	BaseType ==  "Distilled Greed" "Distilled Paranoia" "Distilled Envy" "Distilled Disgust"
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 255 0 0 255
 	SetBorderColor 255 0 0 255
 	SetBackgroundColor 0 0 0 255
@@ -1536,7 +1538,7 @@ PlayAlertSound 11 300
 Show # %HS5 $type->currency->distilations $tier->t3
 	Class == "Stackable Currency"
 	BaseType == "Distilled Ire" "Distilled Guilt"
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 27 228 228 255
 	SetBorderColor 27 228 228 255
 	SetBackgroundColor 0 0 0 255
@@ -1551,7 +1553,7 @@ Show # Ascension 4
 	Class == "Trial Coins" "Inscribed Ultimatum"
 	BaseType == "Djinn Barya" "Inscribed Ultimatum"
 	AreaLevel >= 75
-	SetFontSize 45
+	SetFontSize 40
 	SetTextColor 180 0 255 255
 	SetBorderColor  180 0 255 255
 	SetBackgroundColor 255 255 255 255
@@ -1606,7 +1608,7 @@ Show
 	SetTextColor 255 0 0 255
 	SetBackgroundColor 255 255 255 255
 	SetBorderColor 175 96 37 255
-	SetFontSize 45
+	SetFontSize 40
 	MinimapIcon 0 Red Star
 	PlayEffect Red
 	BaseType == "Heavy Belt"
@@ -1728,7 +1730,7 @@ Show
 
 Show
 	Rarity Rare
-	SetFontSize 50
+	SetFontSize 40
 
 #===============================================================================================================
 # [[4900]] Leveling - Useful magic and normal items
@@ -1746,7 +1748,7 @@ Show
 Show
 	Rarity Normal Magic
 	Class == "Sceptres" "Bows" "Shields"
-	SetFontSize 35	
+	SetFontSize 30	
 
 Show
 	Rarity Normal Magic
@@ -1760,6 +1762,16 @@ Show
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 10 70 65 255	
 
+#------------------------------------
+#   [4905] Hide All known Section
+#------------------------------------
+
+#Hide # $type->hidelayer $tier->final
+	#Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Jewel" "One Hand" "Quivers" "Rings" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Crossbows" "Spears" "Flails" "Quarterstaves" "Traps" "Foci"
+	#SetFontSize 18
+	#SetBorderColor 0 0 0 0
+	#SetBackgroundColor 20 20 0 0
+	#DisableDropSound True
 
 #------------------------------------
 #   [4906] Show All unknown Section
