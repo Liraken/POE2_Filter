@@ -206,20 +206,6 @@ Show # %D5 $type->crafting->Sceptres
 	Corrupted False
 	Rarity Normal Magic
 	Class == "Wands" "Staves"
-	ItemLevel >= 82
-	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 90 0 74 255
-	PlayEffect Purple
-	MinimapIcon 1 Purple Diamond
-PlayAlertSound 3 300
-
-Show # %D5 $type->crafting->Sceptres
-	Mirrored False
-	Corrupted False
-	Rarity Normal Magic
-	Class == "Wands" "Staves"
 	ItemLevel >= 81
 	SetFontSize 40
 	SetTextColor 0 240 190 255
@@ -278,7 +264,7 @@ Show # %D5 $type->crafting->Sceptres
 	Corrupted False
 	Rarity Normal Magic
 	Class == "Body Armours"
-	ItemLevel >= 65
+	ItemLevel >= 79
 	BaseType == "Expert Scalper's Jacket" "Expert Wayfarer Jacket" "Expert Sacrificial Mantle" "Expert Shaman Mantle" "Expert Altar Robe" "Expert Keth Raiment" "Expert Hexer's Robe" "Expert Rogue Armour" "Expert Serpentscale Coat" "Expert Studded Vest" "Expert Pathfinder Coat" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
 	SetFontSize 35
 	SetBorderColor 255 125 0 255
@@ -291,7 +277,7 @@ Show # %D5 $type->crafting->Sceptres
 	Rarity Normal Magic
 	Class == "Bows" "Crossbows"
 	ItemLevel >= 65
-	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Advanced Dualstring Bow" "Expert Dualstring Bow"
+	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Expert Dualstring Bow" "Expert Shortbow"
 	SetFontSize 35
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
@@ -446,7 +432,8 @@ Show # %D4 $type->rr->amuring $tier->t1
 	Class == "Amulets" "Rings"
 	BaseType == "Solar Amulet" "Bloodstone Amulet" "Gold Amulet" "Breach Ring" "Amethyst Ring" "Prismatic Ring" "Pearl Ring" "Stellar Amulet" "Lunar Amulet"
 	SetFontSize 45
-	SetBackgroundColor 9 9 69 255
+	SetTextColor 200 150 255 255
+	SetBackgroundColor 9 9 9 255
 	SetBorderColor 237 255 0
 
 Show # %D3 $type->rr->amuring $tier->t2
@@ -475,6 +462,7 @@ Show # %D2 $type->rr->amuring $tier->t3
 Show # %D2 $type->rr->belts $tier->t3
 	Rarity Normal Magic
 	Class == "Belts"
+	ItemLevel >= 82
 	BaseType == "Golden Obi" "Rawhide Belt" "Linen Belt" "Wide Belt" "Long Belt" "Plate Belt" "Ornate Belt" "Mail Belt" "Double Belt" "Heavy Belt" "Utility Belt" "Fine Belt"
 	SetFontSize 35
 	SetBackgroundColor 64 26 113 255
@@ -603,15 +591,17 @@ Hide # $type->hidelayer $tier->normalmagicendgame
 
 
 Show # %D4 $type->rr->amuring $tier->t1
-	Rarity Normal Magic
+	Rarity Rare
 	Class == "Amulets" "Rings"
 	BaseType == "Solar Amulet" "Bloodstone Amulet" "Gold Amulet" "Breach Ring" "Amethyst Ring" "Prismatic Ring" "Pearl Ring" "Stellar Amulet" "Lunar Amulet"
 	SetFontSize 45
-	SetBackgroundColor 9 9 69 255
+	SetBorderColor 180 180 255 255
+	SetBackgroundColor 9 9 100 255
 	SetBorderColor 237 255 0
+	PlayAlertSound 10 250
 
 Show # %D3 $type->rr->amuring $tier->t2
-	Rarity Normal Magic
+	Rarity Rare
 	Class == "Amulets" "Rings"
 	BaseType == "Sapphire Ring" "Topaz Ring" "Ruby Ring" "Golden Hoop" "Amber Amulet" "Lapis Amulet" "Jade Amulet"
 	SetFontSize 45
@@ -619,7 +609,7 @@ Show # %D3 $type->rr->amuring $tier->t2
 	SetBorderColor 237 255 0
 
 Show # %D2 $type->rr->amuring $tier->t3
-	Rarity Normal Magic
+	Rarity Rare
 	Class == "Amulets" "Rings"
 	BaseType == "Emerald Ring" "Iron Ring" "Unset Ring" "Lazuli Ring" "Crimson Amulet" 
 	SetFontSize 45
@@ -650,9 +640,7 @@ Show # %D2 $type->rr->belts $tier->t3
 	Class == "Belts"
 	BaseType == "Golden Obi" "Rawhide Belt" "Linen Belt" "Wide Belt" "Long Belt" "Plate Belt" "Ornate Belt" "Mail Belt" "Double Belt" "Heavy Belt" "Utility Belt" "Fine Belt"
 	SetFontSize 45
-	SetTextColor 255 231 0
-	SetBackgroundColor 64 26 113 255
-SetBorderColor 255 255 255 255
+
 
 #===============================================================================================================
 # [[2300]] Endgame - Rare - Gear - Droplevel Hiding - DISABLED
@@ -854,19 +842,19 @@ Show # %HS3 $type->jewels->generic $tier->anyrare
     Rarity Rare
     BaseType == "Ruby" "Emerald" "Sapphire" "Diamond" "Time-Lost Sapphire" "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Diamond"  
     SetFontSize 45  
-    SetTextColor 255 255 255 255
-    SetBorderColor 255 255 255 255
-    SetBackgroundColor 0 105 181 255
-    PlayAlertSound 10 300
+	SetTextColor 0 0 0 255
+	SetBorderColor 50 50 212 255
+	SetBackgroundColor 40 140 80 255
+	PlayAlertSound 10 300
 	MinimapIcon 2 Blue Diamond
 
 Show # %H2 $type->jewels->generic $tier->anymagic
 	Rarity Normal Magic
 	BaseType == "Ruby" "Emerald" "Sapphire" "Diamond" "Time-Lost Sapphire" "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Diamond"
 	SetFontSize 40
-	SetTextColor 0 250 250 255
-	SetBorderColor 0 75 250 255
-	SetBackgroundColor 0 20 40 255
+	SetTextColor 0 0 0 255
+	SetBorderColor 50 50 212 255
+	SetBackgroundColor 40 140 80 255
 	PlayAlertSound 10 300
 	MinimapIcon 2 Blue Diamond
 
@@ -1097,8 +1085,10 @@ Show # $type->Waystone $tier->Waystone_a_t15
 	Class == "waystones"
 	SetFontSize 40
 	SetTextColor 255 255 255 255
-	SetBackgroundColor 193 67 67 255
+	SetBorderColor 50 255 255 255 
+	SetBackgroundColor 230 0 0 255
 	PlayAlertSound 6 300
+	PlayEffect Red
 	MinimapIcon 2 Red Square
 
 Show # $type->Waystone $tier->Waystone_a_t14
@@ -1108,7 +1098,7 @@ Show # $type->Waystone $tier->Waystone_a_t14
 	SetTextColor 255 255 255 255
 	SetBackgroundColor 186 61 61 255
 	PlayAlertSound 5 300
-	MinimapIcon 2 Red Square
+	MinimapIcon 1 Red Square
 
 
 Show # %H5 $type->Waystone $tier->Waystone_b_t13
@@ -1458,16 +1448,16 @@ Show # $type->currency->Soul Core $tier->t1
 PlayAlertSound 6 300
 
 Show # $type->Runes $tier->t1
-	BaseType == "Soul Core of Opiloti" "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi" "Soul Core of Topotante"
+	BaseType == "Soul Core of Opiloti" "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi" "Soul Core of Topotante" "Iron Rune"
 	SetFontSize 38
-	SetTextColor 255 190 0 255
+	SetTextColor 0 200 255 255
 	SetBorderColor 0 255 255 255
 	SetBackgroundColor 0 0 83 255
 	MinimapIcon 0 Yellow Raindrop
-	PlayAlertSound 11 300	
+	PlayAlertSound 10 200	
 
 Show # $type->Runes $tier->t2
-	BaseType == "Mind Rune" "Rebirth Rune" "Inspiration Rune" "Stone Rune" "Vision Rune" "Body Rune" "Iron Rune" "Desert Rune" "Glacial Rune" "Storm Rune"
+	BaseType == "Mind Rune" "Rebirth Rune" "Inspiration Rune" "Stone Rune" "Vision Rune" "Body Rune" "Desert Rune" "Glacial Rune" "Storm Rune"
 	SetFontSize 35
 	SetTextColor 0 255 255 255
 	SetBorderColor 0 255 255 255
@@ -1658,8 +1648,8 @@ PlayAlertSound 2 116
 #------------------------------------	
 
 Show # Ascension 4
-	Class == "Trial Coins" "Inscribed Ultimatum"
-	BaseType == "Djinn Barya" "Inscribed Ultimatum"
+	Class == "Trial Coins"
+	BaseType == "Djinn Barya"
 	AreaLevel >= 75
 	SetFontSize 40
 	SetTextColor 180 0 255 255
@@ -1670,7 +1660,7 @@ Show # Ascension 4
 
 Show # Accension 3
 	Class == "Trial Coins"
-	BaseType == "Djinn Barya"
+	BaseType == "Djinn Barya" 
 	AreaLevel >= 60
 	SetFontSize 40
 	SetTextColor 255 255 255 255
@@ -1866,6 +1856,8 @@ Show
 
 Show
 	SetFontSize 30
+	Class "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "One Hand" "Quivers" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Crossbows" "Spears" "Flails" "Quarterstaves" "Traps" "Foci"
+	SetFontSize 18
 	Quality >= 1
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
