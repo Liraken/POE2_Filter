@@ -254,7 +254,7 @@ Show # %D5 $type->crafting->Sceptres
 	Rarity Normal Magic
 	Class == "Wands" "Staves"
 	ItemLevel >= 55
-	SetFontSize 35
+	SetFontSize 30
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 0 Blue Moon
@@ -264,7 +264,7 @@ Show # %D5 $type->crafting->Sceptres
 	Corrupted False
 	Rarity Normal Magic
 	Class == "Body Armours"
-	ItemLevel >= 79
+	ItemLevel >= 81
 	BaseType == "Expert Scalper's Jacket" "Expert Wayfarer Jacket" "Expert Sacrificial Mantle" "Expert Shaman Mantle" "Expert Altar Robe" "Expert Keth Raiment" "Expert Hexer's Robe" "Expert Rogue Armour" "Expert Serpentscale Coat" "Expert Studded Vest" "Expert Pathfinder Coat" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
 	SetFontSize 35
 	SetBorderColor 255 125 0 255
@@ -295,7 +295,6 @@ Show # %D5 $type->crafting->Sceptres
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 0 Blue Moon
-
 
 #------------------------------------
 #   [1307] ILVL ANY - DECORATOR - EVASION 
@@ -892,12 +891,12 @@ Show
 	BaseType == "Uncut Skill Gem"
 	ItemLevel >= 20
 	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 47 0 74 255
-	PlayAlertSound 12 300
+	SetTextColor 255 060 60 255
+	SetBorderColor 255 060 60 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
 	PlayEffect Blue 
-	MinimapIcon 2 Red Triangle
+	MinimapIcon 0 Red Star
 
 Show
 	BaseType == "Uncut Skill Gem"
@@ -1007,14 +1006,13 @@ Hide
 Show
 	BaseType == "Uncut Spirit Gem"
 	ItemLevel >= 20
-	ItemLevel >= 20
 	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 47 0 74 255
-	PlayAlertSound 12 300
+	SetTextColor 255 060 60 255
+	SetBorderColor 255 060 60 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
 	PlayEffect Blue 
-	MinimapIcon 2 Red Triangle
+	MinimapIcon 0 Red Star
 
 Show
 	BaseType == "Uncut Spirit Gem"
@@ -1364,13 +1362,23 @@ Show
 
 Show 
 	Class "Currency"
-	BaseType == "Lesser Jeweller's Orb" "Orb of Transmutation" "Orb of Augmentation" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Regal Shard" "Chance Shard"  "Bronze Key" "Silver Key"
+	BaseType == "Lesser Jeweller's Orb" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Chance Shard" "Bronze Key" "Silver Key"
 	SetFontSize 35
 	SetTextColor 255 255 255 255
 	SetBackgroundColor 33 48 169 255
 	PlayAlertSound 2 300
 	MinimapIcon 1 Yellow Circle
 	SetBorderColor 255 190 0 255
+
+Show # 
+	Class "Currency"
+	BaseType == "Orb of Transmutation" "Orb of Augmentation" "Regal Shard"
+	AreaLevel <= 75
+    SetFontSize 25
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 33 48 169 255
+	MinimapIcon 1 Yellow Circle
+	SetBorderColor 255 190 0 255    
 
 Show 
 	Class "Currency"
@@ -1385,7 +1393,7 @@ Show
 
 Hide
 	Class "Currency"
-	BaseType "Scroll of Wisdom" "Shard"
+	BaseType "Scroll of Wisdom" "Shard" "Orb of Transmutation" "Orb of Augmentation" "Regal Shard"
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 20 20 0 0
