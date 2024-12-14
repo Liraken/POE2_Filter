@@ -1723,43 +1723,180 @@ PlayAlertSound 3 300
 # [[4200]] Uniques
 #===============================================================================================================
 
-Show
+#------------------------------------
+#   [4201] Unique Relics Tiered
+#------------------------------------	
+
+Show # Tier 1 Unique Relics 
 	Rarity Unique
 	SetTextColor 255 0 0 255
 	SetBackgroundColor 255 255 255 255
 	SetBorderColor 175 96 37 255
-	SetFontSize 40
+	SetFontSize 45
 	MinimapIcon 0 Red Star
 	PlayEffect Red
-	BaseType == "Heavy Belt"
 	PlayAlertSound 6 285
+	BaseType == "Incense Relic"
 
-#Show
-	#Rarity Unique
-	#SetTextColor 189 18 229 255
-	#SetBackgroundColor 216 216 216 255
-	#SetBorderColor 189 18 229 255
-	#SetFontSize 38
-	#MinimapIcon 1 Purple Star
-	#BaseType == ""
-	#PlayAlertSound 10 300
+Show # Tier 2 Unique Relics
+	Rarity Unique
+	SetTextColor 234 135 61 255
+	SetBackgroundColor 147 0 0 255
+	SetBorderColor 0 240 190 255
+	SetFontSize 40
+	PlayAlertSound 11 300
+	BaseType == "Seal Relic" "Coffer Relic" "Tapestry Relic"
 
-#Show
-	#Rarity Unique
-	#SetTextColor 255 255 255 255
-	#SetBackgroundColor 240 100 0 255
-	#SetBorderColor 255 255 255 255
-	#SetFontSize 40
-	#BaseType == ""
+Show # Tier 3 Unique Relics
+	Rarity Unique
+	SetTextColor 175 96 37 255
+	SetBackgroundColor 0 0 0 255
+	SetBorderColor 175 96 37 255
+	SetFontSize 35
+	PlayAlertSound 2 200
+	BaseType == "Amphora Relic" "Vase Relic"
 
-Show
+
+#------------------------------------
+#   [4202] Unique Tiering
+#------------------------------------
+
+Show # Tier 0 Uniques [100+ Ex Items]
+	Rarity Unique
+	SetTextColor 255 0 0 255
+	SetBackgroundColor 255 255 255 255
+	SetBorderColor 175 96 37 255
+	SetFontSize 45
+	MinimapIcon 0 Red Star
+	PlayEffect Red
+	PlayAlertSound 6 285
+	BaseType == "Heavy Belt" "Knight Armour" "Furtive Wraps" "Stone Tower Shield" "Crucible Tower Shield" "Grand Visage" "Diamond" "Utility Belt" "Ultimate Life Flask" "Ultimate Mana Flask" "Ring"
+
+Show # Tier 1 Uniques [50-100 Ex Items]
+	Rarity Unique
+	SetTextColor 0 0 255 255
+	SetBackgroundColor 255 255 255 255
+	SetBorderColor 0 0 255 255
+	SetFontSize 45
+	MinimapIcon 1 Blue Star
+	PlayEffect Blue
+	PlayAlertSound 6 300
+	BaseType == "Smuggler Coat" "Armoured Cap" "Closed Helm" "Moulded Mitts" "Grand Regalia" "Ruby" "Emerald Ring" "Ornate Belt"
+
+Show # Tier 2 Uniques [10-40 Ex Items]
+	Rarity Unique
+	SetTextColor 207 0 255 255
+	SetBackgroundColor 255 255 255 255
+	SetBorderColor 189 18 229 255
+	SetFontSize 40
+	MinimapIcon 1 Purple Star
+	PlayEffect Purple
+	PlayAlertSound 6 300
+	BaseType == "Conqueror Plate" "Fine Bracers" "Garment" 
+
+Show # Tier 3 Uniques [3-10 Ex Items]
 	Rarity Unique
 	SetTextColor 255 255 255 255
 	SetBackgroundColor 175 96 37 255
 	SetBorderColor 175 96 37 255
 	SetFontSize 38
 	MinimapIcon 2 Brown Star
-	PlayAlertSound 3 300
+	PlayAlertSound 16 300	
+	BaseType == "Chiming Staff" "Altar Robe" "Ironclad Vestments" "Felt Cap" "Lace Hood" "Tribal Mask" "Jewelled Gloves" "Rope Cuffs" "Gauze Wraps" "Lattice Sandals" "Threaded Shoes" "Hunting Shoes" "Velour Shoes" "Sigil Crest Shield" "Grand Manchettes" "Grand Cuisses"
+	
+#------------------------------------
+#   [4203] Multi-Base Uniques -- Probably Mostly Boss Drops
+#------------------------------------
+
+Show # Multi Base Uniques [High End]
+	Rarity Unique
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 200 150 30 255
+	SetBorderColor 255 255 255 255
+	SetFontSize 42
+	MinimapIcon 2 Yellow Star
+	PlayAlertSound 1 300	
+	BaseType == "Shrine Sceptre" "Silk Robe" "Explorer Armour" "Chain Tiara" "Linen Wraps" "Omen Crest Shield" "Jade Amulet" "Stellar Amulet" "Solar Amulet" "Sapphire Ring" "Amethyst Ring"
+
+Show # Multi Base Uniques [Low End]
+	Rarity Unique
+	SetTextColor 234 135 61 255
+	SetBackgroundColor 147 0 0 255
+	SetBorderColor 0 240 190 255
+	SetFontSize 40
+	BaseType == "Crimson Amulet" "Azure Amulet" "Amber Amulet" "Lapis Amulet" "Gold Amulet" "Topaz Ring" "Pearl Ring" "Gold Ring"
+
+#------------------------------------
+#   [4204] Corruption Uniques
+#------------------------------------
+
+Show # Corruption Tier
+	Rarity Unique
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 138 39 1 255
+	SetBorderColor 255 0 0 255
+	SetFontSize 35
+	MinimapIcon 2 Blue Cross
+	PlayAlertSound 1 300
+	BaseType ==  "Spined Bracers" 
+
+#------------------------------------
+#   [4205] Roll Dependant Uniques
+#------------------------------------
+
+Show # Roll Dependant Uniques
+	Rarity Unique
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 138 39 1 255
+	SetBorderColor 255 0 0 255
+	SetFontSize 35
+	MinimapIcon 2 Blue Cross
+	PlayAlertSound 1 300
+	BaseType == "Burnished Gauntlets" "Crude Bow" "ShortBow" "Vaal Cuirass"
+
+#------------------------------------
+#   [4206] Low Tier Uniques
+#------------------------------------
+
+Show # The Rest
+	Rarity Unique
+	SetTextColor 175 96 37 255
+	SetBackgroundColor 0 0 0 255
+	SetBorderColor 175 96 37 255
+	SetFontSize 35
+	PlayAlertSound 2 200
+	BaseType == "Wooden Club" "Smithing Hammer" "Embossed Boots" "Slim Mace" "Spiked Club" "Plated Mace" "Torment Club" "Felled Greatclub" "Oak Greathammer" "Forge Maul" "Studded Greatclub" "Leaden Greathammer" "Crumbling Maul" "Wrapped Quarterstaff" "Long Quarterstaff" "Gothic QuarterStaff" "Crescent QuarterStaff" "Steelpoint Quarterstaff" "Bone Wand" "Attuned Wand" "Volatile Wand" "Ashen Staff" "Gelid Staff" "Voltaic Staff" "Pyrophyte Staff" "Recurve Bow" "Dualstring Bow" "Makeshift Crossbow" "Tense Crossbow" "Rattling Sceptre" "Omen Sceptre" "Rusted Cuirass" "Fur Plate" "Iron Cuirass" "Raider Plate" "Maraketh Cuirass" "Steel Plate" "Full Plate" "Champion Cuirass" "Leather Vest" "Quilted Vest" "Pathfinder Coat" "Rhoahide Coat" "Studded Vest" "Serpentscale Coat" "Bone Raiment" "Keth Raiment" "Votive Raiment" "Chain Mail" "Rogue Armour" "Vagabond Armour" "Mail Vestments" "Shaman Mantle" "Gilded Vestments" "Hermit Garb" "Waxed Jacket" "Marabout Garb" "Wayfarer Jacket" "Anchorite Garb" "Rusted Greathelm" "Soldier Greathelm" "Elite Greathelm" "Warrior Greathelm" "Shabby Hood" "Beaded Circlet" "Feathered Tiara" "Gold Circlet" "Visored Helm" "Cowled Helm" "Shielded Helm" "Horned Crown" "Cultist Crown" "Martyr Crown" "Heavy Crown" "Spiritbone Crown" "Hewn Mask" "Face Mask" "Hooded Mask" "Veiled Mask" "Tempered Mitts" "Suede Bracers" "Sombre Gloves" "Doubled Gauntlets" "Aged Cuffs" "Rough Greaves" "Iron Greaves" "Bronze Greaves" "Laced Boots" "Steeltoe Boots" "Lizardscale Boots" "Straw Sandals" "Feathered Sandals" "Mail Sabatons" "Braced Sabatons" "Stacked Sabatons" "Secured Leggings" "Splintered Tower Shield" "Painted Tower Shield" "Braced Tower Shield" "Effigial Tower Shield" "Rampart Tower Shield" "Hardwood Targe" "Pelage Targe" "Crescent Targe" "Woven Focus" "Engraved Focus" "Tonal Focus" "Crystal Focus" "Visceral Quiver" "Lunar Amulet" "Bloodstone Amulet" "Lazuli Ring" "Ruby Ring" "Rawhide Belt" "Linen Belt" "Wide Belt" "Long Belt" "Plate Belt" "Mail Belt" "Fine Belt"
+
+Show # The Rest [Early Game / Leveling Uniques] 
+	Rarity Unique
+	SetTextColor 175 96 37 255
+	SetBackgroundColor 0 0 0 255
+	SetBorderColor 175 96 37 255
+	SetFontSize 35
+	PlayAlertSound 2 200
+	BaseType == "Scout's Vest" "Tattered Robe" "Feathered Robe" "Hexer's Robe" "Cloaked Mail" "Pilgrim Vestments" "Wrapped Greathelm" "Spired Greathelm" "Twig Circlet" "Brimmed Helm" "Guarded Helm" "Iron Crown" "Riveted Mitts" "Sectioned Bracers" "Torn Gloves" "Stitched Gloves" "Ringmail Gauntlets" "Wrapped Sandals" "Blazon Crest Shield" "Jingling Crest Shield" "Twig Focus" "Broadhead Quiver" "Fire Quiver" "Iron Ring"
+
+Show # The Rest [Items to keep an Eye one]
+	Rarity Unique
+	SetTextColor 175 96 37 255
+	SetBackgroundColor 0 0 0 255
+	SetBorderColor 175 96 37 255
+	SetFontSize 35
+	PlayAlertSound 2 200
+	BaseType == "Feathered Robe" "Wrapped Greathelm" "Wicker Tiara" "Solid Mask" "Firm Bracers" "Intricate Gloves" "Layered Gauntlets" "Goldcast Cuffs" "Trimmed Greaves" "Stone Greaves" "Silk Slippers" "Emblem Crest Shield" "Scale Mail"
+
+#------------------------------------
+#   [4207] Unique Fallback Layer
+#------------------------------------	
+
+Show # Unique Fallback--->Catches any uniques that aren't listed above
+	Rarity Unique
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 210 105 30 255
+	SetBorderColor 255 255 255 255
+	SetFontSize 45
+	MinimapIcon 0 Red UpsideDownHouse
+	PlayAlertSound 7 300
 
 #===============================================================================================================
 # [[4500]] Hide outdated leveling flasks
@@ -1858,7 +1995,7 @@ Show
 #===============================================================================================================
 
 #------------------------------------
-#   [4901] Shrink Non Highlighted items
+#   [4901] Fallback Layer
 #------------------------------------
 
 Show
@@ -1876,14 +2013,14 @@ Show
 	#ItemLevel >= 40
 	#SetFontSize 25
 
-Show
-	SetFontSize 30
-	Class "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "One Hand" "Quivers" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Crossbows" "Spears" "Flails" "Quarterstaves" "Traps" "Foci"
-	SetFontSize 18
-	Quality >= 1
-	SetTextColor 255 255 255 255
-	SetBorderColor 255 255 255 255
-	SetBackgroundColor 10 70 65 255	
+#Show
+	#SetFontSize 30
+	#Class "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "One Hand" "Quivers" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Crossbows" "Spears" "Flails" "Quarterstaves" "Traps" "Foci"
+	#SetFontSize 18
+	#Quality >= 1
+	#SetTextColor 255 255 255 255
+	#SetBorderColor 255 255 255 255
+	#SetBackgroundColor 10 70 65 255	
 
 #------------------------------------
 #   [4905] Hide All known Section
