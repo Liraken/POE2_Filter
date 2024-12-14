@@ -204,7 +204,7 @@ Show
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal
 	Class == "Wands" "Staves"
 	ItemLevel >= 81
 	SetFontSize 40
@@ -218,7 +218,7 @@ PlayAlertSound 3 300
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal 
 	Class == "Bows" "Crossbows" "Sceptres"
 	ItemLevel >= 82
 	SetFontSize 45
@@ -232,7 +232,7 @@ PlayAlertSound 3 300
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal
 	Class == "Bows" "Crossbows" "Sceptres"
 	BaseType == "Expert Dyad Crossbow" "Advanced Warden Bow" "Expert Warden Bow" "Expert Bombard Crossbow" "Expert Shortbow" "Advanced Dualstring Bow" "Expert Dualstring Bow" "Hallowed Sceptre" "Aromatic Sceptre" "Pious Sceptre" "Wrath Sceptre" "Clasped Sceptre" "Devouring Sceptre" "Ochre Sceptre" "Rattling Sceptre" 
 	ItemLevel >= 81
@@ -251,7 +251,7 @@ PlayAlertSound 3 300
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal
 	Class == "Wands" "Staves"
 	ItemLevel >= 55
 	SetFontSize 30
@@ -262,7 +262,7 @@ Show # %D5 $type->crafting->Sceptres
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal
 	Class == "Body Armours"
 	ItemLevel >= 81
 	BaseType == "Expert Scalper's Jacket" "Expert Wayfarer Jacket" "Expert Sacrificial Mantle" "Expert Shaman Mantle" "Expert Altar Robe" "Expert Keth Raiment" "Expert Hexer's Robe" "Expert Rogue Armour" "Expert Serpentscale Coat" "Expert Studded Vest" "Expert Pathfinder Coat" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
@@ -274,7 +274,7 @@ Show # %D5 $type->crafting->Sceptres
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal
 	Class == "Bows" "Crossbows"
 	ItemLevel >= 65
 	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Expert Dualstring Bow" "Expert Shortbow"
@@ -287,7 +287,7 @@ PlayAlertSound 3 150
 Show # %D5 $type->crafting->Sceptres
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal
 	Class == "Sceptres"
 	ItemLevel >= 55
 	BaseType == "Hallowed Sceptre" "Aromatic Sceptre" "Pious Sceptre" "Wrath Sceptre" "Clasped Sceptre" "Devouring Sceptre" "Ochre Sceptre" "Rattling Sceptre" 
@@ -1354,7 +1354,7 @@ Show
 
 Show 
 	Class "Currency"
-	BaseType "Exalted Orb" "Orb of Alchemy" "Orb of Annulment" "Vaal Orb" "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb" "Exotic" "Regal Orb" "Gemcutter's Prism" "Glassblower's Bauble" "Gold Key"
+	BaseType "Exalted Orb" "Orb of Alchemy" "Orb of Annulment" "Vaal Orb" "Chaos Orb" "Greater Jeweller's Orb" "Exotic" "Gemcutter's Prism" "Glassblower's Bauble" "Gold Key"
 	SetFontSize 45
 	SetTextColor 255 190 0 255
 	SetBackgroundColor 33 48 169
@@ -1363,6 +1363,16 @@ Show
 	MinimapIcon 1 Red Circle
 	SetBorderColor 255 255 255 255
 
+Show 
+	Class "Currency"
+	BaseType == "Lesser Jeweller's Orb" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Regal Orb" "Chance Shard" "Bronze Key" "Silver Key"
+	SetFontSize 35
+	SetTextColor 255 255 255 255
+	SetBackgroundColor 33 48 169 255
+	PlayAlertSound 2 300
+	MinimapIcon 1 Yellow Circle
+	SetBorderColor 255 190 0 255
+
 Show
 	BaseType == "Scroll of Wisdom"
 	AreaLevel <= 70
@@ -1370,16 +1380,6 @@ Show
 	SetTextColor 255 140 54
 	SetBorderColor 100 50 30
 	SetBackgroundColor 66 0 0
-
-Show 
-	Class "Currency"
-	BaseType == "Lesser Jeweller's Orb" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Chance Shard" "Bronze Key" "Silver Key"
-	SetFontSize 35
-	SetTextColor 255 255 255 255
-	SetBackgroundColor 33 48 169 255
-	PlayAlertSound 2 300
-	MinimapIcon 1 Yellow Circle
-	SetBorderColor 255 190 0 255
 
 Show # 
 	Class "Currency"
@@ -1865,7 +1865,7 @@ Show # The Rest
 	SetBorderColor 175 96 37 255
 	SetFontSize 35
 	PlayAlertSound 2 200
-	BaseType == "Wooden Club" "Smithing Hammer" "Embossed Boots" "Slim Mace" "Spiked Club" "Plated Mace" "Torment Club" "Felled Greatclub" "Oak Greathammer" "Forge Maul" "Studded Greatclub" "Leaden Greathammer" "Crumbling Maul" "Wrapped Quarterstaff" "Long Quarterstaff" "Gothic QuarterStaff" "Crescent QuarterStaff" "Steelpoint Quarterstaff" "Bone Wand" "Attuned Wand" "Volatile Wand" "Ashen Staff" "Gelid Staff" "Voltaic Staff" "Pyrophyte Staff" "Recurve Bow" "Dualstring Bow" "Makeshift Crossbow" "Tense Crossbow" "Rattling Sceptre" "Omen Sceptre" "Rusted Cuirass" "Fur Plate" "Iron Cuirass" "Raider Plate" "Maraketh Cuirass" "Steel Plate" "Full Plate" "Champion Cuirass" "Leather Vest" "Quilted Vest" "Pathfinder Coat" "Rhoahide Coat" "Studded Vest" "Serpentscale Coat" "Bone Raiment" "Keth Raiment" "Votive Raiment" "Chain Mail" "Rogue Armour" "Vagabond Armour" "Mail Vestments" "Shaman Mantle" "Gilded Vestments" "Hermit Garb" "Waxed Jacket" "Marabout Garb" "Wayfarer Jacket" "Anchorite Garb" "Rusted Greathelm" "Soldier Greathelm" "Elite Greathelm" "Warrior Greathelm" "Shabby Hood" "Beaded Circlet" "Feathered Tiara" "Gold Circlet" "Visored Helm" "Cowled Helm" "Shielded Helm" "Horned Crown" "Cultist Crown" "Martyr Crown" "Heavy Crown" "Spiritbone Crown" "Hewn Mask" "Face Mask" "Hooded Mask" "Veiled Mask" "Tempered Mitts" "Suede Bracers" "Sombre Gloves" "Doubled Gauntlets" "Aged Cuffs" "Rough Greaves" "Iron Greaves" "Bronze Greaves" "Laced Boots" "Steeltoe Boots" "Lizardscale Boots" "Straw Sandals" "Feathered Sandals" "Mail Sabatons" "Braced Sabatons" "Stacked Sabatons" "Secured Leggings" "Splintered Tower Shield" "Painted Tower Shield" "Braced Tower Shield" "Effigial Tower Shield" "Rampart Tower Shield" "Hardwood Targe" "Pelage Targe" "Crescent Targe" "Woven Focus" "Engraved Focus" "Tonal Focus" "Crystal Focus" "Visceral Quiver" "Lunar Amulet" "Bloodstone Amulet" "Lazuli Ring" "Ruby Ring" "Rawhide Belt" "Linen Belt" "Wide Belt" "Long Belt" "Plate Belt" "Mail Belt" "Fine Belt"
+	BaseType == "Wooden Club" "Hunter Hood" "Smithing Hammer" "Embossed Boots" "Slim Mace" "Spiked Club" "Plated Mace" "Torment Club" "Felled Greatclub" "Oak Greathammer" "Forge Maul" "Studded Greatclub" "Leaden Greathammer" "Crumbling Maul" "Wrapped Quarterstaff" "Long Quarterstaff" "Gothic QuarterStaff" "Crescent QuarterStaff" "Steelpoint Quarterstaff" "Bone Wand" "Attuned Wand" "Volatile Wand" "Ashen Staff" "Gelid Staff" "Voltaic Staff" "Pyrophyte Staff" "Recurve Bow" "Dualstring Bow" "Makeshift Crossbow" "Tense Crossbow" "Rattling Sceptre" "Omen Sceptre" "Rusted Cuirass" "Fur Plate" "Iron Cuirass" "Raider Plate" "Maraketh Cuirass" "Steel Plate" "Full Plate" "Champion Cuirass" "Leather Vest" "Quilted Vest" "Pathfinder Coat" "Rhoahide Coat" "Studded Vest" "Serpentscale Coat" "Bone Raiment" "Keth Raiment" "Votive Raiment" "Chain Mail" "Rogue Armour" "Vagabond Armour" "Mail Vestments" "Shaman Mantle" "Gilded Vestments" "Hermit Garb" "Waxed Jacket" "Marabout Garb" "Wayfarer Jacket" "Anchorite Garb" "Rusted Greathelm" "Soldier Greathelm" "Elite Greathelm" "Warrior Greathelm" "Shabby Hood" "Beaded Circlet" "Feathered Tiara" "Gold Circlet" "Visored Helm" "Cowled Helm" "Shielded Helm" "Horned Crown" "Cultist Crown" "Martyr Crown" "Heavy Crown" "Spiritbone Crown" "Hewn Mask" "Face Mask" "Hooded Mask" "Veiled Mask" "Tempered Mitts" "Suede Bracers" "Sombre Gloves" "Doubled Gauntlets" "Aged Cuffs" "Rough Greaves" "Iron Greaves" "Bronze Greaves" "Laced Boots" "Steeltoe Boots" "Lizardscale Boots" "Straw Sandals" "Feathered Sandals" "Mail Sabatons" "Braced Sabatons" "Stacked Sabatons" "Secured Leggings" "Splintered Tower Shield" "Painted Tower Shield" "Braced Tower Shield" "Effigial Tower Shield" "Rampart Tower Shield" "Hardwood Targe" "Pelage Targe" "Crescent Targe" "Woven Focus" "Engraved Focus" "Tonal Focus" "Crystal Focus" "Visceral Quiver" "Lunar Amulet" "Bloodstone Amulet" "Lazuli Ring" "Ruby Ring" "Rawhide Belt" "Linen Belt" "Wide Belt" "Long Belt" "Plate Belt" "Mail Belt" "Fine Belt"
 
 Show # The Rest [Early Game / Leveling Uniques] 
 	Rarity Unique
@@ -1978,6 +1978,7 @@ Show
 #------------------------------------
 
 Show
+	ItemLevel <= 70
     Sockets 1 2 3 4 
     SetBackgroundColor 111 0 111
 
