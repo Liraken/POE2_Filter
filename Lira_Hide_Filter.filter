@@ -889,7 +889,7 @@ Show # Charms Tiering
 
 Show
 	BaseType == "Uncut Skill Gem"
-	ItemLevel >= 20
+	ItemLevel == 20
 	SetFontSize 45
 	SetTextColor 255 060 60 255
 	SetBorderColor 255 060 60 255
@@ -897,6 +897,17 @@ Show
 	PlayAlertSound 6 300
 	PlayEffect Blue 
 	MinimapIcon 0 Red Star
+
+Show
+	BaseType == "Uncut Skill Gem"
+	ItemLevel == 19
+	SetFontSize 40
+	SetTextColor 240 240 240 255
+	SetBorderColor 240 0 0 255
+	SetBackgroundColor 100 0 0 255
+	PlayAlertSound 6 300
+    PlayEffect Red
+	MinimapIcon 2 Red Triangle
 
 Show
 	BaseType == "Uncut Skill Gem"
@@ -1005,7 +1016,7 @@ Hide
 
 Show
 	BaseType == "Uncut Spirit Gem"
-	ItemLevel >= 20
+	ItemLevel == 20
 	SetFontSize 45
 	SetTextColor 255 060 60 255
 	SetBorderColor 255 060 60 255
@@ -1016,14 +1027,14 @@ Show
 
 Show
 	BaseType == "Uncut Spirit Gem"
-	ItemLevel >= 18
-	ItemLevel <= 19
-	SetFontSize 35
-	SetTextColor 20 240 240 255
+	ItemLevel == 19
+	SetFontSize 40
+	SetTextColor 240 240 240 255
 	SetBorderColor 240 0 0 255
-	SetBackgroundColor 70 0 20 255
-	PlayAlertSound 2 300
-	MinimapIcon 1 Red Triangle
+	SetBackgroundColor 100 0 0 255
+	PlayAlertSound 6 300
+    PlayEffect Red
+	MinimapIcon 2 Red Triangle
 
 Show
 	BaseType == "Uncut Spirit Gem"
