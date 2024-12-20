@@ -238,7 +238,6 @@ Show # $type->artefact->sanctifiedrelics $tier->selectedrelics
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 20 20 0 255
 	MinimapIcon 1 Blue Diamond
-PlayAlertSound 3 300
 
 #===============================================================================================================
 # [[1100]] Exotic Item Variations
@@ -248,6 +247,20 @@ PlayAlertSound 3 300
 # [[1300]] Endgame Crafting Bases
 #===============================================================================================================
 
+Show # Boots(ANY) ILVL 82+
+	Mirrored False
+	Corrupted False
+	Rarity Normal 
+	Class == "Boots"
+	ItemLevel >= 82
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 90 0 74 255
+	PlayEffect Purple
+	MinimapIcon 1 Purple Diamond
+PlayAlertSound 3 300
+
 #------------------------------------
 #   [1301] Amulets
 #------------------------------------
@@ -255,7 +268,7 @@ PlayAlertSound 3 300
 Show # Amulets ILVL 82+
 	Mirrored False
 	Corrupted False
-	Rarity Normal 
+	Rarity Normal Magic
 	Class == "Amulets"
 	BaseType == "Solar Amulet" "Bloodstone Amulet" "Lunar Amulet" 
 	ItemLevel >= 82
@@ -270,7 +283,7 @@ PlayAlertSound 3 300
 Show # Amulets ILVL 82+
 	Mirrored False
 	Corrupted False
-	Rarity Normal
+	Rarity Normal Magic
 	Class == "Amulets" "Charms"
 	ItemLevel >= 81
 	SetFontSize 40
@@ -284,7 +297,7 @@ PlayAlertSound 3 300
 Show # Amulets ILVL 75+
 	Mirrored False
 	Corrupted False
-	Rarity Normal Rare
+	Rarity Normal Magic
 	Class == "Amulets" "Charms" 
 	ItemLevel >= 75
 	SetFontSize 40
@@ -298,7 +311,7 @@ PlayAlertSound 3 150
 Show # Amulets ILVL 60-74
 	Mirrored False
 	Corrupted False
-	Rarity Normal
+	Rarity Normal Magic
 	Class == "Amulets" "Charms"
 	ItemLevel >= 60
 	ItemLevel <= 74 
@@ -306,7 +319,6 @@ Show # Amulets ILVL 60-74
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1302] Rings
@@ -315,7 +327,7 @@ PlayAlertSound 3 150
 Show # Rings ILVL 82+
 	Mirrored False
 	Corrupted False
-	Rarity Normal 
+	Rarity Normal Magic
 	Class == "Rings"
 	ItemLevel >= 82
 	SetFontSize 45
@@ -329,7 +341,7 @@ PlayAlertSound 3 300
 Show # Rings ILVL 82+
 	Mirrored False
 	Corrupted False
-	Rarity Normal
+	Rarity Normal Magic
 	Class == "Rings"
 	ItemLevel >= 81
 	SetFontSize 40
@@ -343,7 +355,7 @@ PlayAlertSound 3 300
 Show # Rings ILVL 74+
 	Mirrored False
 	Corrupted False
-	Rarity Normal Rare
+	Rarity Normal Magic
 	Class == "Rings"
 	ItemLevel >= 74
 	SetFontSize 40
@@ -357,15 +369,14 @@ PlayAlertSound 3 150
 Show # Rings ILVL 60-73
 	Mirrored False
 	Corrupted False
-	Rarity Normal
+	Rarity Normal Magic
 	Class == "Rings"
 	ItemLevel >= 60
 	ItemLevel <= 73 
-	SetFontSize 30
+	SetFontSize 40
 	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 0 50 50 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1303] Belts
@@ -374,7 +385,7 @@ PlayAlertSound 3 150
 Show # Belts ILVL 82+
 	Mirrored False
 	Corrupted False
-	Rarity Normal 
+	Rarity Normal Magic
 	Class == "Belts"
 	ItemLevel >= 82
 	SetFontSize 45
@@ -388,7 +399,7 @@ PlayAlertSound 3 300
 Show # Belts ILVL 81+
 	Mirrored False
 	Corrupted False
-	Rarity Normal
+	Rarity Normal Magic
 	Class == "Belts"
 	ItemLevel >= 81
 	SetFontSize 40
@@ -402,7 +413,7 @@ PlayAlertSound 3 300
 Show # Belts ILVL 77+
 	Mirrored False
 	Corrupted False
-	Rarity Normal
+	Rarity Normal Magic
 	Class == "Belts"
 	AreaLevel <= 78
 	ItemLevel >= 75
@@ -415,7 +426,7 @@ PlayAlertSound 3 150
 Show # Belts ILVL 60-76
 	Mirrored False
 	Corrupted False
-	Rarity Normal
+	Rarity Normal Magic
 	Class == "Belts"
 	AreaLevel <= 78
 	ItemLevel >= 64
@@ -424,7 +435,6 @@ Show # Belts ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1304] Bows
@@ -487,7 +497,7 @@ Show # Bows ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
+
 
 #------------------------------------
 #   [1305] Crossbows
@@ -550,7 +560,7 @@ Show # Crossbows ILVL 65-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
+
 
 #------------------------------------
 #   [1306] Quarterstaves
@@ -613,7 +623,7 @@ Show # Quarterstaves ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
+
 
 #------------------------------------
 #   [1307] Two Handed Maces
@@ -676,8 +686,6 @@ Show # Two Hand Maces ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
-
 
 #------------------------------------
 #   [1308] One Handed Maces
@@ -740,8 +748,6 @@ Show # One Hand Maces ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
-
 
 #------------------------------------
 #   [1309] Sceptres
@@ -800,8 +806,6 @@ Show # Sceptres ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
-
 
 #------------------------------------
 #   [1310] Wands
@@ -849,25 +853,24 @@ Show # Wands ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1311] Staves
 #------------------------------------
 
-Show # Staves ILVL 81+
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Staves"
-	ItemLevel >= 81
-	SetFontSize 40
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 75 30 255
-	PlayEffect Blue
-	MinimapIcon 0 Blue Diamond
-PlayAlertSound 3 300
+# Show # Staves ILVL 81+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Staves"
+# 	ItemLevel >= 81
+# 	SetFontSize 40
+# 	SetTextColor 0 240 190 255
+# 	SetBorderColor 0 240 190 255
+# 	SetBackgroundColor 0 75 30 255
+# 	PlayEffect Blue
+# 	MinimapIcon 0 Blue Diamond
+# PlayAlertSound 3 300
 
 Show # Staves ILVL 78+
 	Mirrored False
@@ -894,7 +897,6 @@ Show # Staves ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1312] Quivers
@@ -942,7 +944,6 @@ Show # Quivers ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1313] Foci - Focus
@@ -1020,7 +1021,6 @@ Show # Foci ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1314] Shields(str)
@@ -1083,7 +1083,6 @@ Show # Shields ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1315] Shields(str_int)
@@ -1146,7 +1145,6 @@ Show # Shields ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1316] Shields(str_dex)
@@ -1209,7 +1207,6 @@ Show # Shields ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1317] Body Armours(int)
@@ -1272,7 +1269,6 @@ Show # Body Armours(int) ILVL 60-78
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1318] Body Armours(dex)
@@ -1335,7 +1331,6 @@ Show # Body Armours(dex) ILVL 60-78
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1319] Body Armours(str)
@@ -1398,7 +1393,6 @@ Show # Body Armours(str) ILVL 60-78
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1320] Body Armours(hybrid)
@@ -1461,7 +1455,6 @@ Show # Body Armours(hybrid) ILVL 60-78
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 # #------------------------------------
 # #   [1321] Helmets(int)
@@ -1524,7 +1517,6 @@ PlayAlertSound 3 150
 # 	SetBorderColor 255 125 0 255
 # 	SetBackgroundColor 0 0 0 255
 # 	MinimapIcon 2 Blue Diamond
-# PlayAlertSound 3 150
 
 # #------------------------------------
 # #   [1322] Helmets(dex)
@@ -1587,7 +1579,6 @@ PlayAlertSound 3 150
 # 	SetBorderColor 255 125 0 255
 # 	SetBackgroundColor 0 0 0 255
 # 	MinimapIcon 2 Blue Diamond
-# PlayAlertSound 3 150
 
 # #------------------------------------
 # #   [1323] Helmets(str)
@@ -1650,7 +1641,6 @@ PlayAlertSound 3 150
 # 	SetBorderColor 255 125 0 255
 # 	SetBackgroundColor 0 0 0 255
 # 	MinimapIcon 2 Blue Diamond
-# PlayAlertSound 3 150
 
 # #------------------------------------
 # #   [1324] Helmets(hybrid)
@@ -1713,7 +1703,6 @@ Show # Helmets(hybrid) ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1325] Gloves(int)
@@ -1776,7 +1765,6 @@ Show # Gloves(int) ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1326] Gloves(dex)
@@ -1839,7 +1827,6 @@ Show # Gloves(dex) ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1327] Gloves(str)
@@ -1902,7 +1889,6 @@ Show # Gloves(str) ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1328] Gloves(hybrid)
@@ -1965,7 +1951,6 @@ Show # Gloves(hybrid) ILVL 60-76
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1329] Boots(int)
@@ -1976,7 +1961,7 @@ Show # Boots(int) ILVL 82+
 	Corrupted False
 	Rarity Normal 
 	Class == "Boots"
-	BaseType == "Expert Feathered Sandals" "Expert Silk Slippers" "Expert Wrapped Sandals"
+	BaseType == "Expert Feathered Sandals" "Expert Silk Slippers" "Expert Wrapped Sandals" "Advanced Feathered Sandals" "Advanced Silk Slippers" "Advanced Wrapped Sandals"
 	ItemLevel >= 82
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -2028,18 +2013,17 @@ Show # Boots(int) ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1330] Boots(dex)
 #------------------------------------
 
-Show # Boots(dex) ILVL 82+
+Show # Boots(dex) ILVL 82+ Advanced
 	Mirrored False
 	Corrupted False
 	Rarity Normal 
 	Class == "Boots"
-	BaseType == "Expert Lizardscale Boots" "Expert Steeltoe Boots" "Expert Laced Boots"
+	BaseType == "Expert Lizardscale Boots" "Expert Steeltoe Boots" "Expert Laced Boots" "Advanced Lizardscale Boots" "Advanced Steeltoe Boots" "Advanced Laced Boots"
 	ItemLevel >= 82
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -2091,7 +2075,6 @@ Show # Boots(dex) ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1331] Boots(str)
@@ -2154,7 +2137,6 @@ Show # Boots(str) ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #------------------------------------
 #   [1332] Boots(hybrid)
@@ -2217,7 +2199,6 @@ Show # Boots(hybrid) ILVL 60-77
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 2 Blue Diamond
-PlayAlertSound 3 150
 
 #===============================================================================================================
 # [[1350]] Scrapping Items
@@ -2230,7 +2211,7 @@ Show # Socketed Items
 	 
 Show # Quality Items
 	SetFontSize 30
-	Class "Belts" "Boots" "Claws" "Daggers" "Gloves" "One Hand" "Quivers" "Sceptre" "Shields" "Wand" "Spears" "Flails" "Traps" "Foci"
+	Class "Belts" "Boots" "Claws" "Body Armours" "Helmets" "Daggers" "Gloves" "One Hand" "Quivers" "Sceptres" "Shields" "Wand" "Spears" "Flails" "Traps" "Foci"
 	SetFontSize 25
 	Quality >= 5
 	SetTextColor 255 255 255 255
@@ -2305,7 +2286,7 @@ Show # %D2 $type->endgameflasks $tier->earlymappingmana
 
 Hide # $type->hidelayer $tier->normalmagicendgame
 	Rarity Normal Magic
-	Class == "Belts" "Body Armours" "Bows" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Sceptres" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Crossbows" "Foci" "Spears" "Flails" "Quarterstaves"
+	Class == "Belts" "Rings" "Amulets" "Body Armours" "Bows" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Sceptres" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Crossbows" "Foci" "Spears" "Flails" "Quarterstaves"
 	AreaLevel >= 68
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
@@ -2387,15 +2368,20 @@ Show # tier->t2
 	Class == "Amulets" "Rings"
 	BaseType == "Sapphire Ring" "Topaz Ring" "Ruby Ring" "Golden Hoop" "Amber Amulet" "Lapis Amulet" "Jade Amulet"
 	SetFontSize 45
-	SetBackgroundColor 50 9 69 255
+	SetBorderColor 180 180 255 255
+	SetBackgroundColor 9 9 100 255
 	SetBorderColor 237 255 0
+	PlayAlertSound 10 250
 
 Show # tier->t3
 	Rarity Rare
 	Class == "Amulets" "Rings"
-	BaseType == "Emerald Ring" "Iron Ring" "Unset Ring" "Lazuli Ring" "Crimson Amulet" 
+	BaseType == "Emerald Ring" "Iron Ring" "Unset Ring" "Lazuli Ring" "Crimson Amulet" "Azure Amulet"
 	SetFontSize 40
-	SetBackgroundColor 31 0 75 255
+	SetBorderColor 180 180 255 255
+	SetBackgroundColor 9 9 100 255
+	SetBorderColor 237 255 0
+	PlayAlertSound 10 250
 
 Show # tier->t1
 	ItemLevel >= 68
@@ -2604,7 +2590,7 @@ Show
 
 Show
 	Rarity Rare
-	Class == "Wands"
+	Class == "Wands" "Staves"
 	SetFontSize 35
 	SetBorderColor 255 215 70
 
@@ -2622,18 +2608,30 @@ Show
 	SetFontSize 35
 	SetBorderColor 255 215 70
 
+
 #===============================================================================================================
-# [[2500]] Hide Layer 2 - Rare Gear - DISABLED
+# [2404] Endgame - Rare - Gear - Expert Rares Catch All
+#===============================================================================================================	
+
+Show
+	Rarity Rare
+	BaseType "Expert "
+	SetFontSize 35
+	SetBorderColor 255 215 70
+
+
+#===============================================================================================================
+# [[2500]] Hide Layer 2 - Rare Gear
 #===============================================================================================================
 
-#Hide # $type->hidelayer $tier->raresendgame
-	#ItemLevel >= 68
-	#Rarity Rare
-	#Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Staves" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
-	#SetFontSize 18
-	#SetBorderColor 0 0 0 0
-	#SetBackgroundColor 20 20 0 0
-	#DisableDropSound True
+Hide # $type->hidelayer $tier->raresendgame
+	ItemLevel >= 78
+	Rarity Rare
+	Class "Body Armours" "Focus" "Quarterstaves" "Crossbows" "Boots" "Bows" "Claws" "Bows" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands"
+	SetFontSize 18
+	SetBorderColor 0 0 0 0
+	SetBackgroundColor 20 20 0 0
+	DisableDropSound True
 
 #===============================================================================================================
 # [[2600]] Jewels
@@ -2723,7 +2721,7 @@ Show
 	SetTextColor 240 240 240 255
 	SetBorderColor 240 240 100 255
 	SetBackgroundColor 200 50 50 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
     PlayEffect Red
 	MinimapIcon 2 Red Triangle
 
@@ -2850,7 +2848,7 @@ Show
 	SetTextColor 240 240 240 255
 	SetBorderColor 240 240 100 255
 	SetBackgroundColor 200 50 50 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
     PlayEffect Red
 	MinimapIcon 2 Red Triangle
 
@@ -2901,7 +2899,6 @@ Hide
 # [[3100]] Normal Waystone Progression
 #===============================================================================================================
 
-
 Show # $type->Waystone $tier->Waystone_a_t16
 	WaystoneTier >= 16
 	Class == "waystones"
@@ -2917,7 +2914,7 @@ Show # $type->Waystone $tier->Waystone_a_t15
 	SetTextColor 255 255 255 255
 	SetBorderColor 50 255 255 255 
 	SetBackgroundColor 230 0 0 255
-	PlayAlertSound 6 300
+	PlayAlertSound 5 300
 	PlayEffect Red
 	MinimapIcon 2 Red Square
 
@@ -3177,18 +3174,18 @@ Show # Tier 2
 	SetTextColor 254 228 0 255
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 1 133 229 255
-	PlayAlertSound 10 250
+	PlayAlertSound 1 250
 	PlayEffect Red
 	MinimapIcon 1 Red Circle
 
 Show # Tier 3
 	Class "Currency"
 	BaseType "Exalted Orb" "Orb of Alchemy" "Vaal Orb" "Glassblower's Bauble"
-	SetFontSize 45
-	SetTextColor 255 190 0 255
+	SetFontSize 40
+	SetTextColor 255 190 50 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 1 133 229 255
-	PlayAlertSound 11 250
+	SetBackgroundColor 1 100 200 255
+	PlayAlertSound 10 200
 	PlayEffect Red
 	MinimapIcon 1 Red Circle
 	
@@ -3260,7 +3257,7 @@ Show # fragments
 Show
 	Class == "Currency"
 	BaseType == "Simulacrum Splinter" "Breach Splinter"
-	SetFontSize 35
+	SetFontSize 30
 	SetTextColor 255 255 255 255
 	SetBorderColor 130 15 255 255
 	SetBackgroundColor 65 20 80
@@ -3310,12 +3307,22 @@ Show # $type->Runes $tier->t1
 
 Show # $type->Runes $tier->t2
 	BaseType == "Mind Rune" "Rebirth Rune" "Inspiration Rune" "Stone Rune" "Vision Rune" "Body Rune" "Desert Rune" "Glacial Rune" "Storm Rune"
+	AreaLevel <= 75
 	SetFontSize 35
 	SetTextColor 0 255 255 255
 	SetBorderColor 0 255 255 255
 	SetBackgroundColor 0 0 0 255
 	MinimapIcon 1 White Raindrop
 	PlayAlertSound 2 300	
+
+Hide # $type->Runes $tier->t2
+	BaseType == "Mind Rune" "Rebirth Rune" "Inspiration Rune" "Stone Rune" "Vision Rune" "Body Rune" "Desert Rune" "Glacial Rune" "Storm Rune"
+	AreaLevel >= 75
+	SetFontSize 18
+	SetBorderColor 0 0 0 0
+	SetBackgroundColor 20 20 0 0
+	DisableDropSound True
+
 
 #------------------------------------
 #   [3703] Essences
@@ -3514,10 +3521,10 @@ Show # Ascension 4
 	BaseType == "Djinn Barya"
 	AreaLevel >= 75
 	SetFontSize 40
-	SetTextColor 180 0 255 255
+	SetTextColor 255 255 255 255
 	SetBorderColor  180 0 255 255
-	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 1 300
 	MinimapIcon 0 Red Hexagon	
 
 Show # Accension 3
@@ -3526,8 +3533,8 @@ Show # Accension 3
 	AreaLevel >= 60
 	SetFontSize 40
 	SetTextColor 255 255 255 255
-	SetBorderColor 255 255 255 255
-	SetBackgroundColor 180 0 255 255
+	SetBorderColor  180 0 255 255
+	SetBackgroundColor 100 0 100 255
 	PlayAlertSound 1 300
 	MinimapIcon 1 Yellow Hexagon	
 
@@ -3536,8 +3543,8 @@ Show # Ascension 1 and 2
 	BaseType == "Djinn Barya" "Inscribed Ultimatum"
 	SetFontSize 40
 	SetTextColor 255 255 255 255
-	SetBorderColor 255 255 255 255
-	SetBackgroundColor 180 0 255 255
+	SetBorderColor  180 0 255 255
+	SetBackgroundColor 100 0 100 255
 	PlayAlertSound 1 300
 	MinimapIcon 1 Red Hexagon	
 
@@ -3832,7 +3839,7 @@ Show
 
 Show
 	Rarity Normal Magic
-	BaseType "Expert"
+	BaseType "Expert "
 	SetFontSize 35
 
 Show
