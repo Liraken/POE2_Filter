@@ -796,18 +796,18 @@ Show # Wands ILVL 81+
 	MinimapIcon 0 Blue Diamond
 PlayAlertSound 3 300
 
-Show # Wands ILVL 78+
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Wands"
-	BaseType == "Attuned Wand" "Siphoning Wand"
-	ItemLevel >= 78
-	SetFontSize 35
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 1 Blue Diamond
-PlayAlertSound 3 150
+# Show # Wands ILVL 78+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Wands"
+# 	BaseType == "Attuned Wand" "Siphoning Wand"
+# 	ItemLevel >= 78
+# 	SetFontSize 35
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 1 Blue Diamond
+# PlayAlertSound 3 150
 
 Show # Wands ILVL 60-76
 	Mirrored False
@@ -2018,7 +2018,7 @@ Show # Boots(dex) ILVL 60-77
 Show # Boots(str) ILVL 82+
 	Mirrored False
 	Corrupted False
-	Rarity Normal Magic
+	Rarity Normal
 	Class == "Boots" 
 	BaseType == "Expert Stone Greaves" "Expert Trimmed Greaves" "Expert Iron Greaves"
 	ItemLevel >= 82
@@ -3013,7 +3013,7 @@ Show # $type->fragments->Tablet $tier->t1
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 255 0 58 255
 	MinimapIcon 0 Red Hexagon
-	PlayAlertSound 6 300
+	CustomAlertSound "filter_sounds\Stefan Gold_2currency.mp3" 300
 
 #===============================================================================================================
 # [[3400]] Currency - Exceptions - Leveling Currencies
