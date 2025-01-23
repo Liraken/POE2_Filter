@@ -1,0 +1,17 @@
+Big Sounds
+filter_sounds\Stefan Gold_1maybevaluable.mp3 
+
+
+filter_sounds\Stefan Gold_2currency.mp3
+
+
+filter_sounds\Stefan Gold_3uniques.mp3
+
+
+filter_sounds\Stefan Gold_5highmaps.mp3
+
+
+filter_sounds\Stefan Gold_6veryvaluable.mp3
+
+
+filter_sounds\Stefan Gold_7chancing.mp3

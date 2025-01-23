@@ -47,6 +47,7 @@
 # [[1000]] Exotic Item Classes
 #   [1001] Relics
 # [[1100]] Exotic Item Variations
+# [[1200]] Chancing Bases
 # [[1300]] End Game Crafting Bases
 #   [1301] Amulets
 #   [1302] Rings
@@ -89,7 +90,6 @@
 #   [1339] Quivers
 #   [1340] Foci
 # [[1350]] Scrapping Items
-# [[1400]] Chancing Bases
 # [[1500]] Endgame Flasks
 #   [1501] Endgame Flasks
 #   [1505] Early mapping life/mana flasks
@@ -104,7 +104,7 @@
 # [[2400]] Endgame - Rare - Gear
 # [[2500]] Hide Layer 2 - Rare Gear
 # [[2600]] Jewels
-#   [2604] Charm Tiering
+#   [2601] Charm Tiering
 # [[2800]] Gem Tierlists
 # [[3100]] Normal Waystone Progression
 # [[3200]] Pseudo-Map-Items
@@ -202,6 +202,114 @@ Show # $type->gold $tier->anyother
 	SetBackgroundColor 255 255 0 255
 	MinimapIcon 2 Yellow Cross
 
+#===============================================================================================================
+# [[0200]] Exotic Bases
+#===============================================================================================================
+# !! Waypoint c2.exotic.all : "Exotic Items - Breach Rings, Fishing Rods, Quest Items"
+# These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
+
+# Currently contains mostly undroppable bases
+
+Show # $type->exoticbases $tier->superexoticbases
+	Rarity Normal Magic Rare
+	BaseType == "Diamond" "Time-Lost Diamond"
+	SetFontSize 42
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
+
+# Currently contains breach rings
+
+Show # %D6 $type->exoticbases $tier->commonexoticbaseshigh
+	ItemLevel >= 82
+	Rarity Normal Magic Rare
+	BaseType == "Breach Ring"
+	SetFontSize 35
+	SetTextColor 0 0 0 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 180 0 255 255
+	PlayAlertSound 2 300
+	PlayEffect Blue
+	MinimapIcon 1 Blue Diamond
+
+Show # %D4 $type->exoticbases $tier->commonexoticbases
+	Rarity Normal Magic
+	BaseType == "Breach Ring"
+	SetFontSize 35
+	SetTextColor 0 0 0 255
+	SetBackgroundColor 180 100 255 255
+	SetBorderColor 180 0 255 255
+	PlayEffect Blue Temp
+	MinimapIcon 2 Blue Diamond
+
+# Sanctum keys
+
+Show # $type->questlikeexception $tier->questlike
+	BaseType == "Bronze Key" "Gold Key" "Silver Key"
+	SetFontSize 42
+	SetTextColor 74 230 58 255
+	PlayAlertSound 3 300
+	PlayEffect Green
+	MinimapIcon 0 Green Pentagon
+
+Show # $type->questlikeexception $tier->questitems
+	Class == "Quest Items"
+	SetFontSize 42
+	SetTextColor 74 230 58 255
+	PlayAlertSound 3 300
+	PlayEffect Green
+	MinimapIcon 0 Green Pentagon
+
+Show # $type->artifact $tier->fishingrod
+	Rarity Normal Magic Rare
+	Class == "Fishing Rods"
+	SetFontSize 42
+	SetTextColor 240 0 0 255
+	SetBorderColor 240 0 0 255
+	SetBackgroundColor 70 0 20 255
+	PlayAlertSound 3 300
+	PlayEffect Orange
+	MinimapIcon 0 Orange Pentagon
+
+#===============================================================================================================
+# [[0300]] Exotic Item States
+#===============================================================================================================
+# !! Waypoint c3.exotic.state.all : "Exotic State - Double Corrupted, Overquality"
+
+Show # $type->exotic->others $tier->overqualityany
+	Corrupted False
+	Quality >= 21
+	Rarity Normal Magic Rare
+	SetFontSize 42
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
+
+#===============================================================================================================
+# [[0400]] Chancing Bases and Economy Selected Bases
+#===============================================================================================================
+#------------------------------------
+#   [0401] Crafting and Chancing Bases
+#------------------------------------
+# !! Waypoint c3.gear.chancing : "Chancing bases"
+
+Show # $type->chancing $tier->any
+	Mirrored False
+	Corrupted False
+	Rarity Normal
+	BaseType == "Emerald Ring" "Sapphire Ring" "Stellar Amulet"
+	SetFontSize 40
+	SetBorderColor 0 200 95
+	PlayAlertSound 3 300
+	PlayEffect Green Temp
+	MinimapIcon 1 Green Diamond
+
 #------------------------------------
 #   [1001] Relics
 #------------------------------------
@@ -209,7 +317,7 @@ Show # $type->gold $tier->anyother
 Show # $type->artefact->sanctifiedrelics $tier->selectedrelics
 	Rarity Normal Magic Rare
 	Class == "Relics"
-	BaseType == "Urn Relic" "Amphora Relic" "Seal Relic" "Coffer Relic" "Tapestry Relic"
+	BaseType == "Urn Relic" "Seal Relic"
 	SetFontSize 40
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -220,28 +328,51 @@ PlayAlertSound 3 300
 Show # $type->artefact->sanctifiedrelics $tier->selectedrelics
 	Rarity Normal Magic Rare
 	Class == "Relics"
-	BaseType == "Vase Relic" "Incense Relic"
-	AreaLevel <= 74
+	BaseType == "Amphora Relic" "Tapestry Relic"
 	SetFontSize 30
-	SetTextColor 255 255 255 255
+	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 20 20 0 255
 	MinimapIcon 1 Blue Diamond
 PlayAlertSound 3 300
 
-Show # $type->artefact->sanctifiedrelics $tier->selectedrelics
+Hide # $type->artefact->sanctifiedrelics $tier->selectedrelics
 	Rarity Normal Magic Rare
 	Class == "Relics"
 	BaseType == "Urn Relic" "Amphora Relic" "Vase Relic" "Seal Relic" "Coffer Relic" "Tapestry Relic" "Incense Relic"
-	SetFontSize 40
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
+	AreaLevel >= 68
+	SetFontSize 18
+	SetBorderColor 0 0 0 255
 	SetBackgroundColor 20 20 0 255
-	MinimapIcon 1 Blue Diamond
-
+	DisableDropSound True
+	
 #===============================================================================================================
 # [[1100]] Exotic Item Variations
 #===============================================================================================================
+
+#===============================================================================================================
+# [[1200]] Chancing Bases
+#===============================================================================================================
+
+
+#Show # # # # # # # # # %D1 $type->chancing $tier->hh
+#	Mirrored False
+#	Corrupted False
+#	Rarity Normal
+#	BaseType == "" ""
+#	SetFontSize 35
+#	SetTextColor 255 255 255 255
+#	SetBorderColor 0 150 0 90
+
+Show # # # # # # # # # %D1 $type->chancing $tier->t2
+	Mirrored False
+	Corrupted False
+	Rarity Normal
+	BaseType == "Stellar Amulet" "Emerald Ring" "Sapphire Ring"
+	SetFontSize 35
+	SetTextColor 255 255 255 255
+	SetBorderColor 0 150 0 90
+
 
 #===============================================================================================================
 # [[1300]] Endgame Crafting Bases
@@ -258,7 +389,7 @@ Show # Amulets ILVL 82+
 	Class == "Amulets"
 	BaseType == "Solar Amulet" "Bloodstone Amulet" "Lunar Amulet" 
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -272,7 +403,7 @@ Show # Amulets ILVL 82+
 	Rarity Normal Magic
 	Class == "Amulets"
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -286,7 +417,7 @@ Show # Amulets ILVL 75+
 	Rarity Normal Magic
 	Class == "Amulets"
 	ItemLevel >= 75
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 0 0 255
@@ -316,7 +447,7 @@ Show # Rings ILVL 82+
 	Rarity Normal Magic
 	Class == "Rings"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -330,7 +461,7 @@ Show # Rings ILVL 82+
 	Rarity Normal Magic
 	Class == "Rings"
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -359,7 +490,7 @@ Show # Rings ILVL 60-73
 	Class == "Rings"
 	ItemLevel >= 60
 	ItemLevel <= 73 
-	SetFontSize 40
+	SetFontSize 35
 	SetBorderColor 255 125 0 255
 	SetBackgroundColor 0 50 50 255
 	MinimapIcon 2 Blue Diamond
@@ -368,47 +499,47 @@ Show # Rings ILVL 60-73
 #   [1303] Belts
 #------------------------------------
 
-Show # Belts ILVL 82+
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Belts"
-	BaseType == "Golden Obi" "Linen Belt" "Wide Belt" "Mail Belt" "Double Belt" "Utility Belt" "Fine Belt"
-	ItemLevel >= 82
-	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 90 0 74 255
-	PlayEffect Purple
-	MinimapIcon 1 Purple Diamond
-PlayAlertSound 3 300
+# Show # Belts ILVL 82+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Belts"
+# 	BaseType == "Golden Obi" "Linen Belt" "Wide Belt" "Mail Belt" "Double Belt" "Utility Belt" "Fine Belt"
+# 	ItemLevel >= 82
+# 	SetFontSize 35
+# 	SetTextColor 0 240 190 255
+# 	SetBorderColor 0 240 190 255
+# 	SetBackgroundColor 90 0 74 255
+# 	PlayEffect Purple
+# 	MinimapIcon 1 Purple Diamond
+# PlayAlertSound 3 300
 
-Show # Belts ILVL 81+
-	Mirrored False
-	Corrupted False
-	Rarity Normal 
-	Class == "Belts"
-	BaseType == "Golden Obi" "Linen Belt" "Wide Belt" "Mail Belt" "Double Belt" "Utility Belt" "Fine Belt"
-	ItemLevel >= 81
-	SetFontSize 40
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 75 30 255
-	PlayEffect Blue
-	MinimapIcon 0 Blue Diamond
-PlayAlertSound 3 300
+# Show # Belts ILVL 81+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal 
+# 	Class == "Belts"
+# 	BaseType == "Golden Obi" "Linen Belt" "Wide Belt" "Mail Belt" "Double Belt" "Utility Belt" "Fine Belt"
+# 	ItemLevel >= 81
+# 	SetFontSize 35
+# 	SetTextColor 0 240 190 255
+# 	SetBorderColor 0 240 190 255
+# 	SetBackgroundColor 0 75 30 255
+# 	PlayEffect Blue
+# 	MinimapIcon 0 Blue Diamond
+# PlayAlertSound 3 300
 
-Show # Belts ILVL 77+
-	Mirrored False
-	Corrupted False
-	Rarity Normal 
-	Class == "Belts"
-	ItemLevel >= 75
-	SetFontSize 35
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 1 Blue Diamond
-PlayAlertSound 3 150
+# Show # Belts ILVL 77+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal 
+# 	Class == "Belts"
+# 	ItemLevel >= 75
+# 	SetFontSize 35
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 1 Blue Diamond
+# PlayAlertSound 3 150
 
 Show # Belts ILVL 60-76
 	Mirrored False
@@ -433,7 +564,7 @@ Show # Bows ILVL 82+
 	Class == "Bows"
 	BaseType == "Expert Dualstring Bow" "Expert Zealot Bow"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -448,7 +579,7 @@ Show # Bows ILVL 81+
 	Class == "Bows"
 	BaseType == "Expert Dualstring Bow" "Expert Zealot Bow"
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -493,7 +624,7 @@ Show # Crossbows ILVL 82+
 	Class == "Crossbows"
 	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -501,20 +632,20 @@ Show # Crossbows ILVL 82+
 	MinimapIcon 1 Purple Diamond
 PlayAlertSound 3 300
 
-# Show # Crossbows Bows ILVL 81+
-# 	Mirrored False
-# 	Corrupted False
-# 	Rarity Normal
-# 	Class == "Crossbows"
-# 	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow"
-# 	ItemLevel >= 81
-# 	SetFontSize 40
-# 	SetTextColor 0 240 190 255
-# 	SetBorderColor 0 240 190 255
-# 	SetBackgroundColor 0 75 30 255
-# 	PlayEffect Blue
-# 	MinimapIcon 0 Blue Diamond
-# PlayAlertSound 3 300
+Show # Crossbows Bows ILVL 81+
+	Mirrored False
+	Corrupted False
+	Rarity Normal
+	Class == "Crossbows"
+	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow"
+	ItemLevel >= 81
+	SetFontSize 35
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
+PlayAlertSound 3 300
 
 # Show # Crossbows ILVL 77+
 # 	Mirrored False
@@ -529,18 +660,18 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Crossbows ILVL 65-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Crossbows"
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Dyad Crossbow" "Bombard Crossbow"
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Crossbows ILVL 65-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Crossbows"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	BaseType == "Expert Dyad Crossbow" "Expert Bombard Crossbow" "Advanced Dyad Crossbow" "Advanced Bombard Crossbow" "Dyad Crossbow" "Bombard Crossbow"
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1306] Quarterstaves
@@ -551,9 +682,9 @@ Show # Quarterstaves ILVL 82+
 	Corrupted False
 	Rarity Normal 
 	Class == "Quarterstaves"
-	BaseType "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" "Expert "
+	BaseType "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" 
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -566,7 +697,7 @@ Show # Quarterstaves ILVL 81+
 	Corrupted False
 	Rarity Normal
 	Class == "Quarterstaves"
-	BaseType "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" "Expert "
+	BaseType "Expert Crescent Quarterstaff" "Expert Long Quarterstaff"
 	ItemLevel >= 81
 	SetFontSize 40
 	SetTextColor 0 240 190 255
@@ -576,30 +707,30 @@ Show # Quarterstaves ILVL 81+
 	MinimapIcon 0 Blue Diamond
 PlayAlertSound 3 300
 
-Show # Quarterstaves ILVL 77+
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Quarterstaves"
-	ItemLevel >= 77
-	BaseType "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" "Expert "
-	SetFontSize 35
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 1 Blue Diamond
-PlayAlertSound 3 150
+# Show # Quarterstaves ILVL 77+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Quarterstaves"
+# 	ItemLevel >= 77
+# 	BaseType "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" "Expert "
+# 	SetFontSize 35
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 1 Blue Diamond
+# PlayAlertSound 3 150
 
-Show # Quarterstaves ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Quarterstaves"
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Quarterstaves ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Quarterstaves"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1307] Two Handed Maces
@@ -627,7 +758,7 @@ PlayAlertSound 3 300
 # 	Class == "Two Hand Maces"
 # 	BaseType == "Expert Leaden Greathammer" "Expert Crumbling Maul"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -648,18 +779,18 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Two Hand Maces ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Two Hand Maces"
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	BaseType == "Expert Leaden Greathammer" "Expert Crumbling Maul" "Advanced Leaden Greathammer" "Advanced Crumbling Maul" "Leaden Greathammer" "Crumbling Maul"
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Two Hand Maces ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Two Hand Maces"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	BaseType == "Expert Leaden Greathammer" "Expert Crumbling Maul" "Advanced Leaden Greathammer" "Advanced Crumbling Maul" "Leaden Greathammer" "Crumbling Maul"
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1308] One Handed Maces
@@ -672,7 +803,7 @@ Show # Two Hand Maces ILVL 60-76
 # 	Class == "One Hand Maces"
 # 	BaseType == "Expert Construct Hammer" "Expert Brigand Mace"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -687,7 +818,7 @@ Show # Two Hand Maces ILVL 60-76
 # 	Class == "One Hand Maces"
 # 	BaseType == "Expert Construct Hammer" "Expert Brigand Mace"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -708,18 +839,18 @@ Show # Two Hand Maces ILVL 60-76
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # One Hand Maces ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "One Hand Maces"
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	BaseType == "Expert Brigand Mace" "Expert Construct Hammer" "Advanced Brigand Mace" "Advanced Construct Hammer" "Brigand Mace" "Construct Hammer"
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # One Hand Maces ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "One Hand Maces"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	BaseType == "Expert Brigand Mace" "Expert Construct Hammer" "Advanced Brigand Mace" "Advanced Construct Hammer" "Brigand Mace" "Construct Hammer"
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1309] Sceptres
@@ -731,7 +862,7 @@ Show # Sceptres ILVL 82+
 	Rarity Normal 
 	Class == "Sceptres"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -745,7 +876,7 @@ Show # Sceptres ILVL 81+
 	Rarity Normal
 	Class == "Sceptres"
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -788,7 +919,7 @@ Show # Wands ILVL 81+
 	Class == "Wands"
 	BaseType == "Attuned Wand" "Siphoning Wand" 
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -809,18 +940,18 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Wands ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Wands"
-	BaseType == "Withered Wand" "Attuned Wand" "Siphoning Wand" "Volatile Wand"
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Wands ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Wands"
+# 	BaseType == "Withered Wand" "Attuned Wand" "Siphoning Wand" "Volatile Wand"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1311] Staves
@@ -833,7 +964,7 @@ Show # Staves ILVL 81+
 	Class == "Staves"
 	BaseType == "Chiming Staff"
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -877,7 +1008,7 @@ Show # Quivers ILVL 81+
 	Class == "Quivers"
 	BaseType == "Primed Quiver" "Penetrating Quiver"
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -922,7 +1053,7 @@ Show # Foci ILVL 82+
 	Class == "Foci"
 	BaseType == "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -937,7 +1068,7 @@ Show # Foci ILVL 81+
 	Class == "Foci"
 	BaseType == "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus"
 	ItemLevel >= 81
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -952,7 +1083,7 @@ Show # Foci ILVL 80+
 	Class == "Foci"
 	BaseType == "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus"
 	ItemLevel >= 80
-	SetFontSize 40
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 0 75 30 255
@@ -960,50 +1091,50 @@ Show # Foci ILVL 80+
 	MinimapIcon 0 Blue Diamond
 PlayAlertSound 3 300
 
-Show # Foci ILVL 77+
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Foci"
-	BaseType == "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus"
-	ItemLevel >= 78
-	SetFontSize 35
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 1 Blue Diamond
-PlayAlertSound 3 150
+# Show # Foci ILVL 77+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Foci"
+# 	BaseType == "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus"
+# 	ItemLevel >= 78
+# 	SetFontSize 35
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 1 Blue Diamond
+# PlayAlertSound 3 150
 
-Show # Foci ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Foci"
-	BaseType == "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus"
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Foci ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Foci"
+# 	BaseType == "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1314] Shields(str)
 #------------------------------------
 
-Show # Shields(str) ILVL 82+
-	Mirrored False
-	Corrupted False
-	Rarity Normal 
-	Class == "Shields"
-	BaseType == "Expert Braced Tower Shield" "Expert Rampart Tower Shield" "Expert Stone Tower Shield"
-	ItemLevel >= 82
-	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 90 0 74 255
-	PlayEffect Purple
-	MinimapIcon 1 Purple Diamond
-PlayAlertSound 3 300
+# Show # Shields(str) ILVL 82+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal 
+# 	Class == "Shields"
+# 	BaseType == "Expert Braced Tower Shield" "Expert Rampart Tower Shield" "Expert Stone Tower Shield"
+# 	ItemLevel >= 82
+# 	SetFontSize 35
+# 	SetTextColor 0 240 190 255
+# 	SetBorderColor 0 240 190 255
+# 	SetBackgroundColor 90 0 74 255
+# 	PlayEffect Purple
+# 	MinimapIcon 1 Purple Diamond
+# PlayAlertSound 3 300
 
 # Show # Shields(str) ILVL 81+
 # 	Mirrored False
@@ -1012,7 +1143,7 @@ PlayAlertSound 3 300
 # 	Class == "Shields"
 # 	BaseType == "Expert Braced Tower Shield" "Expert Rampart Tower Shield" "Expert Stone Tower Shield"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1033,18 +1164,18 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Shields(str) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Shields"
-	BaseType == "Expert Braced Tower Shield" "Expert Rampart Tower Shield" "Expert Stone Tower Shield"
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Shields(str) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Shields"
+# 	BaseType == "Expert Braced Tower Shield" "Expert Rampart Tower Shield" "Expert Stone Tower Shield"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1315] Shields(str_int)
@@ -1057,7 +1188,7 @@ Show # Shields(str) ILVL 60-77
 # 	Class == "Shields"
 # 	BaseType == "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Expert Sigil Crest Shield"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1072,7 +1203,7 @@ Show # Shields(str) ILVL 60-77
 # 	Class == "Shields"
 # 	BaseType == "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Expert Sigil Crest Shield"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1093,18 +1224,18 @@ Show # Shields(str) ILVL 60-77
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Shields(str_int) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Shields"
-	BaseType == "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Expert Sigil Crest Shield"
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Shields(str_int) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Shields"
+# 	BaseType == "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Expert Sigil Crest Shield"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1316] Shields(str_dex)
@@ -1117,7 +1248,7 @@ Show # Shields(str_int) ILVL 60-77
 # 	Class == "Shields"
 # 	BaseType == "Expert Pelage Targe" "Expert Crescent Targe" "Expert Feathered Targe"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1132,7 +1263,7 @@ Show # Shields(str_int) ILVL 60-77
 # 	Class == "Shields"
 # 	BaseType == "Expert Jingling Crest Shield" "Expert Omen Crest Shield" "Expert Sigil Crest Shield"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1153,18 +1284,18 @@ Show # Shields(str_int) ILVL 60-77
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Shields(str_dex) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Shields"
-	BaseType == "Expert Pelage Targe" "Expert Crescent Targe" "Expert Feathered Targe"
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Shields(str_dex) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Shields"
+# 	BaseType == "Expert Pelage Targe" "Expert Crescent Targe" "Expert Feathered Targe"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1317] Body Armours(int)
@@ -1177,7 +1308,7 @@ Show # Body Armours(int) ILVL 82+
 	Class == "Body Armours"
 	BaseType == "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -1192,7 +1323,7 @@ PlayAlertSound 3 300
 # 	Class == "Body Armours"
 # 	BaseType == "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1213,18 +1344,18 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Body Armours(int) ILVL 60-78
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Body Armours"
-	BaseType == "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe"
-	ItemLevel >= 60
-	ItemLevel <= 78 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Body Armours(int) ILVL 60-78
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Body Armours"
+# 	BaseType == "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 78 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1318] Body Armours(dex)
@@ -1237,7 +1368,7 @@ Show # Body Armours(dex) ILVL 82+
 	Class == "Body Armours"
 	BaseType == "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Pathfinder Coat"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -1252,7 +1383,7 @@ PlayAlertSound 3 300
 # 	Class == "Body Armours"
 # 	BaseType == "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Pathfinder Coat"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1273,37 +1404,37 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Body Armours(dex) ILVL 60-78
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Body Armours"
-	BaseType == "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Pathfinder Coat"
-	ItemLevel >= 60
-	ItemLevel <= 78 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Body Armours(dex) ILVL 60-78
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Body Armours"
+# 	BaseType == "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Pathfinder Coat"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 78 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1319] Body Armours(str)
 #------------------------------------
 
-Show # Body Armours(str) ILVL 82+
-	Mirrored False
-	Corrupted False
-	Rarity Normal 
-	Class == "Body Armours"
-	BaseType == "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
-	ItemLevel >= 82
-	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 90 0 74 255
-	PlayEffect Purple
-	MinimapIcon 1 Purple Diamond
-PlayAlertSound 3 300
+# Show # Body Armours(str) ILVL 82+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal 
+# 	Class == "Body Armours"
+# 	BaseType == "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
+# 	ItemLevel >= 82
+# 	SetFontSize 35
+# 	SetTextColor 0 240 190 255
+# 	SetBorderColor 0 240 190 255
+# 	SetBackgroundColor 90 0 74 255
+# 	PlayEffect Purple
+# 	MinimapIcon 1 Purple Diamond
+# PlayAlertSound 3 300
 
 # Show # Body Armours(str) ILVL 81+
 # 	Mirrored False
@@ -1312,7 +1443,7 @@ PlayAlertSound 3 300
 # 	Class == "Body Armours"
 # 	BaseType == "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1333,18 +1464,18 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Body Armours(str) ILVL 60-78
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Body Armours"
-	BaseType == "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
-	ItemLevel >= 60
-	ItemLevel <= 78 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Body Armours(str) ILVL 60-78
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Body Armours"
+# 	BaseType == "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 78 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1320] Body Armours(hybrid)
@@ -1357,7 +1488,7 @@ Show # Body Armours(hybrid) ILVL 82+
 	Class == "Body Armours"
 	BaseType == "Expert Rogue Armour" "Expert Shaman Mantle" "Expert Sacrificial Mantle"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -1372,7 +1503,7 @@ PlayAlertSound 3 300
 # 	Class == "Body Armours"
 # 	BaseType == "Expert Rogue Armour" "Expert Shaman Mantle" "Expert Sacrificial Mantle"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1393,18 +1524,18 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Body Armours(hybrid) ILVL 60-78
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Body Armours"
-	BaseType == "Expert Rogue Armour" "Expert Shaman Mantle" "Expert Sacrificial Mantle"
-	ItemLevel >= 60
-	ItemLevel <= 78 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Body Armours(hybrid) ILVL 60-78
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Body Armours"
+# 	BaseType == "Expert Rogue Armour" "Expert Shaman Mantle" "Expert Sacrificial Mantle"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 78 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 # #------------------------------------
 # #   [1321] Helmets(int)
@@ -1417,7 +1548,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Feathered Tiara" "Expert Chain Tiara" "Expert Wicker Tiara"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1432,7 +1563,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Feathered Tiara" "Expert Chain Tiara" "Expert Wicker Tiara"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1477,7 +1608,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Hunter Hood" "Expert Swathed Cap" "Expert Felt Cap"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1492,7 +1623,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Hunter Hood" "Expert Swathed Cap" "Expert Felt Cap"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1537,7 +1668,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Elite Greathelm" "Expert Spired Greathelm" "Expert Soldier Greathelm"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1552,7 +1683,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Elite Greathelm" "Expert Spired Greathelm" "Expert Soldier Greathelm"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1597,7 +1728,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Horned Crown" "Expert Martyr Crown" "Expert Heavy Crown" "Expert Face Mask" "Expert Veiled Mask" "Expert Tribal Mask"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1612,7 +1743,7 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	Class == "Helmets"
 # 	BaseType == "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Horned Crown" "Expert Martyr Crown" "Expert Heavy Crown" "Expert Face Mask" "Expert Veiled Mask" "Expert Tribal Mask"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1633,18 +1764,18 @@ Show # Body Armours(hybrid) ILVL 60-78
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Helmets(hybrid) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Helmets"
-	BaseType == "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Horned Crown" "Expert Martyr Crown" "Expert Heavy Crown" "Expert Face Mask" "Expert Veiled Mask" "Expert Tribal Mask"
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Helmets(hybrid) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Helmets"
+# 	BaseType == "Expert Guarded Helm" "Expert Cowled Helm" "Expert Shielded Helm" "Expert Horned Crown" "Expert Martyr Crown" "Expert Heavy Crown" "Expert Face Mask" "Expert Veiled Mask" "Expert Tribal Mask"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1325] Gloves(int)
@@ -1657,7 +1788,7 @@ Show # Helmets(hybrid) ILVL 60-77
 # 	Class == "Gloves"
 # 	BaseType == "Expert Sombre Gloves" "Expert Jewelled Gloves" "Expert Intricate Gloves" 
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1672,7 +1803,7 @@ Show # Helmets(hybrid) ILVL 60-77
 # 	Class == "Gloves"
 # 	BaseType == "Expert Sombre Gloves" "Expert Jewelled Gloves" "Expert Intricate Gloves" 
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1693,78 +1824,78 @@ Show # Helmets(hybrid) ILVL 60-77
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Gloves(int) ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Gloves"
-	BaseType == "Expert Sombre Gloves" "Expert Jewelled Gloves" "Expert Intricate Gloves" 
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Gloves(int) ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Gloves"
+# 	BaseType == "Expert Sombre Gloves" "Expert Jewelled Gloves" "Expert Intricate Gloves" 
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1326] Gloves(dex)
 #------------------------------------
 
-Show # Gloves(dex) ILVL 82+
-	Mirrored False
-	Corrupted False
-	Rarity Normal 
-	Class == "Gloves"
-	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
-	ItemLevel >= 82
-	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 90 0 74 255
-	PlayEffect Purple
-	MinimapIcon 1 Purple Diamond
-PlayAlertSound 3 300
+# Show # Gloves(dex) ILVL 82+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal 
+# 	Class == "Gloves"
+# 	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
+# 	ItemLevel >= 82
+# 	SetFontSize 35
+# 	SetTextColor 0 240 190 255
+# 	SetBorderColor 0 240 190 255
+# 	SetBackgroundColor 90 0 74 255
+# 	PlayEffect Purple
+# 	MinimapIcon 1 Purple Diamond
+# PlayAlertSound 3 300
 
-Show # Gloves(dex) ILVL 81+
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Gloves"
-	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
-	ItemLevel >= 81
-	SetFontSize 40
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 75 30 255
-	PlayEffect Blue
-	MinimapIcon 0 Blue Diamond
-PlayAlertSound 3 300
+# Show # Gloves(dex) ILVL 81+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Gloves"
+# 	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
+# 	ItemLevel >= 81
+# 	SetFontSize 35
+# 	SetTextColor 0 240 190 255
+# 	SetBorderColor 0 240 190 255
+# 	SetBackgroundColor 0 75 30 255
+# 	PlayEffect Blue
+# 	MinimapIcon 0 Blue Diamond
+# PlayAlertSound 3 300
 
-Show # Gloves(dex) ILVL 77+
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Gloves"
-	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
-	ItemLevel >= 77
-	SetFontSize 35
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 1 Blue Diamond
-PlayAlertSound 3 150
+# Show # Gloves(dex) ILVL 77+
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Gloves"
+# 	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
+# 	ItemLevel >= 77
+# 	SetFontSize 35
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 1 Blue Diamond
+# PlayAlertSound 3 150
 
-Show # Gloves(dex) ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Gloves"
-	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Gloves(dex) ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Gloves"
+# 	BaseType == "Expert Spined Bracers" "Expert Sectioned Bracers" "Expert Firm Bracers"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1327] Gloves(str)
@@ -1777,7 +1908,7 @@ Show # Gloves(dex) ILVL 60-76
 # 	Class == "Gloves"
 # 	BaseType == "Expert Moulded Mitts" "Expert Bolstered Mitts" "Expert Riveted Mitts"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1792,7 +1923,7 @@ Show # Gloves(dex) ILVL 60-76
 # 	Class == "Gloves"
 # 	BaseType == "Expert Moulded Mitts" "Expert Bolstered Mitts" "Expert Riveted Mitts"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1813,18 +1944,18 @@ Show # Gloves(dex) ILVL 60-76
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Gloves(str) ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Gloves"
-	BaseType == "Expert Moulded Mitts" "Expert Bolstered Mitts" "Expert Riveted Mitts"
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Gloves(str) ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Gloves"
+# 	BaseType == "Expert Moulded Mitts" "Expert Bolstered Mitts" "Expert Riveted Mitts"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1328] Gloves(hybrid)
@@ -1837,7 +1968,7 @@ Show # Gloves(str) ILVL 60-76
 # 	Class == "Gloves"
 # 	BaseType == "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Rope Cuffs" "Expert Aged Cuffs" "Expert Goldcast Cuffs" "Expert Gauze Wraps" "Expert Linen Wraps" "Expert Spiral Wraps"
 # 	ItemLevel >= 82
-# 	SetFontSize 45
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 90 0 74 255
@@ -1852,7 +1983,7 @@ Show # Gloves(str) ILVL 60-76
 # 	Class == "Gloves"
 # 	BaseType == "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Rope Cuffs" "Expert Aged Cuffs" "Expert Goldcast Cuffs" "Expert Gauze Wraps" "Expert Linen Wraps" "Expert Spiral Wraps"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1874,19 +2005,19 @@ Show # Gloves(str) ILVL 60-76
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Gloves(hybrid) ILVL 60-76
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Gloves"
-	BaseType == "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Rope Cuffs" "Expert Aged Cuffs" "Expert Goldcast Cuffs" "Expert Gauze Wraps" "Expert Linen Wraps" "Expert Spiral Wraps"
-	AreaLevel <= 78
-	ItemLevel >= 60
-	ItemLevel <= 76 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Gloves(hybrid) ILVL 60-76
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Gloves"
+# 	BaseType == "Expert Ringmail Gauntlets" "Expert Layered Gauntlets" "Expert Doubled Gauntlets" "Expert Rope Cuffs" "Expert Aged Cuffs" "Expert Goldcast Cuffs" "Expert Gauze Wraps" "Expert Linen Wraps" "Expert Spiral Wraps"
+# 	AreaLevel <= 78
+# 	ItemLevel >= 60
+# 	ItemLevel <= 76 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1329] Boots(int)
@@ -1899,7 +2030,7 @@ Show # Boots(int) ILVL 82+
 	Class == "Boots"
 	BaseType == "Expert Feathered Sandals" "Expert Silk Slippers" "Expert Wrapped Sandals"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -1914,7 +2045,7 @@ PlayAlertSound 3 300
 # 	Class == "Boots"
 # 	BaseType == "Expert Feathered Sandals" "Expert Silk Slippers" "Expert Wrapped Sandals"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1936,19 +2067,19 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Boots(int) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Boots"
-	BaseType == "Expert Feathered Sandals" "Expert Silk Slippers" "Expert Wrapped Sandals"
-	AreaLevel <= 78
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Boots(int) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Boots"
+# 	BaseType == "Expert Feathered Sandals" "Expert Silk Slippers" "Expert Wrapped Sandals"
+# 	AreaLevel <= 78
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1330] Boots(dex)
@@ -1961,7 +2092,7 @@ Show # Boots(dex) ILVL 82+
 	Class == "Boots"
 	BaseType == "Expert Lizardscale Boots" "Expert Steeltoe Boots" "Expert Laced Boots"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -1976,7 +2107,7 @@ PlayAlertSound 3 300
 # 	Class == "Boots"
 # 	BaseType == "Expert Lizardscale Boots" "Expert Steeltoe Boots" "Expert Laced Boots"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -1997,19 +2128,19 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Boots(dex) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Boots"
-	BaseType == "Expert Lizardscale Boots" "Expert Steeltoe Boots" "Expert Laced Boots"
-	AreaLevel <= 78
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Boots(dex) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Boots"
+# 	BaseType == "Expert Lizardscale Boots" "Expert Steeltoe Boots" "Expert Laced Boots"
+# 	AreaLevel <= 78
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1331] Boots(str)
@@ -2022,7 +2153,7 @@ Show # Boots(str) ILVL 82+
 	Class == "Boots" 
 	BaseType == "Expert Stone Greaves" "Expert Trimmed Greaves" "Expert Iron Greaves"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -2058,19 +2189,19 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Boots(str) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Boots"
-	BaseType == "Expert Stone Greaves" "Expert Trimmed Greaves" "Expert Iron Greaves"
-	AreaLevel <= 78
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Boots(str) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Boots"
+# 	BaseType == "Expert Stone Greaves" "Expert Trimmed Greaves" "Expert Iron Greaves"
+# 	AreaLevel <= 78
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [1332] Boots(hybrid)
@@ -2083,7 +2214,7 @@ Show # Boots(hybrid) ILVL 82+
 	Class == "Boots"
 	BaseType == "Expert Hunting Shoes" "Expert Threaded Shoes" "Expert Frayed Shoes" "Expert Pelt Leggings" "Expert Secured Leggings" "Expert Padded Leggings" "Expert Stacked Sabatons" "Expert Braced Sabatons" "Expert Mail Sabatons"
 	ItemLevel >= 82
-	SetFontSize 45
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 90 0 74 255
@@ -2098,7 +2229,7 @@ PlayAlertSound 3 300
 # 	Class == "Boots"
 # 	BaseType == "Expert Hunting Shoes" "Expert Threaded Shoes" "Expert Frayed Shoes" "Expert Pelt Leggings" "Expert Secured Leggings" "Expert Padded Leggings" "Expert Stacked Sabatons" "Expert Braced Sabatons" "Expert Mail Sabatons"
 # 	ItemLevel >= 81
-# 	SetFontSize 40
+# 	SetFontSize 35
 # 	SetTextColor 0 240 190 255
 # 	SetBorderColor 0 240 190 255
 # 	SetBackgroundColor 0 75 30 255
@@ -2119,27 +2250,27 @@ PlayAlertSound 3 300
 # 	MinimapIcon 1 Blue Diamond
 # PlayAlertSound 3 150
 
-Show # Boots(hybrid) ILVL 60-77
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	Class == "Boots"
-	BaseType == "Expert Hunting Shoes" "Expert Threaded Shoes" "Expert Frayed Shoes" "Expert Pelt Leggings" "Expert Secured Leggings" "Expert Padded Leggings" "Expert Stacked Sabatons" "Expert Braced Sabatons" "Expert Mail Sabatons"
-	ItemLevel >= 60
-	ItemLevel <= 77 
-	SetFontSize 30
-	SetBorderColor 255 125 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 2 Blue Diamond
+# Show # Boots(hybrid) ILVL 60-77
+# 	Mirrored False
+# 	Corrupted False
+# 	Rarity Normal
+# 	Class == "Boots"
+# 	BaseType == "Expert Hunting Shoes" "Expert Threaded Shoes" "Expert Frayed Shoes" "Expert Pelt Leggings" "Expert Secured Leggings" "Expert Padded Leggings" "Expert Stacked Sabatons" "Expert Braced Sabatons" "Expert Mail Sabatons"
+# 	ItemLevel >= 60
+# 	ItemLevel <= 77 
+# 	SetFontSize 30
+# 	SetBorderColor 255 125 0 255
+# 	SetBackgroundColor 0 0 0 255
+# 	MinimapIcon 2 Blue Diamond
 
 #===============================================================================================================
 # [[1350]] Scrapping Items
 #===============================================================================================================
 
-Show # Socketed Items
-	ItemLevel <= 70
-    Sockets 1 2 3 4 
-    SetBackgroundColor 111 0 111
+# Show # Socketed Items
+# 	ItemLevel <= 70
+#     Sockets 1 2 3 4 
+#     SetBackgroundColor 111 0 111
 	 
 # Show # Quality Items
 # 	Rarity Normal Magic Rare
@@ -2150,30 +2281,6 @@ Show # Socketed Items
 # 	SetTextColor 255 255 255 255
 # 	SetBorderColor 255 255 255 255
 # 	SetBackgroundColor 10 70 65 255	 
-
-
-#===============================================================================================================
-# [[1400]] Chancing Bases
-#===============================================================================================================
-
-
-#Show # # # # # # # # # %D1 $type->chancing $tier->hh
-#	Mirrored False
-#	Corrupted False
-#	Rarity Normal
-#	BaseType == "" ""
-#	SetFontSize 35
-#	SetTextColor 255 255 255 255
-#	SetBorderColor 0 150 0 90
-
-Show # # # # # # # # # %D1 $type->chancing $tier->t2
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	BaseType == "Stellar Amulet" "Emerald Ring" "Sapphire Ring"
-	SetFontSize 35
-	SetTextColor 255 255 255 255
-	SetBorderColor 0 150 0 90
 
 #===============================================================================================================
 # [[1500]] Endgame Flasks
@@ -2467,6 +2574,13 @@ Show
 # 	SetFontSize 30
 # 	SetBorderColor 255 215 70
 
+Show
+	Rarity Rare
+	Class == "Quarterstaves"
+	BaseType "Expert "
+	SetFontSize 30
+	SetBorderColor 255 215 70
+
 # Show
 # 	Rarity Rare
 # 	AreaLevel <= 75
@@ -2564,33 +2678,74 @@ Hide # $type->hidelayer $tier->raresendgame
 # [[2600]] Jewels
 #===============================================================================================================
 
+Show # $type->jewels->generic $tier->anytimeless
+	Rarity Normal Magic Rare
+	Class "Jewel"
+	BaseType == "Time-Lost Emerald" "Time-Lost Ruby" "Time-Lost Sapphire"
+	SetFontSize 42
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
 
-Show # %HS3 $type->jewels->generic $tier->anyrare
-    Rarity Rare
-    BaseType == "Ruby" "Emerald" "Sapphire" "Diamond" "Time-Lost Sapphire" "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Diamond"  
-    SetFontSize 45  
-	SetTextColor 0 255 155 255
-	SetBorderColor 0 255 155 255
-	SetBackgroundColor 0 0 0 255
-	PlayAlertSound 10 300
-	MinimapIcon 2 Blue Cross
+Show # $type->jewels->generic $tier->anycorruptedmod
+	AnyEnchantment True
+	Corrupted True
+	Rarity Normal Magic Rare
+	Class "Jewel"
+	SetFontSize 42
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
 
-Show # %H2 $type->jewels->generic $tier->anymagic
+Show # $type->jewels->generic $tier->any5modded
+	Corrupted True
+	Rarity Normal Magic Rare
+	Class "Jewel"
+	HasExplicitMod >=5 "a" "o" "e" "u" "i" "y"
+	SetFontSize 42
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
+
+Show # $type->jewels->generic $tier->anyrare
+	Rarity Rare
+	Class "Jewel"
+	BaseType == "Emerald" "Ruby" "Sapphire"
+	SetFontSize 42
+	SetTextColor 220 220 0
+	SetBorderColor 220 220 0
+	SetBackgroundColor 75 75 0
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Diamond
+
+Show # %H5 $type->jewels->generic $tier->anymagic
 	Rarity Normal Magic
-	BaseType == "Ruby" "Emerald" "Sapphire" "Diamond" "Time-Lost Sapphire" "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Diamond"
-	SetFontSize 40
-	SetTextColor 0 255 155 255
-	SetBorderColor 0 255 155 255
-	SetBackgroundColor 0 0 0 255
-	PlayAlertSound 10 300
-	MinimapIcon 2 Blue Cross
+	Class "Jewel"
+	BaseType == "Emerald" "Ruby" "Sapphire"
+	SetFontSize 42
+	SetTextColor 0 70 255 255
+	SetBorderColor 0 70 255 255
+	SetBackgroundColor 30 0 70 255
+	PlayAlertSound 2 300
+	PlayEffect Blue
+	MinimapIcon 1 Blue Diamond
 
 #------------------------------------
 #   [2601] Charm Tiering
 #------------------------------------	
 
 # Show # Charms Tiering - Ilvl 81+ 
-# 	Rarity Normal Magic Rare
+# 	Rarity Normal Magic
 # 	Class == "Charms"
 # 	ItemLevel >= 81
 # 	SetFontSize 35
@@ -2601,7 +2756,7 @@ Show # %H2 $type->jewels->generic $tier->anymagic
 # PlayAlertSound 3 300
 
 # Show # Charms Tiering
-# 	Rarity Normal Magic Rare
+# 	Rarity Normal Magic
 # 	BaseType == "Grounding Charm" "Stone Charm" "Thawing Charm" "Amethyst Charm" "Golden Charm"
 # 	ItemLevel <= 80
 # 	AreaLevel < 79
@@ -2612,7 +2767,7 @@ Show # %H2 $type->jewels->generic $tier->anymagic
 # 	MinimapIcon 1 Yellow Pentagon
 
 # Show # Charms Tiering
-# 	Rarity Normal Magic Rare
+# 	Rarity Normal Magic
 # 	BaseType == "Topaz Charm" "Sapphire Charm" "Ruby Charm" "Silver Charm" "Staunching Charm" "Dousing Charm" "Antidote Charm"
 # 	ItemLevel <= 80
 # 	AreaLevel < 79
@@ -2622,6 +2777,11 @@ Show # %H2 $type->jewels->generic $tier->anymagic
 # 	SetBackgroundColor 30 0 30 255	
 # 	MinimapIcon 1 White Pentagon
 	
+#===============================================================================================================
+# [[2800]] Gems and Uncut Gems
+#===============================================================================================================
+# !! Waypoint c8.gems.uncut : "Gems - Uncut"
+
 #===============================================================================================================
 # [[2800]] Gem Tierlists
 #===============================================================================================================
@@ -2714,13 +2874,12 @@ Hide
 Show
 	BaseType == "Uncut Support Gem"
 	ItemLevel == 3
-	AreaLevel <= 75
-	SetFontSize 45
+	#AreaLevel <= 75
+	SetFontSize 35
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 47 0 74 255
 	PlayAlertSound 10 300
-	PlayEffect Red
 	MinimapIcon 2 Red Triangle
 
 Show
@@ -2746,12 +2905,13 @@ Show
 	PlayAlertSound 2 300
 	MinimapIcon 1 Yellow Triangle
 
-Hide
-	BaseType == "Uncut Support Gem"
-	SetFontSize 18
-	SetBorderColor 0 0 0 0
-	SetBackgroundColor 20 20 0 0
-	DisableDropSound True
+# Hide
+# 	BaseType == "Uncut Support Gem"
+# 	AreaLevel >= 65
+# 	SetFontSize 18
+# 	SetBorderColor 0 0 0 0
+# 	SetBackgroundColor 20 20 0 0
+# 	DisableDropSound True
 
 #------------------------------------
 #   [2803] Uncut Spirit gem progression
@@ -2821,6 +2981,7 @@ Hide
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 20 20 0 0
 	DisableDropSound True
+
 
 #===============================================================================================================
 # [[3100]] Normal Waystone Progression
@@ -3000,14 +3161,13 @@ Hide # $type->Waystone $tier->restex
 # [[3200]] Pseudo-Map-Items
 #===============================================================================================================
 
-
 #------------------------------------
 #   [3201] Precursor Tablets
 #------------------------------------
 
 Show # $type->fragments->Tablet $tier->t1
 	Class == "Tablet"
-	BaseType == "Precursor Tablet" "Breach Precursor Tablet" "Expedition Precursor Tablet" "Delirium Precursor Tablet" "Ritual Precursor Tablet"
+	BaseType == "Overseer Precursor Tablet" "Breach Precursor Tablet" "Delirium Precursor Tablet"
 	SetFontSize 38
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -3015,67 +3175,62 @@ Show # $type->fragments->Tablet $tier->t1
 	MinimapIcon 0 Red Hexagon
 	CustomAlertSound "filter_sounds\Stefan Gold_2currency.mp3" 300
 
+Show # $type->fragments->Tablet $tier->t2
+	Class == "Tablet"
+	BaseType == "Precursor Tablet" "Expedition Precursor Tablet" "Ritual Precursor Tablet"
+	SetFontSize 38
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 255 0 58 255
+	MinimapIcon 1 Red Hexagon
+	PlayAlertSound 10 300
+
 #===============================================================================================================
 # [[3400]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
+# !! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 
-#Show # # # # # # # # # %D4 $type->currency->levelingstacked $tier->chance
-#	StackSize >= 3
-#	Class == "Stackable Currency"
-#	BaseType == "Blacksmith's Whetstone" "Chromatic Orb" "Orb of Alteration" "Orb of Chance"
-#	AreaLevel <= 67
-#	SetFontSize 45
-#	SetTextColor 0 0 0 255
-#	SetBorderColor 0 0 0 255
-#	SetBackgroundColor 61 156 136 255
-#	PlayAlertSound 2 300
-#	PlayEffect Grey
-#	MinimapIcon 2 Grey Circle
+Show # %H5 $type->currency->leveling $tier->rare
+	Class == "Stackable Currency"
+	BaseType == "Artificer's Orb" "Lesser Jeweller's Orb" "Regal Orb"
+	AreaLevel < 65
+	SetFontSize 42
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 240 180 100 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
-#Show # # # # # # # # # %D4 $type->currency->levelingstacked $tier->trans
-#	StackSize >= 3
-#	Class == "Stackable Currency"
-#	BaseType == "Orb of Transmutation"
-#	AreaLevel <= 67
-#	SetFontSize 45
-#	SetTextColor 0 0 0 255
-#	SetBorderColor 0 0 0 255
-#	SetBackgroundColor 61 156 136 255
-#	MinimapIcon 2 Grey Circle
+Show # %H4 $type->currency->leveling $tier->magic
+	Class == "Stackable Currency"
+	BaseType == "Orb of Augmentation" "Orb of Transmutation"
+	AreaLevel < 65
+	SetFontSize 42
+	SetTextColor 220 175 132
+	SetBorderColor 220 175 132
 
-#Show # # # # # # # # # %D4 $type->currency->levelingstacked $tier->aug
-#	StackSize >= 3
-#	Class == "Stackable Currency"
-#	BaseType == "Armourer's Scrap" "Orb of Augmentation"
-#	AreaLevel <= 67
-#	SetFontSize 45
-#	SetTextColor 190 178 135 255
-#	SetBorderColor 190 178 135 255
-#	SetBackgroundColor 20 20 0 255
+Hide # %H3 $type->currency->leveling $tier->wisdomstart
+	Class == "Stackable Currency"
+	BaseType == "Scroll of Wisdom"
+	AreaLevel < 17
+	SetFontSize 40
+	SetTextColor 170 158 130
+	SetBorderColor 170 158 130
 
-#Show # # # # # # # # # %D4 $type->currency->levelingstacked $tier->portal
-#	StackSize >= 3
-#	Class == "Stackable Currency"
-#	BaseType == "Portal Scroll"
-#	AreaLevel <= 67
-#	SetFontSize 45
-#	SetBorderColor 60 100 200 255
-#	SetBackgroundColor 5 8 40 255
+Hide # %H3 $type->currency->leveling $tier->wisdom
+	Class == "Stackable Currency"
+	BaseType == "Scroll of Wisdom"
+	AreaLevel < 65
+	SetFontSize 35
+	SetTextColor 170 158 130
 
-#Show # # # # # # # # # %D4 $type->currency->levelingstacked $tier->wisdom
-#	StackSize >= 3
-#	Class == "Stackable Currency"
-#	BaseType == "Scroll of Wisdom"
-#	AreaLevel <= 67
-#	SetFontSize 45
-#	SetBorderColor 200 100 60 255
-#	SetBackgroundColor 30 5 5 255
 
 #===============================================================================================================
 # [[3600]] Currency - Regular Currency Tiering
 #===============================================================================================================
 
-Show # Mirror
+Show # Mirror Tier
 	Class Currency
 	SetTextColor 255 0 230 255
 	SetBackgroundColor 251 251 251 255
@@ -3086,20 +3241,20 @@ Show # Mirror
 	MinimapIcon 0 White Cross
 	PlayEffect White
 
-Show # Tier 1
-	Class "Currency"
-	BaseType "Divine Orb" "Mirror of Kalandra" "Mirror Shard" "Perfect Jeweller's Orb"
+Show # $type->currency $tier->s
+	Class == "Stackable Currency"
+	BaseType == "Albino Rhoa Feather" "Divine Orb" "Mirror Shard" "Perfect Jeweller's Orb"
 	SetFontSize 45
-	SetTextColor 0 19 166 255
-	SetBorderColor 0 19 166 255
+	SetTextColor 255 0 0 255
+	SetBorderColor 255 0 0 255
 	SetBackgroundColor 255 255 255 255
 	PlayAlertSound 6 300
 	PlayEffect Red
-	MinimapIcon 1 Red Star
+	MinimapIcon 0 Red Star
 
-Show # Tier 2
-	Class "Currency"
-	BaseType "Orb of Chance" "Orb of Annulment" "Chaos Orb" "Greater Jeweller's Orb" "Exotic Coinage" "Gemcutter's Prism" "Gold Key"
+Show # $type->currency $tier->a
+	Class == "Stackable Currency"
+	BaseType == "Greater Jeweller's Orb" "Orb of Annulment" "Orb of Chance"
 	SetFontSize 45
 	SetTextColor 254 228 0 255
 	SetBorderColor 255 255 255 255
@@ -3108,9 +3263,9 @@ Show # Tier 2
 	PlayEffect Red
 	MinimapIcon 1 Red Circle
 
-Show # Tier 3
-	Class "Currency"
-	BaseType "Exalted Orb" "Orb of Alchemy" "Vaal Orb" "Glassblower's Bauble"
+Show # $type->currency $tier->b
+	Class == "Stackable Currency"
+	BaseType == "Chaos Orb" "Exotic Coinage" "Gemcutter's Prism"
 	SetFontSize 40
 	SetTextColor 255 190 50 255
 	SetBorderColor 255 255 255 255
@@ -3119,16 +3274,27 @@ Show # Tier 3
 	PlayEffect Red
 	MinimapIcon 1 Red Circle
 	
-Show # Tier 4
-	Class "Currency"
-	BaseType == "Lesser Jeweller's Orb" "Artificer's Orb" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Regal Orb" "Chance Shard" "Bronze Key" "Silver Key"
+Show # $type->currency $tier->c
+	Class == "Stackable Currency"
+	BaseType == "Exalted Orb" "Glassblower's Bauble"
 	SetFontSize 35
 	SetTextColor 255 255 255 255
 	SetBackgroundColor 33 48 169 255
 	SetBorderColor 255 190 0 255
 	PlayAlertSound 2 300
 	MinimapIcon 1 Yellow Circle
-	
+
+Show # %H5 $type->currency $tier->d
+	Class == "Stackable Currency"
+	BaseType == "Armourer's Scrap" "Artificer's Orb" "Chance Shard" "Lesser Jeweller's Orb" "Orb of Alchemy" "Regal Orb" "Vaal Orb"	"Arcanist's Etcher" "Blacksmith's Whetstone"
+	SetFontSize 42
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 245 139 87 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 1 Yellow Circle
+
 Show # Wisdom Tier
 	BaseType == "Scroll of Wisdom"
 	AreaLevel <= 70
@@ -3147,21 +3313,10 @@ Show # Early Currency
 	MinimapIcon 1 Yellow Circle
 	SetBorderColor 255 190 0 255    
 
-Show # Shards
-	Class "Currency"
-	BaseType == "Transmutation Shard" "Artificer's Shard" 
-	AreaLevel <= 70
-	SetFontSize 35
-	SetTextColor 255 255 255 255
-	SetBackgroundColor 33 48 169 255
-	PlayAlertSound 2 300
-	MinimapIcon 1 Yellow Circle
-	SetBorderColor 255 190 0 255
-
 Hide # Leveling Currency
 	Class "Currency"
-	BaseType "Scroll of Wisdom" "Shard" "Orb of Transmutation" "Orb of Augmentation" "Regal Shard"
-	AreaLevel >= 60
+	BaseType "Scroll of Wisdom" "Transmutation Shard" "Artificer's Shard" "Shard" "Orb of Transmutation" "Orb of Augmentation" "Regal Shard"
+	AreaLevel >= 65
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 20 20 0 0
@@ -3187,7 +3342,7 @@ Show # fragments
 Show
 	Class == "Currency"
 	BaseType == "Simulacrum Splinter" "Breach Splinter"
-	SetFontSize 30
+	SetFontSize 35
 	SetTextColor 255 255 255 255
 	SetBorderColor 130 15 255 255
 	SetBackgroundColor 65 20 80
@@ -3202,7 +3357,6 @@ Show # fragments
 	PlayAlertSound 1 300
 	MinimapIcon 1 Red Hexagon
 
-
 Show # $type->expedition->logbook $tier->any
 	BaseType == "Expedition Logbook"
 	SetFontSize 45
@@ -3216,25 +3370,57 @@ Show # $type->expedition->logbook $tier->any
 #   [3702] Runes and Soul Cores
 #------------------------------------
 
-Show # $type->currency->Soul Core $tier->t1
+Show # %H4 $type->sockets->runes $tier->levelingrunes
 	Class == "Socketable"
-	BaseType == "Soul Core of Tacati" "Soul Core of Jiquani" "Soul Core of Zalatl" "Soul Core of Citaqualotl" "Soul Core of Puhuarte" "Soul Core of Tzamoto" "Soul Core of Xopec" "Soul Core of Azcapa" "Soul Core of Quipolatl" "Soul Core of Ticaba" 
-	SetFontSize 40
+	BaseType == "Body Rune" "Desert Rune" "Glacial Rune" "Inspiration Rune" "Mind Rune" "Rebirth Rune" "Stone Rune" "Storm Rune" "Vision Rune"
+	AreaLevel < 65
+	SetFontSize 38
+	SetTextColor 220 175 132
+	SetBorderColor 220 175 132
+
+Show # $type->sockets->cores $tier->s
+	Class == "Socketable"
+	BaseType == "Soul Core of Azcapa"
+	SetFontSize 45
 	SetTextColor 255 0 0 255
 	SetBorderColor 255 0 0 255
 	SetBackgroundColor 255 255 255 255
-	MinimapIcon 0 Red Raindrop
-PlayAlertSound 6 300
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
-Show # $type->Runes $tier->t1
-	BaseType == "Soul Core of Opiloti" "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi" "Soul Core of Topotante" "Iron Rune"
-	SetFontSize 38
+Show # $type->sockets->cores $tier->a
+	Class == "Socketable"
+	BaseType == "Soul Core of Citaqualotl" "Soul Core of Zalatl"
+	SetFontSize 45
 	SetTextColor 255 255 255 255
-	SetBorderColor 0 255 255 255
-	SetBackgroundColor 0 0 83 255
-	PlayEffect Blue
-	MinimapIcon 0 Yellow Raindrop
-	PlayAlertSound 11 250
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 245 105 90 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
+
+Show # $type->sockets->cores $tier->b
+	Class == "Socketable"
+	BaseType == "Soul Core of Jiquani" "Soul Core of Opiloti" "Soul Core of Puhuarte" "Soul Core of Quipolatl" "Soul Core of Tacati" "Soul Core of Ticaba" "Soul Core of Topotante" "Soul Core of Tzamoto" "Soul Core of Xopec"
+	SetFontSize 42
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 245 105 90 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
+
+Show # %H6 $type->sockets->cores $tier->c
+	Class == "Socketable"
+	BaseType == "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi" "Iron Rune"
+	SetFontSize 35
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 245 139 87 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 1 Yellow Circle
 
 Show # $type->Runes $tier->t2
 	BaseType == "Mind Rune" "Rebirth Rune" "Inspiration Rune" "Stone Rune" "Vision Rune" "Body Rune" "Desert Rune" "Glacial Rune" "Storm Rune"
@@ -3253,7 +3439,6 @@ Hide # $type->Runes $tier->t2
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 20 20 0 0
 	DisableDropSound True
-
 
 #------------------------------------
 #   [3703] Essences
@@ -3294,23 +3479,21 @@ Show # %HS4 $type->currency->essence $tier->t2
 
 Show # %D8 $type->currency->stackedthree $tier->t1
 	Class == "Stackable Currency"
-	BaseType == "Flesh Catalyst" "Neural Catalyst" "Carapace Catalyst" "Uul-Netol's Catalyst" "Xoph's Catalyst" "Tul's Catalyst" "Esh's Catalyst" "Chayula's Catalyst" "Reaver Catalyst" "Sibilant Catalyst" "Skittering Catalyst" "Adaptive Catalyst" 
+	BaseType == "Adaptive Catalyst" 
 	SetFontSize 40
-	SetTextColor 255 79 0 255
-	SetBorderColor 255 79 0 255
-	SetBackgroundColor 0 0 0 255
+	SetTextColor 237 214 255 255
+	SetBorderColor 80 0 0 255
+	SetBackgroundColor 52 0 58 255
 	MinimapIcon 1 Orange Circle
 PlayAlertSound 2 300
 
-#Show # %D7 $type->currency->stackedthree $tier->t2
-	#Class == "Stackable Currency"
-	#BaseType == ""
-	#SetFontSize 40
-	#SetTextColor 255 0 0 255
-	#SetBorderColor 255 0 0 255
-	#SetBackgroundColor 0 0 0 255
-	#MinimapIcon 1 Red Circle
-	#PlayAlertSound 11 300
+Show # %D7 $type->currency->stackedthree $tier->t2
+	Class == "Stackable Currency"
+	BaseType == "Flesh Catalyst" "Neural Catalyst" "Carapace Catalyst" "Uul-Netol's Catalyst" "Xoph's Catalyst" "Tul's Catalyst" "Esh's Catalyst" "Chayula's Catalyst" "Reaver Catalyst" "Sibilant Catalyst" "Skittering Catalyst"
+	SetFontSize 30
+	SetTextColor 200 200 200 255
+	SetBorderColor 120 120 50 255
+	SetBackgroundColor 100 0 100 255
 
 #Show # %D6 $type->currency->stackedthree $tier->t3
 	#Class == "Stackable Currency"
@@ -3327,23 +3510,25 @@ PlayAlertSound 2 300
 
 Show # %D8 $type->currency->stackedthree $tier->t1
 	Class == "Stackable Currency"
-	BaseType == "Exotic Coinage" "Broken Circle Artifact" "Black Scythe Artifact" "Order Artifact" "Sun Artifact"
+	BaseType == "Exotic Coinage" "Black Scythe Artifact" "Sun Artifact"
 	SetFontSize 40
-	SetTextColor 255 100 30 255
-	SetBorderColor 255 79 0 255
-	SetBackgroundColor 0 0 0 255
-	MinimapIcon 1 Orange Circle
+	SetTextColor 240 207 132
+	SetBorderColor 240 207 132
+	SetBackgroundColor 76 51 12
 	PlayAlertSound 2 300
+	PlayEffect Yellow Temp
+	MinimapIcon 1 White Kite
 
-#Show # %D7 $type->currency->stackedthree $tier->t2
-	#Class == "Stackable Currency"
-	#BaseType == ""
-	#SetFontSize 40
-	#SetTextColor 255 0 0 255
-	#SetBorderColor 255 0 0 255
-	#SetBackgroundColor 0 0 0 255
-	#MinimapIcon 1 Red Circle
-	#PlayAlertSound 11 300
+Show # %D7 $type->currency->stackedthree $tier->t2
+	Class == "Stackable Currency"
+	BaseType == "Broken Circle Artifact" "Order Artifact"
+	SetFontSize 40
+	SetTextColor 240 207 132
+	SetBorderColor 240 207 132
+	SetBackgroundColor 76 51 12
+	PlayAlertSound 2 300
+	PlayEffect Yellow Temp
+	MinimapIcon 1 White Kite
 
 #Show # %D6 $type->currency->stackedthree $tier->t3
 	#Class == "Stackable Currency"
@@ -3447,37 +3632,37 @@ PlayAlertSound 2 116
 #   [3708] Ascension Items
 #------------------------------------	
 
-Show # Ascension 4
-	Class == "Trial Coins"
-	BaseType == "Djinn Barya"
-	AreaLevel >= 75
-	SetFontSize 40
-	SetTextColor 255 255 255 255
-	SetBorderColor  180 0 255 255
-	SetBackgroundColor 100 0 100 255
-	PlayAlertSound 1 300
-	MinimapIcon 0 Red Hexagon	
+# Show # Ascension 4
+# 	Class == "Trial Coins"
+# 	BaseType == "Djinn Barya"
+# 	AreaLevel >= 75
+# 	SetFontSize 40
+# 	SetTextColor 255 255 255 255
+# 	SetBorderColor  180 0 255 255
+# 	SetBackgroundColor 100 0 100 255
+# 	PlayAlertSound 1 300
+# 	MinimapIcon 0 Red Hexagon	
 
-Show # Accension 3
-	Class == "Trial Coins"
-	BaseType == "Djinn Barya" 
-	AreaLevel >= 60
-	SetFontSize 40
-	SetTextColor 255 255 255 255
-	SetBorderColor  180 0 255 255
-	SetBackgroundColor 100 0 100 255
-	PlayAlertSound 1 300
-	MinimapIcon 1 Yellow Hexagon	
+# Show # Accension 3
+# 	Class == "Trial Coins"
+# 	BaseType == "Djinn Barya" 
+# 	AreaLevel >= 60
+# 	SetFontSize 40
+# 	SetTextColor 255 255 255 255
+# 	SetBorderColor  180 0 255 255
+# 	SetBackgroundColor 100 0 100 255
+# 	PlayAlertSound 1 300
+# 	MinimapIcon 1 Yellow Hexagon	
 
-Show # Ascension 1 and 2
-	Class == "Trial Coins" "Inscribed Ultimatum"
-	BaseType == "Djinn Barya" "Inscribed Ultimatum"
-	SetFontSize 40
-	SetTextColor 255 255 255 255
-	SetBorderColor  180 0 255 255
-	SetBackgroundColor 100 0 100 255
-	PlayAlertSound 1 300
-	MinimapIcon 1 Red Hexagon	
+# Show # Ascension 1 and 2
+# 	Class == "Trial Coins" "Inscribed Ultimatum"
+# 	BaseType == "Djinn Barya" "Inscribed Ultimatum"
+# 	SetFontSize 40
+# 	SetTextColor 255 255 255 255
+# 	SetBorderColor  180 0 255 255
+# 	SetBackgroundColor 100 0 100 255
+# 	PlayAlertSound 1 300
+# 	MinimapIcon 1 Red Hexagon	
 
 #===============================================================================================================
 # [[3900]] Divination Cards [Not in Game Yet]
@@ -3548,7 +3733,7 @@ Show # Tier 0 Uniques [100+ Ex Items]
 	MinimapIcon 0 Red Star
 	PlayEffect Red
 	PlayAlertSound 6 285
-	BaseType == "Heavy Belt" "Knight Armour" "Furtive Wraps" "Stone Tower Shield" "Crucible Tower Shield" "Grand Visage" "Diamond" "Utility Belt" "Ultimate Life Flask" "Ultimate Mana Flask" "Ring"
+	BaseType == "Armoured Cap" "Emerald" "Furtive Wraps" "Incense Relic" "Ornate Belt" "Ring" "Ruby" "Sapphire" "Smuggler Coat" "Stone Tower Shield" "Timeless Jewel" "Time-Lost Diamond" "Ultimate Life Flask" "Ultimate Mana Flask" "Utility Belt" "Vase Relic" "Ring"
 
 Show # Tier 1 Uniques [50-100 Ex Items]
 	Rarity Unique
@@ -3559,7 +3744,7 @@ Show # Tier 1 Uniques [50-100 Ex Items]
 	MinimapIcon 1 Blue Star
 	PlayEffect Blue
 	PlayAlertSound 6 300
-	BaseType == "Smuggler Coat" "Armoured Cap" "Closed Helm" "Moulded Mitts" "Grand Regalia" "Ruby" "Emerald Ring" "Ornate Belt"
+	BaseType == "Altar Robe" "Burnished Gauntlets" "Conqueror Plate" "Crucible Tower Shield" "Diamond" "Feathered Tiara" "Fine Bracers" "Gold Amulet" "Grand Regalia" "Grand Visage" "Heavy Crown" "Wyrm Quarterstaff"
 
 Show # Tier 2 Uniques [10-40 Ex Items]
 	Rarity Unique
@@ -3641,7 +3826,7 @@ Show # The Rest
 	SetTextColor 175 96 37 255
 	SetBackgroundColor 0 0 0 255
 	SetBorderColor 175 96 37 255
-	SetFontSize 35
+	SetFontSize 30
 	PlayAlertSound 2 200
 	BaseType == "Wooden Club" "Hunter Hood" "Smithing Hammer" "Embossed Boots" "Slim Mace" "Spiked Club" "Plated Mace" "Torment Club" "Felled Greatclub" "Oak Greathammer" "Forge Maul" "Studded Greatclub" "Leaden Greathammer" "Crumbling Maul" "Wrapped Quarterstaff" "Long Quarterstaff" "Gothic QuarterStaff" "Crescent QuarterStaff" "Steelpoint Quarterstaff" "Bone Wand" "Attuned Wand" "Volatile Wand" "Ashen Staff" "Gelid Staff" "Voltaic Staff" "Pyrophyte Staff" "Recurve Bow" "Dualstring Bow" "Makeshift Crossbow" "Tense Crossbow" "Rattling Sceptre" "Omen Sceptre" "Rusted Cuirass" "Fur Plate" "Iron Cuirass" "Raider Plate" "Maraketh Cuirass" "Steel Plate" "Full Plate" "Champion Cuirass" "Leather Vest" "Quilted Vest" "Pathfinder Coat" "Rhoahide Coat" "Studded Vest" "Serpentscale Coat" "Bone Raiment" "Keth Raiment" "Votive Raiment" "Chain Mail" "Rogue Armour" "Vagabond Armour" "Mail Vestments" "Shaman Mantle" "Gilded Vestments" "Hermit Garb" "Waxed Jacket" "Marabout Garb" "Wayfarer Jacket" "Anchorite Garb" "Rusted Greathelm" "Soldier Greathelm" "Elite Greathelm" "Warrior Greathelm" "Shabby Hood" "Beaded Circlet" "Feathered Tiara" "Gold Circlet" "Visored Helm" "Cowled Helm" "Shielded Helm" "Horned Crown" "Cultist Crown" "Martyr Crown" "Heavy Crown" "Spiritbone Crown" "Hewn Mask" "Face Mask" "Hooded Mask" "Veiled Mask" "Tempered Mitts" "Suede Bracers" "Sombre Gloves" "Doubled Gauntlets" "Aged Cuffs" "Rough Greaves" "Iron Greaves" "Bronze Greaves" "Laced Boots" "Steeltoe Boots" "Lizardscale Boots" "Straw Sandals" "Feathered Sandals" "Mail Sabatons" "Braced Sabatons" "Stacked Sabatons" "Secured Leggings" "Splintered Tower Shield" "Painted Tower Shield" "Braced Tower Shield" "Effigial Tower Shield" "Rampart Tower Shield" "Hardwood Targe" "Crescent Targe" "Woven Focus" "Engraved Focus" "Tonal Focus" "Crystal Focus" "Visceral Quiver" "Lunar Amulet" "Bloodstone Amulet" "Lazuli Ring" "Ruby Ring" "Rawhide Belt" "Linen Belt" "Wide Belt" "Long Belt" "Plate Belt" "Mail Belt" "Fine Belt"
 
@@ -3650,7 +3835,7 @@ Show # The Rest [Early Game / Leveling Uniques]
 	SetTextColor 175 96 37 255
 	SetBackgroundColor 0 0 0 255
 	SetBorderColor 175 96 37 255
-	SetFontSize 35
+	SetFontSize 30
 	PlayAlertSound 2 200
 	BaseType == "Scout's Vest" "Tattered Robe" "Feathered Robe" "Hexer's Robe" "Cloaked Mail" "Pilgrim Vestments" "Wrapped Greathelm" "Spired Greathelm" "Twig Circlet" "Brimmed Helm" "Guarded Helm" "Iron Crown" "Riveted Mitts" "Sectioned Bracers" "Torn Gloves" "Stitched Gloves" "Ringmail Gauntlets" "Wrapped Sandals" "Blazon Crest Shield" "Jingling Crest Shield" "Twig Focus" "Broadhead Quiver" "Fire Quiver" "Iron Ring"
 
@@ -3659,7 +3844,7 @@ Show # The Rest [Items to keep an Eye one]
 	SetTextColor 175 96 37 255
 	SetBackgroundColor 0 0 0 255
 	SetBorderColor 175 96 37 255
-	SetFontSize 35
+	SetFontSize 30
 	PlayAlertSound 2 200
 	BaseType == "Feathered Robe" "Pelage Targe" "Wrapped Greathelm" "Wicker Tiara" "Solid Mask" "Firm Bracers" "Intricate Gloves" "Layered Gauntlets" "Goldcast Cuffs" "Trimmed Greaves" "Stone Greaves" "Silk Slippers" "Emblem Crest Shield" "Scale Mail"
 
@@ -3677,9 +3862,86 @@ Show # Unique Fallback--->Catches any uniques that aren't listed above
 	PlayAlertSound 7 300
 
 #===============================================================================================================
+# [[4400]] Leveling - Salvagable
+#===============================================================================================================
+# !! Waypoint c20.leveling.salvagable.all: "Leveling - Salvagable bases"
+
+# Double Quality Currencies
+
+# Show # %D4 $type->leveling->salvagable $tier->quality2martialany
+# 	Quality >= 10
+# 	Rarity Normal Magic
+# 	Class == "Bows" "Crossbows" "One Hand Maces" "Quarterstaves" "Two Hand Maces"
+# 	AreaLevel < 65
+# 	SetFontSize 40
+# 	SetBorderColor 180 180 180
+
+# Show # %D4 $type->leveling->salvagable $tier->quality2casterany
+# 	Quality >= 10
+# 	Rarity Normal Magic
+# 	Class == "Sceptres" "Staves" "Wands"
+# 	AreaLevel < 65
+# 	SetFontSize 40
+# 	SetBorderColor 180 180 180
+
+# Show # %D5 $type->leveling->salvagable $tier->quality2armorany
+# 	Quality >= 10
+# 	Rarity Normal Magic
+# 	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+# 	AreaLevel < 65
+# 	SetFontSize 40
+# 	SetBorderColor 180 180 180
+
+# # Single Quality Currencies
+
+# Show # %D4 $type->leveling->salvagable $tier->qualitymartialany
+# 	Quality >= 1
+# 	Rarity Normal Magic
+# 	Class == "Bows" "Crossbows" "One Hand Maces" "Quarterstaves" "Two Hand Maces"
+# 	AreaLevel < 65
+# 	SetFontSize 40
+# 	SetBorderColor 180 180 180
+
+# Show # %D4 $type->leveling->salvagable $tier->qualitycasterany
+# 	Quality >= 1
+# 	Rarity Normal Magic
+# 	Class == "Sceptres" "Staves" "Wands"
+# 	AreaLevel < 65
+# 	SetFontSize 40
+# 	SetBorderColor 180 180 180
+
+# Show # %D4 $type->leveling->salvagable $tier->qualityarmorany
+# 	Quality >= 1
+# 	Rarity Normal Magic
+# 	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+# 	AreaLevel < 65
+# 	SetFontSize 40
+# 	SetBorderColor 180 180 180
+
+# Artificer Scraps
+
+#Show # %D3 $type->leveling->salvagable $tier->socketslarge
+#	Sockets > 0
+#	Height >= 3
+#	Rarity Normal Magic
+#	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands"
+#	AreaLevel < 65
+#	SetFontSize 40
+#	SetBorderColor 127 127 127
+
+#Show # %D3 $type->leveling->salvagable $tier->socketssmall
+#	Sockets > 0
+#	Height < 3
+#	Rarity Normal Magic
+#	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands"
+#	AreaLevel < 65
+#	SetFontSize 40
+#	SetBorderColor 180 180 180
+
+
+#===============================================================================================================
 # [[4500]] Hide outdated leveling flasks
 #===============================================================================================================
-
 
 #Hide # $type->hidelayer $tier->outdatedlevelflaska
 	#Quality 0
@@ -3725,87 +3987,794 @@ Show # Unique Fallback--->Catches any uniques that aren't listed above
 # [[4700]] Leveling - Life, Mana
 #===============================================================================================================
 
+Show # %D5 $type->leveling->flasks->quality $tier->max
+	Quality >= 20
+	Rarity Normal Magic
+	Class == "Charms" "Life Flasks" "Mana Flasks"
+	SetFontSize 38
+	SetBorderColor 180 180 180
+	SetBackgroundColor 10 60 40
+
+Show # %D4 $type->leveling->flasks->quality $tier->high
+	Quality >= 14
+	Rarity Normal Magic
+	Class == "Charms" "Life Flasks" "Mana Flasks"
+	SetFontSize 38
+	SetBorderColor 180 180 180
+	SetBackgroundColor 10 60 40
+
+#Show # %D3 $type->leveling->flasks->quality $tier->any
+#	Quality >= 1
+#	Rarity Normal Magic
+#	Class == "Charms" "Life Flasks" "Mana Flasks"
+#	SetFontSize 38
+#	SetBorderColor 100 100 100
+#	SetBackgroundColor 10 60 40
+
 #------------------------------------
 #   [4702] Life flasks Leveling
 #------------------------------------
 
-Show
+Show # $type->leveling->flasks->life $tier->t1
 	Class == "Life Flasks"
-	AreaLevel <= 64
-	SetFontSize 25
-	SetBorderColor 120 0 0 255
-	SetBackgroundColor 106 0 0
+	BaseType "Medium"
+	AreaLevel <= 8
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
+
+Show # $type->leveling->flasks->life $tier->t2
+	Class == "Life Flasks"
+	BaseType "Greater"
+	AreaLevel <= 15
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
+
+Show # $type->leveling->flasks->life $tier->t3
+	Class == "Life Flasks"
+	BaseType "Grand"
+	AreaLevel <= 22
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
+
+Show # $type->leveling->flasks->life $tier->t4
+	Class == "Life Flasks"
+	BaseType "Giant"
+	AreaLevel <= 29
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
+
+Show # $type->leveling->flasks->life $tier->t5
+	Class == "Life Flasks"
+	BaseType "Colossal"
+	AreaLevel <= 39
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
+
+Show # $type->leveling->flasks->life $tier->t6
+	Class == "Life Flasks"
+	BaseType "Gargantuan"
+	AreaLevel <= 49
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
+
+Show # $type->leveling->flasks->life $tier->t7
+	Class == "Life Flasks"
+	BaseType "Transcendent"
+	AreaLevel <= 59
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
+
+Show # $type->leveling->flasks->life $tier->t8
+	Class == "Life Flasks"
+	BaseType "Ultimate"
+	AreaLevel <= 65
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 110 10 10
 
 #------------------------------------
 #   [4703] Mana flasks Leveling
 #------------------------------------
 
-Show
+Show # $type->leveling->flasks->mana $tier->t1
 	Class == "Mana Flasks"
-	AreaLevel <= 64
-	SetFontSize 25
-	SetBorderColor 0 0 120 255
-	SetBackgroundColor 25 96 100
+	BaseType "Medium"
+	AreaLevel <= 8
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+Show # $type->leveling->flasks->mana $tier->t2
+	Class == "Mana Flasks"
+	BaseType "Greater"
+	AreaLevel <= 15
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+Show # $type->leveling->flasks->mana $tier->t3
+	Class == "Mana Flasks"
+	BaseType "Grand"
+	AreaLevel <= 22
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+Show # $type->leveling->flasks->mana $tier->t4
+	Class == "Mana Flasks"
+	BaseType "Giant"
+	AreaLevel <= 29
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+Show # $type->leveling->flasks->mana $tier->t5
+	Class == "Mana Flasks"
+	BaseType "Colossal"
+	AreaLevel <= 39
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+Show # $type->leveling->flasks->mana $tier->t6
+	Class == "Mana Flasks"
+	BaseType "Gargantuan"
+	AreaLevel <= 49
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+Show # $type->leveling->flasks->mana $tier->t7
+	Class == "Mana Flasks"
+	BaseType "Transcendent"
+	AreaLevel <= 59
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+Show # $type->leveling->flasks->mana $tier->t8
+	Class == "Mana Flasks"
+	BaseType "Ultimate"
+	AreaLevel <= 65
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+#------------------------------------
+#   [4704] Charms
+#------------------------------------
+
+Show # %D4 $type->leveling->charms $tier->selected
+	Rarity Normal Magic
+	BaseType == "Amethyst Charm" "Antidote Charm" "Dousing Charm" "Golden Charm" "Grounding Charm" "Stone Charm" "Thawing Charm"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBorderColor 100 100 100
+	SetBackgroundColor 10 60 40
+
+#Show # %D2 $type->leveling->charms $tier->any
+#	Rarity Normal Magic
+#	Class == "Charms"
+#	AreaLevel < 65
+#	SetFontSize 40
+#	SetBorderColor 100 100 100
+#	SetBackgroundColor 10 60 40
+
 
 #===============================================================================================================
 # [[4800]] Leveling - Rules
 #===============================================================================================================
-
+# !! Waypoint c21.leveling.gear.all : "Leveling - Gear - All"
 #------------------------------------
-#   [4803] Rares - Universal
+#   [4801] Rares - Decorators
 #------------------------------------
+# !! Waypoint c21.leveling.decorators.all : "Leveling - Rares - Decorators"
 
-Show
+#Show  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # $type->leveling->decorators->rare $tier->largerares
+#	Width >= 2
+#	Height >= 3
+#	Rarity Rare
+#	AreaLevel < 65
+#	Continue
+
+#Show  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # $type->leveling->decorators->rare $tier->mediumrares1
+#	Width 1
+#	Height >= 3
+#	Rarity Rare
+#	AreaLevel < 65
+#	Continue
+
+#Show  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # $type->leveling->decorators->rare $tier->mediumrares2
+#	Width 2
+#	Height 2
+#	Rarity Rare
+#	AreaLevel < 65
+#	Continue
+
+Show # $type->leveling->decorators->rare $tier->tinyrares
+	Width <= 2
+	Height 1
 	Rarity Rare
-	SetFontSize 30
-	SetTextColor 220 180 70 255
+	AreaLevel < 65
+	SetBorderColor 220 220 0
+	Continue
+
+#------------------------------------
+#   [3402] Rares - Universal
+#------------------------------------
+
+# !! Waypoint c21.leveling.rares.jewellery : "Leveling - Rares - Belts, Rings, Amulets"
+
+Show # %D6 $type->leveling->rare->universal $tier->jewellery
+	Rarity Rare
+	Class == "Amulets" "Belts" "Rings"
+	AreaLevel < 65
+	SetFontSize 42
+	SetBackgroundColor 75 75 0
+	PlayEffect Yellow
+	MinimapIcon 1 White Diamond
+
+# !! Waypoint c21.leveling.rares.armors : "Leveling - Rares - Armour Pieces"
+
+Show # %D4 $type->leveling->rare->armours $tier->ar
+	BaseEnergyShield 0
+	BaseEvasion 0
+	BaseArmour > 0
+	Rarity Rare
+	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->armours $tier->ev
+	BaseEnergyShield 0
+	BaseEvasion > 0
+	BaseArmour 0
+	Rarity Rare
+	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->armours $tier->es
+	BaseEnergyShield > 0
+	BaseEvasion 0
+	BaseArmour 0
+	Rarity Rare
+	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->armours $tier->arev
+	BaseEnergyShield 0
+	BaseEvasion > 0
+	BaseArmour > 0
+	Rarity Rare
+	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->armours $tier->ares
+	BaseEnergyShield > 0
+	BaseEvasion 0
+	BaseArmour > 0
+	Rarity Rare
+	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->armours $tier->eves
+	BaseEnergyShield > 0
+	BaseEvasion > 0
+	BaseArmour 0
+	Rarity Rare
+	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %H5 $type->leveling->rare->armours $tier->anythingearly
+	Rarity Rare
+	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+	AreaLevel < 16
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->wands
+	Rarity Rare
+	Class == "Wands"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->sceptres
+	Rarity Rare
+	Class == "Sceptres"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->staves
+	Rarity Rare
+	Class == "Staves"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->bowsquivers
+	Rarity Rare
+	Class == "Bows" "Quivers"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->crossbows
+	Rarity Rare
+	Class == "Crossbows"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->onehandmaces
+	Rarity Rare
+	Class == "One Hand Maces"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->twohandmaces
+	Rarity Rare
+	Class == "Two Hand Maces"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+Show # %D4 $type->leveling->rare->weapons $tier->quarterstaves
+	Rarity Rare
+	Class == "Quarterstaves"
+	AreaLevel < 65
+	SetFontSize 40
+	SetBackgroundColor 20 20 0 255
+
+#------------------------------------
+#   [3403] Rares - Other
+#------------------------------------
+# !! Waypoint c21.leveling.rares.low : "Leveling - Gear - Low Tier"
+
+Hide # %H3 $type->leveling->rare->remaining $tier->any class == "body armours" "gloves" "boots" "helmets" "shields" "foci" "staves" "sceptres" "wands" "one hand maces" "quarterstaves" "two hand maces" "bows" "crossbows" "quivers" "amulets" "belts" "rings"
+	Rarity Rare
+	AreaLevel < 65
+	SetFontSize 38
+	SetBackgroundColor 35 35 35 240
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Makeshift Crossbow"
+ItemLevel <= 3
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Tense Crossbow"
+ItemLevel <= 9
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Sturdy Crossbow"
+ItemLevel <= 15
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Varnished Crossbow"
+ItemLevel <= 19
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Dyad Crossbow"
+ItemLevel <= 25
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Alloy Crossbow"
+ItemLevel <= 32
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Bombard Crossbow"
+ItemLevel <= 37
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Construct Crossbow"
+ItemLevel <= 44
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Advanced Tense Crossbow"
+ItemLevel <= 47
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Advanced Sturdy Crossbow"
+ItemLevel <= 50
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Advanced Varnished Crossbow"
+ItemLevel <= 54
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Advanced Dyad Crossbow"
+ItemLevel <= 58
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Advanced Bombard Crossbow"
+ItemLevel <= 61
+
+# FilterBlade: Conditional Entry
+Show
+Rarity Normal Magic
+SetBorderColor 200 0 0
+SetFontSize 38
+BaseType "Advanced Forlorn Crossbow"
+ItemLevel <= 65
 
 #===============================================================================================================
-# [[4900]] Leveling - Useful magic and normal items
+# [[3500]] Leveling - Useful magic and normal items
 #===============================================================================================================
+#------------------------------------
+#   [3501] Decorators
+#------------------------------------
+# !! Waypoint c21.leveling.magicvendor.all : "Leveling - Normal and Magic - Magic Vendor Items"
+
+# Show # $type->decorators->leveling->magic $tier->largemagic
+# 	Width >= 2
+# 	Height >= 3
+# 	Rarity Magic
+# 	AreaLevel < 65
+# 	SetFontSize 38
+# 	Continue
+
+# Show # $type->decorators->leveling->magic $tier->medium1
+# 	Width 1
+# 	Height >= 3
+# 	Rarity Magic
+# 	AreaLevel < 65
+# 	SetFontSize 38
+# 	Continue
+
+# Show # $type->decorators->leveling->magic $tier->medium2
+# 	Width 2
+# 	Height 2
+# 	Rarity Magic
+# 	AreaLevel < 65
+# 	SetFontSize 38
+# 	Continue
+
+# Show # $type->decorators->leveling->magic $tier->noticeearly
+# 	Rarity Magic
+# 	AreaLevel <= 9
+# 	SetFontSize 40
+# 	Continue
+
+# Show # $type->decorators->leveling->magic $tier->tiny
+# 	Width <= 2
+# 	Height 1
+# 	Rarity Magic
+# 	AreaLevel < 65
+# 	SetFontSize 40
+# 	Continue
 
 #------------------------------------
-#   [4901] Fallback Layer
+#   [3502] Purpose Picked Items
 #------------------------------------
 
-Show
+# !! Waypoint c21.leveling.normalmagic : "Leveling - Remarkable Normal and Magic Gear"
+
+Show # %D4 $type->leveling->normalmagicremarkable $tier->jewellery
 	Rarity Normal Magic
-	BaseType "Expert "
-	SetFontSize 35
+	Class == "Amulets" "Belts" "Rings"
+	SetFontSize 42
+	SetBackgroundColor 30 0 70 255
 
-Show
-	Rarity Normal Magic
-	Class == "Sceptres" "Bows" "Shields"
-	SetFontSize 30	
-
-#Show
-	#Rarity Normal Magic
-	#ItemLevel >= 40
-	#SetFontSize 25
+Show # %D5 $type->leveling->normalmagicremarkable $tier->earlyboots
+	Rarity Magic
+	Class == "Boots"
+	AreaLevel <= 32
+	SetFontSize 40
+	SetBackgroundColor 30 0 70 255
 
 #------------------------------------
-#   [4905] Hide All known Section
+#   [3503] Conditional Rules
+#------------------------------------
+# !! Waypoint c21.leveling.firstlevels.all : "Leveling - Normal and Magic - First Levels"
+
+Hide  # %RH1 $type->leveling->progressivehide $tier->normal1
+DropLevel < 8
+Rarity Normal
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 22
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH1 $type->leveling->progressivehide $tier->normal2
+DropLevel < 16
+Rarity Normal
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 30
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH1 $type->leveling->progressivehide $tier->normal3
+DropLevel < 24
+Rarity Normal
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 40
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH1 $type->leveling->progressivehide $tier->normal4
+DropLevel < 32
+Rarity Normal
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 48
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH1 $type->leveling->progressivehide $tier->normal5
+DropLevel < 40
+Rarity Normal
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 56
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH1 $type->leveling->progressivehide $tier->normal6
+DropLevel < 44
+Rarity Normal
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 60
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH2 $type->leveling->progressivehide $tier->magic1
+DropLevel < 8
+Rarity Magic
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 22
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH2 $type->leveling->progressivehide $tier->magic2
+DropLevel < 16
+Rarity Magic
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 30
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH2 $type->leveling->progressivehide $tier->magic3
+DropLevel < 24
+Rarity Magic
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 40
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH2 $type->leveling->progressivehide $tier->magic4
+DropLevel < 32
+Rarity Magic
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 48
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH2 $type->leveling->progressivehide $tier->magic5
+DropLevel < 40
+Rarity Magic
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 56
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+Hide  # %RH2 $type->leveling->progressivehide $tier->magic6
+DropLevel < 44
+Rarity Magic
+Class == "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces"
+AreaLevel >= 60
+SetFontSize 18
+SetBackgroundColor 20 20 0 0
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->armours $tier->ar
+#	BaseEnergyShield 0
+#	BaseEvasion 0
+#	BaseArmour > 0
+#	Rarity Normal Magic
+#	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->armours $tier->ev
+#	BaseEnergyShield 0
+#	BaseEvasion > 0
+#	BaseArmour 0
+#	Rarity Normal Magic
+#	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->armours $tier->es
+#	BaseEnergyShield > 0
+#	BaseEvasion 0
+#	BaseArmour 0
+#	Rarity Normal Magic
+#	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->armours $tier->arev
+#	BaseEnergyShield 0
+#	BaseEvasion > 0
+#	BaseArmour > 0
+#	Rarity Normal Magic
+#	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->armours $tier->ares
+#	BaseEnergyShield > 0
+#	BaseEvasion 0
+#	BaseArmour > 0
+#	Rarity Normal Magic
+#	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->armours $tier->eves
+#	BaseEnergyShield > 0
+#	BaseEvasion > 0
+#	BaseArmour 0
+#	Rarity Normal Magic
+#	Class == "Body Armours" "Boots" "Foci" "Gloves" "Helmets" "Shields"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->wands
+#	Rarity Normal Magic
+#	Class == "Wands"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->sceptres
+#	Rarity Normal Magic
+#	Class == "Sceptres"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->staves
+#	Rarity Normal Magic
+#	Class == "Staves"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->bowsquivers
+#	Rarity Normal Magic
+#	Class == "Bows" "Quivers"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->crossbows
+#	Rarity Normal Magic
+#	Class == "Crossbows"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->onehandmaces
+#	Rarity Normal Magic
+#	Class == "One Hand Maces"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->twohandmaces
+#	Rarity Normal Magic
+#	Class == "Two Hand Maces"
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D3 $type->leveling->normalmagic->weapons $tier->quarterstaves
+#	Rarity Normal Magic
+#	Class == "Quarterstaves"
+
+#------------------------------------
+#   [3504] Others
 #------------------------------------
 
-Hide # Hide All
-	Rarity Normal Magic
-	AreaLevel >= 60
-	Class "Belts" "Charms" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "One Hand" "Quivers" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Crossbows" "Spears" "Flails" "Quarterstaves" "Traps" "Foci"
+Show # %D5 $type->leveling->firstlevels $tier->firstareasmagic
+	Rarity Magic
+	AreaLevel <= 3
+	SetFontSize 38
+
+Show # %D5 $type->leveling->firstlevels $tier->firstareasnormal
+	Rarity Normal
+	AreaLevel <= 3
+	SetFontSize 38
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D2 $type->leveling->magic->remaining $tier->rest
+#	Rarity Magic
+#	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands"
+#	AreaLevel >= 24
+#	AreaLevel <= 65
+
+# Show # %D4 $type->leveling->magic->remaining $tier->act2
+# 	Rarity Magic
+# 	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands"
+# 	AreaLevel >= 16
+# 	AreaLevel <= 24
+
+# Show # %D4 $type->leveling->magic->remaining $tier->act1
+# 	Rarity Magic
+# 	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Crossbows" "Foci" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands"
+# 	AreaLevel >= 9
+# 	AreaLevel <= 16
+
+# !! Waypoint c22.hide.all : "HIDELAYER - Hide all known untiered items"
+#------------------------------------
+#   [3505] Hide All known Section
+#------------------------------------
+
+#Show # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # %D0 $type->lowstrictnessshowlayer $tier->anyfinal
+#	Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Charms" "Crossbows" "Foci" "Gloves" "Helmets" "Jewels" "Life Flasks" "Mana Flasks" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands"
+#	SetFontSize 18
+#	SetBorderColor 0 0 0 0
+#	SetBackgroundColor 20 20 0 0
+#	DisableDropSound True
+
+Hide # $type->hidelayer $tier->final
+	Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Charms" "Crossbows" "Foci" "Gloves" "Helmets" "Jewels" "Life Flasks" "Mana Flasks" "One Hand Maces" "Quarterstaves" "Quivers" "Rings" "Sceptres" "Shields" "Staves" "Two Hand Maces" "Wands"
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 20 20 0 0
 	DisableDropSound True
 
 #------------------------------------
-#   [4906] Show All unknown Section
+#   [3506] Show All unknown Section
 #------------------------------------
+# !! Waypoint c22.show.all : "SAFETYLAYER - Show all unknown items"
+# THIS ENTRY IS CAUGHT IN 3 CASES:
+# 1) YOUR FILTER IS OUT OF DATE!
+# 2) YOU DID SOMETHING SILLY WHEN EDITING THE FILTER
+# 3) YOU ENCOUNTERED A PREVIOUSLY UNKNOWN ITEM (VERY UNLIKELY)
 
-
-#Show # $type->anyremaining $tier->restex
-	#SetFontSize 45
-	#SetTextColor 0 0 0 255
-	#SetBorderColor 255 255 255 255
-	#SetBackgroundColor 100 0 100 255
-	#PlayAlertSound 3 300
-
+Show # $type->anyremaining $tier->restex
+	SetFontSize 45
+	SetTextColor 0 255 255 255
+	SetBorderColor 0 255 255 255
+	SetBackgroundColor 255 0 255 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Pentagon
 
